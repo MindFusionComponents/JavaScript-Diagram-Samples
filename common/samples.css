@@ -1,0 +1,96 @@
+html 
+{
+	height: 100%;
+	width: 100%;
+}
+
+body 
+{
+	font: 12px/18px "Trebuchet MS", sans-serif;
+	margin: 0px;
+}
+
+select
+{
+	width: 120px;
+}
+
+input[type=text]
+{
+	font: 12px/18px "Trebuchet MS", sans-serif;
+	border: 1px solid #e2e4e7;
+}
+
+input[type=text]
+{
+	outline: none;
+}
+
+::selection
+{
+	background-color: #cfcfcf;
+}
+
+::-moz-selection
+{
+	background-color: #cfcfcf;
+}
+
+#header
+{
+	background-color: #fafafa;
+	border-bottom: 1px solid #e2e4e7;
+	overflow: auto;
+	padding: 5px;
+}
+
+#content
+{
+	position: absolute;
+	left: 0px;
+	right: 401px;
+}
+
+#footer
+{
+	background-color: #fafafa;
+	border-top: 1px solid #e2e4e7;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.label
+{
+	font-weight: bold;
+	color: #999999;
+	display: block;
+	margin-bottom: 1px;
+}
+
+#info
+{
+	width: 400px;
+	overflow: auto;
+	position: absolute;
+	right: 0px;
+	border-left: 1px solid #e2e4e7;
+}
+
+#copyright
+{
+	display:block;
+	margin: 2px 10px;
+	float: right;
+}
+
+hr
+{
+	border-width: 0px;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(226,228,231,0), rgba(226,228,231,1), rgba(226,228,231,0));
+	background-image: -moz-linear-gradient(left, rgba(226,228,231,0), rgba(226,228,231,1), rgba(226,228,231,0));
+	background-image: -ms-linear-gradient(left, rgba(226,228,231,0), rgba(226,228,231,1), rgba(226,228,231,0));
+	background-image: -o-linear-gradient(left, rgba(226,228,231,0), rgba(226,228,231,1), rgba(226,228,231,0));
+}
