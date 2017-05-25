@@ -1,0 +1,43 @@
+html, body {
+  height: 60%;
+  width: 99%;
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  padding: 5px;
+ 
+}
+
+
+
+
+section {
+   display: flex;
+   max-width: 700px;
+
+}
+
+.column {
+  margin: 10px 10px 0px 0px;
+  flex: 1 1 0;
+  border: 1px solid #cecece;
+}
+
+section:nth-of-type(2) .column:first-of-type {
+  flex: 2 2 22;
+ 
+}
+
+
+
+section:first-of-type .column:first-of-type {
+  flex: 1 1 auto;
+}
+
+
+
+
+

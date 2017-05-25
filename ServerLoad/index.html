@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Server Load</title>
+    <script src="Scripts/MindFusion.Common.js" type="text/javascript"></script>
+    <link href="common/jquery-ui.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="common/jquery.min.js"></script>
+    <script type="text/javascript" src="common/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Scripts/config.js"></script>
+
+   
+    <script src="Scripts/MindFusion.Diagramming.js" type="text/javascript"></script>    
+    
+
+    <link href="common/style.css" rel="stylesheet" />
+
+   
+</head>
+<body>  
+    
+  
+    <section>
+        <div class="column">
+            <canvas id="lineChart"></canvas>
+            </div>
+        </section>
+    <section>
+        <div class="column">
+            Click on a link in the network to show its load. Click and drag with the mouse or hold 'Ctrl' to select several links. Click anywhere else on the diagram to return to default.
+        <canvas id="diagram"></canvas>
+            </div>
+        <div class="column">
+            Average User Count:
+            <canvas width="320" height="320" id="userCounter" style="padding: 20px 10px 0px 10px;"></canvas>
+        </div>
+        </section>
+    <script src="Scripts/diagram.js" type="text/javascript"></script>
+    <script data-main="charts" src="Scripts/require.js"></script>
+</body>
+</html>
