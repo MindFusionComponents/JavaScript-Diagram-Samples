@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MindFusion JsDiagram Sample - Tutorial 5</title>
+	<meta charset="utf-8" />
+	<link href="common/jquery-ui.min.css" rel="stylesheet" />
+	<link href="common/samples.css" rel="stylesheet" />
+	<script type="text/javascript" src="common/jquery.min.js"></script>
+	<script type="text/javascript" src="common/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="common/samples.js"></script>
+</head>
+<body>
+	<div id="header" style="height: 49px;">
+		<div style="float: right; margin-right: 5px; margin-top: 17px;">
+			<a href="OrgChartEditor.js" style="margin-right: 10px;">View source</a>
+			<button id="expandButton" onclick="onExpandCollapse()">
+				&gt;</button>
+		</div>
+	</div>
+	<div id="info" style="top: 60px; bottom: 24px;">
+		<div id="infoTab" style="padding: 10px;">
+			<h1>
+				About this sample</h1>
+			<p>
+				This example shows how to create a custom node class that exposes some new properties
+				in addition to the ones defined by TableNode and implements its own drawing logic.
+			</p>
+			<h4>
+			<ul>Features
+				<li>Editable nodes - select a node with a mouseclick and select an editable field (name, title, comment) to change its' text</li>
+				<li>Editable images - select an image to edit and paste a url to change it</li>
+				<li>Adding and deleting nodes - right-click on any node to add a child to it. Right-clicking without a node will add an unconected node to the diagram. Delete a node by pressing the delete button with a selected node</li>
+				<li>Drag a node without a boss to any node to assign it as that node's child</li>
+				<li>IDs within the hierarchy are distributed automatically</li>
+				<li>Hierarchy rearranges automatically once changes by the user are made</li>
+			</ul>
+			</h4>
+		</div>
+	</div>
+	<div id="content" style="top: 60px; bottom: 24px;">
+		<!-- The Diagram component is bound to the canvas element below -->
+		<div style="width: 100%; height: 100%; overflow: auto;">
+			<canvas id="diagram" width="2100" height="2100">
+				This page requires a browser that supports HTML 5 Canvas element.
+			</canvas>
+		</div>
+	</div>
+	<div id="footer" style="height: 24px;">
+		<span id="copyright"></span>
+	</div>
+	<script src="MindFusion.Common.js" type="text/javascript"></script>
+	<script src="MindFusion.Diagramming.js" type="text/javascript"></script>
+	<script src="OrgChartEditor.js" type="text/javascript"></script>
+</body>
+</html>
