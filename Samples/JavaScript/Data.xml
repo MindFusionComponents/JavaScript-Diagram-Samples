@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<continents>
+	<continent name="Africa" population="1.1" area="30.222">
+		<countries>
+			<country name="Algeria" population="0.034178188" area="2.38174" />
+			<country name="Angola" population="0.012799293" area="1.2467" />
+			<country name="Burkina Faso" population="0.015746232" area="0.2742" />
+			<country name="Cameroon" population="0.018879301" area="0.47544" />
+			<country name="Chad" population="0.010329208" area="1.284" />
+			<country name="Côte d'Ivoire" population="0.020617068" area="0.32246" />
+			<country name="Democratic Republic of the Congo" population="0.069575" area="2.34541" />
+			<country name="Egypt" population="0.082868" area="1.00145" />
+			<country name="Ethiopia" population="0.084320987" area="1.127127" />
+			<country name="Ghana" population="0.023832495" area="0.23946" />
+			<country name="Guinea" population="0.010057975" area="0.245857" />
+			<country name="Kenya" population="0.039002772" area="0.58265" />
+			<country name="Liberia" population="0.00344179" area="0.11137" />
+			<country name="Libya" population="0.006310434" area="1.75954" />
+			<country name="Madagascar" population="0.020653556" area="0.58704" />
+			<country name="Malawi" population="0.014268711" area="0.11848" />
+			<country name="Mali" population="0.012666987" area="1.24" />
+			<country name="Mauritania" population="0.003129486" area="1.0307" />
+			<country name="Morocco" population="0.034859364" area="0.44655" />
+			<country name="Mozambique" population="0.021669278" area="0.80159" />
+			<country name="Niger" population="0.015306252" area="1.267" />
+			<country name="Nigeria" population="0.166629" area="0.923768" />
+			<country name="Republic of the Congo" population="0.004012809" area="0.342" />
+			<country name="Rwanda" population="0.010473282" area="0.026338" />
+			<country name="Senegal" population="0.013711597" area="0.19619" />
+			<country name="Somalia" population="0.009832017" area="0.637657" />
+			<country name="South Africa" population="0.05177056" area="1.219912" />
+			<country name="Sudan" population="0.030894" area="1.861484" />
+			<country name="Tanzania" population="0.044929002" area="0.945087" />
+			<country name="Tunisia" population="0.010486339" area="0.16361" />
+			<country name="Uganda" population="0.032369558" area="0.23604" />
+			<country name="Zambia" population="0.01186274" area="0.752614" />
+			<country name="Zimbabwe" population="0.011392629" area="0.39058" />
+		</countries>
+	</continent>
+	<continent name="Asia" population="4.164" area="44.579">
+		<countries>
+			<country name="Afghanistan" population="0.030419928" area="0.6475" />
+			<country name="Bangladesh" population="0.150039" area="0.14757" />
+			<country name="Myanmar" population="0.05458465" area="0.676578" />
+			<country name="Cambodia" population="0.014952665" area="0.181035" />
+			<country name="China" population="1.343239923" area="9.596961" />
+			<country name="India" population="1.205073612" area="3.287263" />
+			<country name="Indonesia" population="0.248645008" area="1.904569" />
+			<country name="Iran" population="0.078868711" area="1.648195" />
+			<country name="Iraq" population="0.031129225" area="0.438317" />
+			<country name="Japan" population="0.127368088" area="0.377915" />
+			<country name="Kazakhstan" population="0.01752201" area="2.7249" />
+			<country name="Kyrgyzstan" population="0.005496737" area="0.199951" />
+			<country name="Malaysia" population="0.029179952" area="0.329847" />
+			<country name="Mongolia" population="0.003179997" area="1.564116" />
+			<country name="Nepal" population="0.029890686" area="0.147181" />
+			<country name="North Korea" population="0.024589122" area="0.120538" />
+			<country name="Pakistan" population="0.190291129" area="0.796095" />
+			<country name="Philippines" population="0.0998336" area="0.3" />
+			<country name="Russia" population="0.14251767" area="17.098242" />
+			<country name="Saudi Arabia" population="0.026534504" area="2.14969" />
+			<country name="South Korea" population="0.050004441" area="0.10021" />
+			<country name="Syria" population="0.022530746" area="0.18518" />
+			<country name="Thailand" population="0.067091089" area="0.51312" />
+			<country name="Turkey" population="0.079749461" area="0.783562" />
+			<country name="Uzbekistan" population="0.02839418" area="0.4474" />
+			<country name="Vietnam" population="0.091519289" area="0.331212" />
+			<country name="Yemen" population="0.024771809" area="0.527968" />
+		</countries>
+	</continent>
+	<continent name="Europe" population="0.742" area="10.180">
+		<countries>
+			<country name="Austria" population="0.008169929" area="0.083858" />
+			<country name="Belarus" population="0.009458" area="0.20756" />
+			<country name="Belgium" population="0.011007" area="0.030528" />
+			<country name="Bulgaria" population="0.007621337" area="0.11091" />
+			<country name="Czech Republic" population="0.01025676" area="0.078866" />
+			<country name="Denmark" population="0.005564219" area="0.043094" />
+			<country name="Finland" population="0.005157537" area="0.336593" />
+			<country name="France" population="0.063182" area="0.54703" />
+			<country name="Germany" population="0.083251851" area="0.357021" />
+			<country name="Greece" population="0.011123034" area="0.131957" />
+			<country name="Hungary" population="0.010075034" area="0.09303" />
+			<country name="Ireland" population="0.004234925" area="0.07028" />
+			<country name="Italy" population="0.059530464" area="0.30123" />
+			<country name="Lithuania" population="0.0029884" area="0.0652" />
+			<country name="Moldova" population="0.004434547" area="0.033843" />
+			<country name="Netherlands" population="0.016318199" area="0.041526" />
+			<country name="Norway" population="0.005018836" area="0.385178" />
+			<country name="Poland" population="0.038625478" area="0.312685" />
+			<country name="Portugal" population="0.010409995" area="0.091568" />
+			<country name="Romania" population="0.021698181" area="0.238391" />
+			<country name="Serbia" population="0.007120666" area="0.088361" />
+			<country name="Slovakia" population="0.005422366" area="0.048845" />
+			<country name="Spain" population="0.047059533" area="0.504851" />
+			<country name="Sweden" population="0.009090113" area="0.449964" />
+			<country name="Switzerland" population="0.007507" area="0.04129" />
+			<country name="Ukraine" population="0.04839647" area="0.6037" />
+			<country name="United Kingdom" population="0.061100835" area="0.24482" />
+		</countries>
+	</continent>
+	<continent name="North America" population="0.528" area="24.709">
+		<countries>
+			<country name="Canada" population="0.033573" area="9.98467" />
+			<country name="Cuba" population="0.011204" area="0.109886" />
+			<country name="Dominican Republic" population="0.01009" area="0.048671" />
+			<country name="Greenland" population="0.000057" area="2.166086" />
+			<country name="Guatemala" population="0.014027" area="0.108889" />
+			<country name="Jamaica" population="0.002719" area="0.010991" />
+			<country name="Mexico" population="0.112322757" area="1.964375" />
+			<country name="United States" population="0.31163" area="9.629091" />
+		</countries>
+	</continent>
+	<continent name="Oceania" population="0.036" area="8.525">
+		<countries>
+			<country name="Australia" population="0.023034879" area="7.68685" />
+			<country name="Fiji" population="0.000856346" area="0.01827" />
+			<country name="New Zealand" population="0.0044659" area="0.26868" />
+			<country name="Papua New Guinea" population="0.005172033" area="0.46284" />
+			<country name="Solomon Islands" population="0.000494786" area="0.02845" />
+		</countries>
+	</continent>
+	<continent name="South America" population="0.386" area="17.840">
+		<countries>
+			<country name="Argentina" population="0.040482" area="2.76689" />
+			<country name="Bolivia" population="0.009863" area="1.09858" />
+			<country name="Brazil" population="0.191241714" area="8.514877" />
+			<country name="Chile" population="0.016928873" area="0.75695" />
+			<country name="Colombia" population="0.04592897" area="1.13891" />
+			<country name="Ecuador" population="0.014573101" area="0.28356" />
+			<country name="Paraguay" population="0.006831306" area="0.40675" />
+			<country name="Peru" population="0.029132013" area="1.28522" />
+			<country name="Uruguay" population="0.00347778" area="0.17622" />
+			<country name="Venezuela" population="0.03164893" area="0.916445" />
+		</countries>
+	</continent>
+</continents>

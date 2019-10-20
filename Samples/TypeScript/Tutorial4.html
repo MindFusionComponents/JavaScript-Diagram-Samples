@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MindFusion JsDiagram Sample - Tutorial 4</title>
+	<meta charset="utf-8" />
+	<link href="common/jquery-ui.min.css" rel="stylesheet" />
+	<link href="common/samples.css" rel="stylesheet" />
+	<script type="text/javascript" src="common/jquery.min.js"></script>
+	<script type="text/javascript" src="common/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="common/samples.js"></script>
+</head>
+<body>
+	<div id="header" style="height: 49px;">
+		<div style="float: left; margin-top: 17px;">
+			<button onclick="Tutorial4.diagram.copyToClipboard()">
+				copy</button>
+			<button onclick="Tutorial4.diagram.cutToClipboard()">
+				cut</button>
+			<button onclick="Tutorial4.diagram.pasteFromClipboard(5, 5)">
+				paste</button>
+			<button onclick="Tutorial4.diagram.undo()">
+				undo</button>
+			<button onclick="Tutorial4.diagram.redo()">
+				redo</button>
+		</div>
+		<div style="float: right; margin-right: 5px; margin-top: 17px;">
+			<a href="Tutorial4.js" style="margin-right: 10px;">View source</a>
+			<button id="expandButton" onclick="onExpandCollapse()">
+				&gt;</button>
+		</div>
+	</div>
+	<div id="info" style="top: 60px; bottom: 24px;">
+		<div id="infoTab" style="padding: 10px;">
+			<h1>
+				About this sample</h1>
+			<p id="pinfo">
+				This example extends Tutorial #3 with clipboard and undo/redo functionality.
+			</p>
+		</div>
+	</div>
+	<div id="content" style="top: 60px; bottom: 24px;">
+		<div style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 260px; border-right: 1px solid #e2e4e7;
+			overflow: hidden; vertical-align: top;">
+			<!-- The NodeList component is bound to the canvas element below -->
+			<div style="position: absolute; top: 0px; bottom: 0px; left: 2px; right: 0px; width: 240px;
+				height: 100%;">
+				<canvas id="nodeListView" width="240">
+				</canvas>
+			</div>
+		</div>
+		<!-- The Diagram component is bound to the canvas element below -->
+		<div style="position: absolute; left: 261px; top: 0px; right: 0px; bottom: 0px; overflow: auto;">
+			<canvas id="diagram" width="2100" height="2100">
+				This page requires a browser that supports HTML 5 Canvas element.
+			</canvas>
+		</div>
+	</div>
+	<div id="footer" style="height: 24px;">
+		<span id="copyright"></span>
+	</div>
+	<script src="MindFusion.Common.js" type="text/javascript"></script>
+	<script src="MindFusion.Diagramming.js" type="text/javascript"></script>
+	<script src="Tutorial4.js" type="text/javascript"></script>
+</body>
+</html>

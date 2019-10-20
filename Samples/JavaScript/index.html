@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>MindFusion.Diagramming for JavaScript Samples</title>
+	<link href="common/jquery-ui.min.css" rel="stylesheet" />
+	<link href="common/samples.css" rel="stylesheet" />
+	<script type="text/javascript" src="common/jquery.min.js"></script>
+	<script type="text/javascript" src="common/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="common/samples.js"></script>
+	<style type="text/css">
+		a {
+			margin-left: 4px;
+		}
+		p {
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+	<input type="hidden" id="collapsed" />
+	<div id="header" style="height: 49px;">
+		<div style="float: right; margin-right: 5px; margin-top: 17px;">
+			<button id="expandButton" onclick="onExpandCollapse()">
+				&gt;
+			</button>
+		</div>
+	</div>
+	<div id="info" style="top: 60px; bottom: 24px;">
+		<div id="infoTab" style="padding: 10px;">
+			<h1>
+				About this sample
+			</h1>
+			<p>
+				Please, choose a sample from the links on the left.
+			</p>
+		</div>
+	</div>
+	<div id="content" style="left: 8px; top: 60px; bottom: 24px; overflow-y: auto; font-size: 14px; line-height: 21px;">
+		<div id="links" style="">
+			<a href="Anchors.html">Anchors</a>
+			<p id="pAnchors"></p>
+			<a href="Animations.html">Animations</a>
+			<p id="pAnimations"></p>
+			<a href="Containers.html">Containers</a>
+			<p id="pContainers"></p>
+			<a href="Controls.html">Controls</a>
+			<p id="pControls"></p>
+			<a href="DBDesign.html">Database Design</a>
+			<p id="pDBDesign"></p>
+			<a href="DomTree.html">Dom Tree</a>
+			<p id="pDomTree"></p>
+			<a href="DragDrop.html">Drag Drop</a>
+			<p id="pDragDrop"></p>
+			<a href="Flowcharter.html">Flowcharter</a>
+			<p id="pFlowcharter"></p>
+			<a href="FlowchartLayout.html">Flowchart Layout</a>
+			<p id="pFlowchartLayout"></p>
+			<a href="FractalLayout.html">Fractal Layout</a>
+			<p id="pFractalLayout"></p>
+			<a href="Inheritance.html">Inheritance</a>
+			<p id="pInheritance"></p>
+			<a href="Lanes.html">Lanes</a>
+			<p id="pLanes"></p>
+			<a href="LayeredLayout.html">Layered Layout</a>
+			<p id="pLayeredLayout"></p>
+			<a href="OrgChartEditor.html">OrgChart Editor</a>
+			<p id="pOrgChartEditor"></p>
+			<a href="PathFinder.html">Path Finder</a>
+			<p id="pPathFinder"></p>
+			<a href="SpanningCells.html">Spanning Cells</a>
+			<p id="pSpanningCells"></p>
+			<a href="StockShapes.html">Stock Shapes</a>
+			<p id="pStockShapes"></p>
+			<a href="SvgNodes.html">SVG Nodes</a>
+			<p id="pSvgNodes"></p>
+			<a href="TreeLayout.html">Tree Layout</a>
+			<p id="pTreeLayout"></p>
+			<a href="TreeMap.html">Tree Map</a>
+			<p id="pTreeMap"></p>
+
+			<a href="Tutorial1.html">Tutorial 1</a>
+			<p id="pTutorial1"></p>
+			<a href="Tutorial2.html">Tutorial 2</a>
+			<p id="pTutorial2"></p>
+			<a href="Tutorial3.html">Tutorial 3</a>
+			<p id="pTutorial3"></p>
+			<a href="Tutorial4.html">Tutorial 4</a>
+			<p id="pTutorial4"></p>
+		</div>
+	</div>
+	<script>
+
+		$(document).ready(function () {
+			$('#links > a').each(function (index, item)
+			{
+				var href = item.getAttribute("href")
+				$('#p' + href.replace(".html", "")).load(href + ' div#infoTab > p')
+			});
+		});
+
+	</script>
+</body>
+</html>

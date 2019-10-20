@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{E34FAD09-9C26-4048-8A97-1068F16A42CA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Animations.html" />
+    <Content Include="Anchors.html" />
+    <Content Include="common\acorn\acorn.js" />
+    <Content Include="common\acorn\walk.js" />
+    <Content Include="common\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="common\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="common\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="common\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="common\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="common\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="common\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="common\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="common\images\ui-icons_222222_256x240.png" />
+    <Content Include="common\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="common\images\ui-icons_454545_256x240.png" />
+    <Content Include="common\images\ui-icons_888888_256x240.png" />
+    <Content Include="common\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="common\jquery-ui.min.css" />
+    <Content Include="common\jquery-ui.min.js" />
+    <Content Include="common\jquery-ui.structure.min.css" />
+    <Content Include="common\jquery-ui.theme.min.css" />
+    <Content Include="common\jquery.min.js" />
+    <Content Include="common\samples.css" />
+    <Content Include="common\samples.js" />
+    <Content Include="Containers.html" />
+    <Content Include="Controls.html" />
+    <Content Include="DomTree.html" />
+    <Content Include="DragDrop.html" />
+    <Content Include="Flowcharter.html" />
+    <Content Include="FlowcharterJson.js" />
+    <Content Include="FlowchartLayout.html" />
+    <Content Include="FractalLayout.html" />
+    <Content Include="index.html" />
+    <Content Include="Inheritance.html" />
+    <Content Include="Lanes.html" />
+    <Content Include="LayeredLayout.html" />
+    <Content Include="MindFusion.Common.js" />
+    <Content Include="MindFusion.Diagramming.js" />
+    <TypeScriptCompile Include="Lanes.ts" />
+    <TypeScriptCompile Include="PathFinder.ts" />
+    <Content Include="PathFinder.html" />
+    <Content Include="SpanningCells.html" />
+    <Content Include="StockShapes.html" />
+    <Content Include="SvgNodes.html" />
+    <Content Include="TreeLayout.html" />
+    <Content Include="TreeMap.html" />
+    <Content Include="Tutorial1.html" />
+    <Content Include="Tutorial2.html" />
+    <Content Include="Tutorial3.html" />
+    <Content Include="Tutorial4.html" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Animations.ts" />
+    <TypeScriptCompile Include="Anchors.ts" />
+    <TypeScriptCompile Include="Containers.ts" />
+    <TypeScriptCompile Include="Controls.ts" />
+    <TypeScriptCompile Include="DomTree.ts" />
+    <TypeScriptCompile Include="DragDrop.ts" />
+    <TypeScriptCompile Include="Flowcharter.ts" />
+    <TypeScriptCompile Include="FlowchartLayout.ts" />
+    <TypeScriptCompile Include="FractalLayout.ts" />
+    <TypeScriptCompile Include="LayeredLayout.ts" />
+    <TypeScriptCompile Include="Inheritance.ts" />
+    <TypeScriptCompile Include="TreeMap.ts" />
+    <TypeScriptCompile Include="TreeLayout.ts" />
+    <TypeScriptCompile Include="SvgNodes.ts" />
+    <TypeScriptCompile Include="StockShapes.ts" />
+    <TypeScriptCompile Include="SpanningCells.ts" />
+    <TypeScriptCompile Include="Tutorial1.ts" />
+    <TypeScriptCompile Include="Tutorial2.ts" />
+    <TypeScriptCompile Include="Tutorial3.ts" />
+    <TypeScriptCompile Include="Tutorial4.ts" />
+    <TypeScriptCompile Include="Utils.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Samples</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\WebApplications\Microsoft.WebApplication.targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58491</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58491/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <TypeScriptModuleKind>none</TypeScriptModuleKind>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>
