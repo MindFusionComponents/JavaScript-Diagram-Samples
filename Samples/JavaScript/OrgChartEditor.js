@@ -668,7 +668,7 @@ function onLinkCreated(diagram, eventArgs)
 function styleLink(link)
 {
 	link.setPen("#2d3956");
-	link.setStrokeThickness(2.0);
+	link.setStrokeThickness(0.5);
 	link.setHeadShape();
 }
 

@@ -94,11 +94,9 @@ $(document).ready(function () {
         cell.setBrush(colors[i - 1]);
     }
 
-
     // create third table
     var table3 = diagram.getFactory().createTableNode(25, 80, 75, 30);
     table3.redimTable(4, 4);
-    table3.getColumn(4).columnStyle = ColumnStyle.AutoWidth;
     table3.setText("Delivery");
     table3.setCaptionBackBrush("#ce0000");
     table3.setCaptionFont(

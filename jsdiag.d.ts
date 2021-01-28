@@ -2,14 +2,9 @@
 
 // Type definitions for MindFusion.Diagramming for JavaScript
 // Project: https://www.mindfusion.eu/javascript-diagram.html
-// Definitions by: MindFusion <http://www.mindfusion.eu>
+// Definitions by: MindFusion <https://www.mindfusion.eu>
 
-// Copyright (c) 2018-2019, MindFusion LLC - Bulgaria.
-
-declare module "diagram-library"
-{
-export = MindFusion;
-}
+// Copyright (c) 2018-2020, MindFusion LLC - Bulgaria.
 
 declare namespace MindFusion.Animations
 {
@@ -351,6 +346,26 @@ declare namespace MindFusion.Graphs
 		*/
 		static With(): FlowchartLayoutBuilder;
 	}
+	/** Applies topological ordering to the graph. */
+	class TopologicalLayout extends Layout
+	{
+		/** Initializes a new instance of the TopologicalLayout class. */
+		constructor();
+		/** The desired distance between adjacent nodes. */
+		nodeDistance: number;
+		/** The direction of the arranged graph. */
+		direction: LayoutDirection;
+		/** Indicates whether to bend links connecting adjacent nodes or draw them as straight lines. */
+		bendAdjacentLinks: boolean;
+		/** Returns a builder object, associated with this TopologicalLayout instance.
+		 * @return A Builder instance.
+		*/
+		init(): TopologicalLayoutBuilder;
+		/** Returns a builder object.
+		 * @return A Builder instance.
+		*/
+		static With(): TopologicalLayoutBuilder;
+	}
 	/** A builder class for the TreeLayout class. */
 	class TreeLayoutBuilder
 	{
@@ -623,6 +638,38 @@ declare namespace MindFusion.Graphs
 		*/
 		multipleGraphsPlacement(value: MultipleGraphsPlacement): FlowchartLayoutBuilder;
 	}
+	/** A builder class for the TopologicalLayout class. */
+	class TopologicalLayoutBuilder
+	{
+		/** Creates a new TopologicalLayout instance with the specified properties.
+		 * @return A TopologicalLayout instance.
+		*/
+		create(): TopologicalLayout;
+		/** Sets The desired distance between adjacent nodes.
+		 * @param value 
+		*/
+		nodeDistance(value: number): TopologicalLayoutBuilder;
+		/** Sets The direction of the arranged graph.
+		 * @param value 
+		*/
+		direction(value: LayoutDirection): TopologicalLayoutBuilder;
+		/** Sets Indicates whether to bend links connecting adjacent nodes or draw them as straight lines.
+		 * @param value 
+		*/
+		bendAdjacentLinks(value: boolean): TopologicalLayoutBuilder;
+		/** Sets Indicates how to align links to the anchor points of nodes.
+		 * @param value 
+		*/
+		anchoring(value: Anchoring): TopologicalLayoutBuilder;
+		/** Sets Indicates whether to treat each Group of nodes as a single vertex in the arranged graph.
+		 * @param value 
+		*/
+		keepGroupLayout(value: boolean): TopologicalLayoutBuilder;
+		/** Sets Indicates how multiple independent graphs in the diagram should be positioned relatively to each other.
+		 * @param value 
+		*/
+		multipleGraphsPlacement(value: MultipleGraphsPlacement): TopologicalLayoutBuilder;
+	}
 }
 declare namespace MindFusion.Diagramming
 {
@@ -778,7 +825,7 @@ declare namespace MindFusion.Diagramming
 		/** Initializes a new instance of the DiagramNode class.
 		 * @param parent A Diagram instance whose default node attributes are copied to this node.
 		*/
-		constructor(parent: Diagram);
+		constructor(parent?: Diagram);
 		/** Gets the incoming links collection of this node.
 		 * @return An array containing incoming DiagramLink objects.
 		*/
@@ -1008,7 +1055,7 @@ declare namespace MindFusion.Diagramming
 		/** Initializes a new instance of the ShapeNode class with default values supplied from the specified Diagram.
 		 * @param parent The Diagram from which to obtain default values for the node properties.
 		*/
-		constructor(parent: Diagram);
+		constructor(parent?: Diagram);
 		/** Gets a value indicating whether text is rotated when the node is rotated. */
 		getRotateText(): boolean;
 		/** Sets a value indicating whether text is rotated when the node is rotated. */
@@ -1166,7 +1213,7 @@ declare namespace MindFusion.Diagramming
 		/** Initializes a new instance of the TableNode class with default values supplied from the specified Diagram.
 		 * @param parent The Diagram from which to obtain default values for the node properties.
 		*/
-		constructor(parent: Diagram);
+		constructor(parent?: Diagram);
 		/** Returns a reference to the cell located at the specified column and row of this table.
 		 * @param col An integer value specifying the index of a table's column.
 		 * @param row An integer value specifying the index of a table's row.
@@ -1193,8 +1240,11 @@ declare namespace MindFusion.Diagramming
 		 * @param value The column's width.
 		*/
 		setColumnWidth(col: number, value: number): void;
-		/** Resizes the columns and rows so that the cells are large enough to fit their text. */
-		resizeToFitText(): void;
+		/** Resizes the columns and rows so that the cells are large enough to fit their text.
+		 * @param ignoreCaption true to ignore caption text and consider only cells for table size, or false otherwise.
+		 * @param keepCellWidth true to preserve column widths and resize only row heights, or false otherwise.
+		*/
+		resizeToFitText(ignoreCaption: boolean, keepCellWidth: boolean): void;
 		/** Gets the shape of the table's outline. */
 		getShape(): SimpleShape;
 		/** Sets the shape of the table's outline. */
@@ -1302,13 +1352,29 @@ declare namespace MindFusion.Diagramming
 		*/
 		parseSvg(svg: string): void;
 	}
+	/** Creates SVG (Scalable Vector Graphics) drawings from the content of Diagram objects. */
+	class SvgExporter
+	{
+		/** Initializes a new instance of the SvgExporter class. */
+		constructor();
+		/** Creates an SVG element representing the specified diagram.
+		 * @param diagram A reference to the diagram to be exported.
+		 * @return A DOM SVG element.
+		*/
+		exportElement(diagram: Diagram): any;
+		/** Creates an SVG document representing the specified diagram.
+		 * @param diagram A reference to the diagram to be exported.
+		 * @return A string containing the SVG document's content.
+		*/
+		exportString(diagram: Diagram): string;
+	}
 	/** SvgNode instances are diagram nodes that can render SVG drawings. */
 	class SvgNode extends ShapeNode
 	{
 		/** Initializes a new instance of the SvgNode class with default values supplied from the specified Diagram.
 		 * @param parent The Diagram from which to obtain default values for the node properties.
 		*/
-		constructor(parent: Diagram);
+		constructor(parent?: Diagram);
 		/** Gets an SvgContent instance representing the SVG drawing rendered in this node. */
 		getContent(): SvgContent;
 		/** Sets an SvgContent instance representing the SVG drawing rendered in this node. */
@@ -1328,7 +1394,7 @@ declare namespace MindFusion.Diagramming
 		/** Initializes a new instance of the ContainerNode class with default values supplied from the specified Diagram.
 		 * @param parent The Diagram from which to obtain default values for the node properties.
 		*/
-		constructor(parent: Diagram);
+		constructor(parent?: Diagram);
 		/** Adds a node to this container.
 		 * @param node The node that should be added to this container.
 		*/
@@ -1423,7 +1489,7 @@ declare namespace MindFusion.Diagramming
 		/** Initializes a new instance of the FreeFormNode class.
 		 * @param parent A Diagram instance whose default node attributes are copied to this node.
 		*/
-		constructor(parent: Diagram);
+		constructor(parent?: Diagram);
 		/** Gets a value indicating whether the node's shape is closed. */
 		getClosed(): boolean;
 		/** Sets a value indicating whether the node's shape is closed. */
@@ -1463,6 +1529,32 @@ declare namespace MindFusion.Diagramming
 		 * @return The component created for specified element in the template.
 		*/
 		getComponent(name: string): MindFusion.Drawing.Component;
+		/** Gets a value specifying whether contents will clip to outline, when an outline component is used. */
+		getClipToOutline(): boolean;
+		/** Sets a value specifying whether contents will clip to outline, when an outline component is used. */
+		setClipToOutline(value: boolean): void;
+	}
+	/** A VideoNode instance renders video stream assigned to the VideoLocation property. */
+	class VideoNode
+	{
+		/** Initializes a new instance of the VideoNode class.
+		 * @param parent A Diagram instance whose default node attributes are copied to this node.
+		*/
+		constructor(parent?: Diagram);
+		/** DiagramNode.LoadFromXml override. Loads the node's content from an XML element.
+		 * @param xmlElement An XML DOM element containing the item's data.
+		 * @param context An object providing contextual information about the serialization process and some helper serialization methods.
+		*/
+		loadFromXml(xmlElement: any, context: XmlPersistContext): void;
+		/** Saves the node's content into an XML element.
+		 * @param xmlElement An XML DOM element that will contain the item's data.
+		 * @param context An object providing contextual information about the serialization process and some helper serialization methods.
+		*/
+		saveToXml(xmlElement: any, context: XmlPersistContext): void;
+		/** Gets the URL of the video stream displayed in this VideoNode. */
+		getVideoLocation(): string;
+		/** Sets the URL of the video stream displayed in this VideoNode. */
+		setVideoLocation(value: string): void;
 	}
 	/** Represents an action that changes the diagram and whose effects can be undone. */
 	class Command
@@ -1581,7 +1673,7 @@ declare namespace MindFusion.Diagramming
 		/** Initializes a new instance of the Diagram class.
 		 * @param element The Canvas DOM Element this Diagram is associated with.
 		*/
-		constructor(element: any);
+		constructor(element?: any);
 		/** Creates and initializes a new Diagram associated with specified Canvas DOM element.
 		 * @param element The Canvas DOM element that the Diagram should be attached to.
 		 * @return A Diagram instance.
@@ -1956,6 +2048,10 @@ declare namespace MindFusion.Diagramming
 		getNodesExpandable(): boolean;
 		/** Sets a value indicating whether newly created nodes can be collapsed and expanded by users. */
 		setNodesExpandable(value: boolean): void;
+		/** Gets a value indicating what should happen when a user clicks the +/- button that is displayed near expandable nodes. */
+		getExpandButtonAction(): ExpandButtonAction;
+		/** Sets a value indicating what should happen when a user clicks the +/- button that is displayed near expandable nodes. */
+		setExpandButtonAction(value: ExpandButtonAction): void;
 		/** Gets the style associated with this diagram. */
 		getStyle(): Style;
 		/** Sets the style associated with this diagram. */
@@ -2088,6 +2184,10 @@ declare namespace MindFusion.Diagramming
 		getCustomNodeType(): any;
 		/** Sets the type of a MindFusion.Diagramming.DiagramNode derived class whose instance should be created when a user starts drawing. */
 		setCustomNodeType(value: any): void;
+		/** Gets the HTML string representing the DOM content, rendered by default in newly created ControlNode objects. */
+		getDefaultControlTemplate(): string;
+		/** Sets the HTML string representing the DOM content, rendered by default in newly created ControlNode objects. */
+		setDefaultControlTemplate(value: string): void;
 		/** Rearranges link labels whose AutoArrange property is enabled. */
 		arrangeLinkLabels(): void;
 		/** Undoes an action saved in the command history. */
@@ -2147,6 +2247,10 @@ declare namespace MindFusion.Diagramming
 		static suppressSetDirty: boolean;
 		/** Forces the removal of any created tooltips from the diagram canvas. */
 		clearTooltip(): void;
+		/** Overrides Component.Initialize */
+		initialize(): void;
+		/** Overrides Component.Dispose */
+		dispose(): void;
 	}
 	/** Identifies the adjustment handles of a node. */
 	enum AdjustmentHandles
@@ -2191,6 +2295,10 @@ declare namespace MindFusion.Diagramming
 		LinkTables = 4,
 		/** Drawing with the mouse creates TableNode instances. */
 		DrawTables = 5,
+		/** Drawing with the mouse creates ControlNode instances. */
+		DrawControls = 6,
+		/** Drawing over empty document area creates a ControlNode instance. Drawing started over a node creates a DiagramLink. */
+		LinkControls = 7,
 		/** The control ignores users actions with the mouse, but raises the appropriate mouse events. This mode allows applications to implement their own mouse-drawing behavior, disabling the default response to users actions. */
 		DoNothing = 8,
 		/** Drawing with the mouse creates instances of the type assigned to CustomNodeType. */
@@ -2465,6 +2573,19 @@ declare namespace MindFusion.Diagramming
 		 * @return The newly created DiagramLink instance.
 		*/
 		createDiagramLink(origin: DiagramNode, destination: DiagramNode): DiagramLink;
+		/** Creates a new VideoNode instance and adds it to the nodes collection of the underlying diagram.
+		 * @param bounds Specifies the bounding rectangle of the new node.
+		 * @return The newly created VideoNode instance.
+		*/
+		createVideoNode(bounds: MindFusion.Drawing.Rect): VideoNode;
+		/** Creates a new VideoNode instance and adds it to the nodes collection of the underlying diagram.
+		 * @param x The x-coordinate of the upper-left corner of the new node.
+		 * @param y The y-coordinate of the upper-left corner of the new node.
+		 * @param width The width of the new node.
+		 * @param height The height of the new node.
+		 * @return The newly created VideoNode instance.
+		*/
+		createVideoNode(x: number, y: number, width: number, height: number): VideoNode;
 	}
 	/** Represents a set of appearance properties whose values can be inherited from parent objects if not set locally for an item. */
 	class Style
@@ -2564,6 +2685,10 @@ declare namespace MindFusion.Diagramming
 		getPen(): string;
 		/** Sets an object used to paint the frame of the Shape. */
 		setPen(value: string): void;
+		/** Gets the thickness of the frame of the Shape. */
+		getStrokeThickness(): number;
+		/** Sets the thickness of the frame of the Shape. */
+		setStrokeThickness(value: number): void;
 	}
 	/** Represents a label displayed by a DiagramLink. New labels can be added to a link by calling its addLabel method. */
 	class LinkLabel
@@ -2890,6 +3015,8 @@ declare namespace MindFusion.Diagramming
 		static treeExpanded: string;
 		/** Raised when a user collapses a tree branch by clicking the [-] button of an Expandable node. The event handlers get a NodeEventArgs instance that contains data about this event. */
 		static treeCollapsed: string;
+		/** Raised if ExpandButtonAction is set to RaiseEvents and the [+/-] button of an Expandable node is clicked. */
+		static expandButtonClicked: string;
 		/** A validation event raised while the user is moving or resizing multiple items. The event handlers get a NodeEventArgs instance that contains data about this event. */
 		static selectionModifying: string;
 		/** Raised when the diagram has been repainted. */
@@ -2946,6 +3073,8 @@ declare namespace MindFusion.Diagramming
 		static itemRemoved: string;
 		/** Raised when the user clicks a hyperlink inside a node. The event handlers get a NodeEventArgs instance that contains data about this event. */
 		static hyperlinkClicked: string;
+		/** Raised when the content of a ControlNode is added to the page DOM. */
+		static nodeDomCreated: string;
 	}
 	/** The base type of event-arguments objects passed to DiagramItem -related events. */
 	class ItemEventArgs extends MindFusion.EventArgs
@@ -3117,6 +3246,37 @@ declare namespace MindFusion.Diagramming
 		/** Sets a value indicating whether the event has been handled. */
 		setHandled(value: boolean): void;
 	}
+	/** Contains the arguments passed to handlers of header-related events. */
+	class HeaderEventArgs extends MindFusion.EventArgs
+	{
+		/** Initializes a new instance of the HeaderEventArgs class.
+		 * @param header The header related to the event.
+		*/
+		constructor(header: MindFusion.Diagramming.Lanes.Header);
+		/** Gets the header related to the event.
+		 * @return The header related to the event.
+		*/
+		getHeader(): MindFusion.Diagramming.Lanes.Header;
+	}
+	/** Contains the arguments passed to handlers of header resize events. */
+	class HeaderResizeEventArgs extends HeaderEventArgs
+	{
+		/** Initializes a new instance of the HeaderEventArgs class.
+		 * @param header The header related to the event.
+		 * @param horizontal A value indicating whether the user resizes the header horizontally.
+		*/
+		constructor(header: MindFusion.Diagramming.Lanes.Header, horizontal: boolean);
+		/** Gets a value indicating whether the user resizes the header horizontally.
+		 * @return true if the header is resized horizontally, otherwise false.
+		*/
+		getHorizontal(): boolean;
+		/** Immediately cancels the resize. */
+		cancelDrag(): void;
+		/** Gets a value indicating whether to allow the current operation. */
+		getCancel(): boolean;
+		/** Sets a value indicating whether to allow the current operation. */
+		setCancel(value: boolean): void;
+	}
 	/** A list-box control that hosts DiagramNodes and supports dragging them to the Diagram control. */
 	class NodeListView extends MindFusion.Drawing.Canvas
 	{
@@ -3129,6 +3289,12 @@ declare namespace MindFusion.Diagramming
 		 * @return A NodeListView instance.
 		*/
 		static create(element: any): NodeListView;
+		/** Returns the specified NodeListView object. This member is static and can be invoked without creating an instance of the class.
+		 * @param id A string that contains the ID of the nodeListView to find.
+		 * @param parent The component or element that contains the nodeListView to find.
+		 * @return A NodeListView object that contains the nodeListView requested by id, if found; otherwise, null.
+		*/
+		static find(id: string, parent?: any): NodeListView;
 		/** Removes all items from the NodeListView. */
 		clearAll(): void;
 		/** Adds a node to the NodeListView.
@@ -3160,10 +3326,19 @@ declare namespace MindFusion.Diagramming
 		getShapeLibraryLocation(): string;
 		/** Sets the location of a shape library file containing custom shape definitions. */
 		setShapeLibraryLocation(value: string): void;
+		/** Gets a value indicating whether handling of mouse events is possible. */
+		getEnabled(): boolean;
+		/** Sets a value indicating whether handling of mouse events is possible. */
+		setEnabled(value: boolean): void;
+		/** Gets the delay before a tooltip is shown. */
+		getTooltipDelay(): number;
+		/** Sets the delay before a tooltip is shown. */
+		setTooltipDelay(value: number): void;
 		/** Gets the currently dragged from the node list diagram node.
 		 * @return The dragged diagram node.
 		*/
 		getDraggedNode(): DiagramNode;
+		setTargetView(diagramView: Diagram): void;
 	}
 	/** The Overview control provides a scaled-down view of Diagram's contents and allows scrolling and zooming the diagram with the mouse. */
 	class Overview extends MindFusion.Drawing.Canvas
@@ -3205,6 +3380,10 @@ declare namespace MindFusion.Diagramming
 		getAutoScrollAmount(): number;
 		/** Sets the amount by which to auto-scroll the view when the mouse leaves the view boundaries while drawing. */
 		setAutoScrollAmount(value: number): void;
+		/** Gets the background color of the control. */
+		getBackColor(): string;
+		/** Sets the background color of the control. */
+		setBackColor(value: string): void;
 	}
 	/** A builder class for the DiagramLink class. */
 	class DiagramLinkBuilder
@@ -4538,6 +4717,216 @@ declare namespace MindFusion.Diagramming
 		*/
 		bounds(value: MindFusion.Drawing.Rect): FreeFormNodeBuilder;
 	}
+	/** ControlNode instances are diagram nodes that render HTML content. */
+	class ControlNode extends DiagramNode
+	{
+		/** Initializes a new instance of the ControlNode class with default values supplied from the specified Diagram.
+		 * @param diagram The Diagram from which to obtain default values for the node properties.
+		*/
+		constructor(diagram?: Diagram);
+		/** Creates the background svg image. */
+		createImage(): void;
+		/** Gets the content element of this node.
+		 * @return The div element hosting HTML content generated from Template.
+		*/
+		getContent(): any;
+		/** Gets the HTML string representing the DOM content rendered in this node. */
+		getTemplate(): string;
+		/** Sets the HTML string representing the DOM content rendered in this node. */
+		setTemplate(value: string): void;
+		/** Creates a clone of this node. */
+		clone(): ControlNode;
+		/** Returns a Builder object used to configure this ControlNode instance.
+		 * @return A Builder instance.
+		*/
+		init(): ControlNodeBuilder;
+		/** Returns a Builder object used to configure and create new ControlNode instances.
+		 * @return A Builder instance.
+		*/
+		static With(): ControlNodeBuilder;
+	}
+	/** A builder class for the ControlNode class. */
+	class ControlNodeBuilder
+	{
+		/** Creates a new ControlNode instance with the specified properties.
+		 * @return A ControlNode instance.
+		*/
+		create(): ControlNode;
+		/** Sets the HTML string representing the DOM content rendered in this node.
+		 * @param value 
+		*/
+		template(value: string): ControlNodeBuilder;
+		/** Sets a value indicating whether users are allowed to draw incoming links to this node.
+		 * @param value 
+		*/
+		allowIncomingLinks(value: boolean): ControlNodeBuilder;
+		/** Sets a value indicating whether users are allowed to draw outgoing links from this node.
+		 * @param value 
+		*/
+		allowOutgoingLinks(value: boolean): ControlNodeBuilder;
+		/** Sets the angle at which this node is rotated.
+		 * @param value 
+		*/
+		rotationAngle(value: number): ControlNodeBuilder;
+		/** Sets the kinds of modifications that end-users are permitted to perform on the node.
+		 * @param value 
+		*/
+		enabledHandles(value: AdjustmentHandles): ControlNodeBuilder;
+		/** Sets a value indicating how the node adjustment handles behave and what do they look like.
+		 * @param value 
+		*/
+		handlesStyle(value: HandlesStyle): ControlNodeBuilder;
+		/** Sets a value indicating whether this node is considered an obstacle by the link-routing algorithm.
+		 * @param value 
+		*/
+		obstacle(value: boolean): ControlNodeBuilder;
+		/** Sets a value indicating whether users are allowed to expand or collapse the tree branch that starts at this node.
+		 * @param value 
+		*/
+		expandable(value: boolean): ControlNodeBuilder;
+		/** Sets a value indicating whether the tree branch that starts at this node is expanded or collapsed.
+		 * @param value 
+		*/
+		expanded(value: boolean): ControlNodeBuilder;
+		/** Sets the anchor points to which links are attached when connected to the node.
+		 * @param value 
+		*/
+		anchorPattern(value: AnchorPattern): ControlNodeBuilder;
+		/** Sets a value indicating whether this node displays a delete button.
+		 * @param value 
+		*/
+		showDeleteButton(value: boolean): ControlNodeBuilder;
+		/** Sets a string containing the DiagramItem's text.
+		 * @param value 
+		*/
+		text(value: string): ControlNodeBuilder;
+		/** Sets a string specifying the color of the text of this item.
+		 * @param value 
+		*/
+		textColor(value: string): ControlNodeBuilder;
+		/** Sets a string specifying the color of the text outline of this item.
+		 * @param value 
+		*/
+		textStroke(value: string): ControlNodeBuilder;
+		/** Sets the width of the text outline of this item.
+		 * @param value 
+		*/
+		textStrokeThickness(value: number): ControlNodeBuilder;
+		/** Sets the spacing between the item boundaries and its text.
+		 * @param value 
+		*/
+		textPadding(value: MindFusion.Drawing.Thickness): ControlNodeBuilder;
+		/** Sets the font used to render this item's text.
+		 * @param value 
+		*/
+		font(value: MindFusion.Drawing.Font): ControlNodeBuilder;
+		/** Sets the font used to render this item's text.
+		 * @param name the font's name.
+		 * @param size the font's size.
+		*/
+		font(name: string, size: number): ControlNodeBuilder;
+		/** Sets an object that specifies how to paint the interior of the DiagramItem.
+		 * @param value 
+		*/
+		brush(value: any): ControlNodeBuilder;
+		/** Sets an object that specifies how to paint the interior of the DiagramItem.
+		 * @param color1 The starting color of the linear gradient brush.
+		 * @param color2 The ending color of the linear gradient brush.
+		 * @param angle The angle of the linear gradient brush.
+		*/
+		brush(color1: string, color2: string, angle: number): ControlNodeBuilder;
+		/** Sets an object that specifies how to paint the interior of the DiagramItem.
+		 * @param color1 The starting color of the radial gradient brush.
+		 * @param color2 The ending color of the radial gradient brush.
+		 * @param radius1 The inner radius of the radial gradient brush.
+		 * @param radius2 The outer radius of the radial gradient brush.
+		*/
+		brush(color1: string, color2: string, radius1: number, radius2: number): ControlNodeBuilder;
+		/** Sets a string specifying the color used to stroke the item's frame.
+		 * @param value 
+		*/
+		stroke(value: string): ControlNodeBuilder;
+		/** Sets the line width applied when stroking the item's frame.
+		 * @param value 
+		*/
+		strokeThickness(value: number): ControlNodeBuilder;
+		/** Sets the line dash pattern applied when stroking the item's frame.
+		 * @param value 
+		*/
+		strokeDashStyle(value: MindFusion.Drawing.DashStyle): ControlNodeBuilder;
+		/** Sets a custom value associated with this item.
+		 * @param value 
+		*/
+		tag(value: any): ControlNodeBuilder;
+		/** Sets a custom value associated with this item.
+		 * @param value 
+		*/
+		id(value: any): ControlNodeBuilder;
+		/** Sets the tooltip text that should be displayed when the mouse hovers over this item.
+		 * @param value 
+		*/
+		tooltip(value: string): ControlNodeBuilder;
+		/** Sets a weight value used in layout and path-finding algorithms.
+		 * @param value 
+		*/
+		weight(value: number): ControlNodeBuilder;
+		/** Sets a value indicating whether the position of this item should not be changed by automatic layout methods.
+		 * @param value 
+		*/
+		ignoreLayout(value: boolean): ControlNodeBuilder;
+		/** Sets the z-order position of the object.
+		 * @param value 
+		*/
+		zIndex(value: number): ControlNodeBuilder;
+		/** Sets a value indicating whether a diagram item is selected.
+		 * @param value 
+		*/
+		selected(value: boolean): ControlNodeBuilder;
+		/** Sets the hyperlink associated with this diagram item.
+		 * @param value 
+		*/
+		hyperLink(value: string): ControlNodeBuilder;
+		/** Sets a value indicating whether this item is visible.
+		 * @param value 
+		*/
+		visible(value: boolean): ControlNodeBuilder;
+		/** Sets a value indicating whether users are allowed to modify this item.
+		 * @param value 
+		*/
+		locked(value: boolean): ControlNodeBuilder;
+		/** Sets the color used to draw the shadow of this item.
+		 * @param value 
+		*/
+		shadowColor(value: string): ControlNodeBuilder;
+		/** Sets the horizontal offset of the item's shadow.
+		 * @param value 
+		*/
+		shadowOffsetX(value: number): ControlNodeBuilder;
+		/** Sets the vertical offset of the item's shadow.
+		 * @param value 
+		*/
+		shadowOffsetY(value: number): ControlNodeBuilder;
+		/** Sets the style associated with this item.
+		 * @param value 
+		*/
+		style(value: Style): ControlNodeBuilder;
+		/** Sets how the text should be aligned inside the ShapeNode's bounding rectangle.
+		 * @param value 
+		*/
+		textAlignment(value: Alignment): ControlNodeBuilder;
+		/** Sets how the text should be vertically aligned inside the ShapeNode's bounding rectangle.
+		 * @param value 
+		*/
+		lineAlignment(value: Alignment): ControlNodeBuilder;
+		/** Sets A function to call when repainting the item, to use for custom drawing.
+		 * @param value 
+		*/
+		onUpdateVisuals(value: UpdateVisualsDelegate): ControlNodeBuilder;
+		/** Sets The bounds of the item.
+		 * @param value 
+		*/
+		bounds(value: MindFusion.Drawing.Rect): ControlNodeBuilder;
+	}
 	/** A builder class for the Style class. */
 	class StyleBuilder
 	{
@@ -4666,6 +5055,10 @@ declare namespace MindFusion.Diagramming
 		getProjectRotatedBounds(): boolean;
 		/** Sets whether the projection of nodes on ruler's scales rotates with them. */
 		setProjectRotatedBounds(value: boolean): void;
+		/** Sets the Diagram attached to this Ruler.
+		 * @param diagram The Diagram attached to the ruler.
+		*/
+		setDiagram(diagram: Diagram): void;
 	}
 	/** Manipulator is an abstract base class which defines the behavior of miscellaneous UI widgets attached to nodes. */
 	class Manipulator
@@ -4902,6 +5295,14 @@ declare namespace MindFusion.Diagramming
 		/** Use fixed scale specified via ScaleFactor, ignoring diagram's zoom level. */
 		FixedScale = 2
 	}
+	/** Specifies what action is triggered by the +/ -buttons that are displayed near expandable nodes. */
+	enum ExpandButtonAction
+	{
+		/** Expands or collapses the children of a node in a tree-like diagram and raises the TreeExpanded or TreeCollapsed event. */
+		ExpandTreeBranch = 0,
+		/** Raises the ExpandButtonClicked event. */
+		RaiseEvents = 1
+	}
 	/** Represents layout containers in CompositeNode visual tree. */
 	class Panel extends MindFusion.Drawing.Container
 	{
@@ -4967,6 +5368,30 @@ declare namespace MindFusion.Diagramming
 		 * @return An array containing the grid columns.
 		*/
 		getColumns(): Array<GridColumn>;
+	}
+	/** Represents a button component for CompositeNodes. */
+	class Button extends MindFusion.Drawing.Component
+	{
+		/** Initializes a new instance of the Button class. */
+		constructor();
+		/** Gets the text to be displayed. */
+		getText(): string;
+		/** Sets the text to be displayed. */
+		setText(value: string): void;
+		/** The border color. */
+		pen: string;
+		/** The border thickness. */
+		strokeThickness: number;
+		/** The button background color. */
+		brush: string;
+		/** The text color. */
+		textColor: string;
+		/** The desired width of the button. */
+		width: number;
+		/** The desired height of the button. */
+		height: number;
+		/** The font. */
+		font: MindFusion.Drawing.Font;
 	}
 	/** Implements a simple link routing algorithm that pulls link segments out of nodes they would overlap. */
 	class Router
@@ -5073,6 +5498,14 @@ declare namespace MindFusion.Diagramming
 	{
 		/** The keyboard state. */
 		static state: any;
+	}
+	/** Contains API compatibility settings. */
+	class CompatConfig
+	{
+		/** Indicates whether stroke thickness values are specified in pixels or diagram units. */
+		static pixelThickness: boolean;
+		/** Indicates whether to use CSS grid layout for diagram DOM. */
+		static gridLayout: boolean;
 	}
 }
 declare namespace MindFusion.Diagramming.Lanes
@@ -5517,5 +5950,10 @@ declare namespace MindFusion.Controls
 		getCornerRadius(): number;
 		/** Sets the corner radius of rounded child elements. */
 		setCornerRadius(value: number): void;
+		/** Creates and initializes a new ZoomControl associated with specified Canvas DOM element.
+		 * @param element The Canvas DOM element that the ZoomControl should be attached to.
+		 * @return A ZoomControl instance.
+		*/
+		static create(element: any): ZoomControl;
 	}
 }

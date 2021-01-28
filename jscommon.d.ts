@@ -1,11 +1,6 @@
 // Type definitions for MindFusion.Common for JavaScript
-// Definitions by: MindFusion <http://www.mindfusion.eu>
-// Copyright (c) 2018-2019, MindFusion LLC - Bulgaria.
-
-declare module "mindfusion-common"
-{
-	export = MindFusion;
-}
+// Definitions by: MindFusion <https://www.mindfusion.eu>
+// Copyright (c) 2018-2020, MindFusion LLC - Bulgaria.
 
 declare namespace MindFusion
 {
@@ -85,10 +80,17 @@ declare namespace MindFusion
 		 * @param value The JSON string to deserialize.
 		*/
 		static fromJson(value: string): any;
+		/** Attaches a control to the specified DOM element.
+		 * @param control The control to attach.
+		 * @param element The DOM element that the component should be attached to.
+		*/
+		static attachControl(control: any, element: any): any;
 	}
 	/** The base type of classes that define arguments passed to event handler functions. */
 	class EventArgs
 	{
+		/** Empty event args. */
+		static Empty: EventArgs;
 	}
 	/** Provides a value to use with cancellable events. */
 	class CancelEventArgs extends EventArgs
@@ -310,6 +312,11 @@ declare namespace MindFusion.Drawing
 		 * @param height The height of the rectangle.
 		*/
 		constructor(x: number, y: number, width: number, height: number);
+		/** Initializes a new instance of the Rect class.
+		 * @param location The location of the top left corner of the rectangle.
+		 * @param size The size of the rectangle.
+		*/
+		constructor(location: Point, size: Size);
 		/** Creates a Rect object with the specified edge locations.
 		 * @param l The x-coordinate of the top left corner of the rectangle.
 		 * @param t The y-coordinate of the top left corner of the rectangle.
@@ -368,13 +375,18 @@ declare namespace MindFusion.Drawing
 		*/
 		intersectsWith(rect: Rect): boolean;
 		/** Determines if the rectangular region represented by rect is entirely contained within this Rect object.
-		 * @param rect The rect to test. 
+		 * @param rect The rect to test.
 		 * @return true if the rectangular region represented by rect is entirely contained within this Rect; otherwise, false.
 		*/
 		contains(rect: Rect): boolean;
 		/** Determines if the specified point is contained within this Rect object.
+		 * @param point The point to test.
+		 * @return true if point is contained within the Rect; otherwise, false.
+		*/
+		contains(point: Point): boolean;
+		/** Determines if the specified point is contained within this Rect object.
 		 * @param point The point to test. 
-		 * @return true if point is contained within the Rect; otherwise, false..
+		 * @return true if point is contained within the Rect; otherwise, false.
 		*/
 		containsPoint(point: Point): boolean;
 		/** Returns a Rect object representing the union of the current rectangle with the specified rectangle.
@@ -726,5 +738,27 @@ declare namespace MindFusion.Drawing
 		 * @return The difference between the two vectors.
 		*/
 		static sub(vector1: Vector, vector2: Vector): Vector;
+	}
+	/** A component that displays video stream. */
+	class Video
+	{
+		/** Initializes a new instance of the Video class.
+		 * @param bounds The bounds of the Video.
+		*/
+		constructor(bounds: Rect);
+		/** Creates a Video object identical to the current object. */
+		clone(): void;
+		/** Starts playing the video stream. */
+		play(): boolean;
+		/** Detects if video is playing. */
+		isPlaying(): boolean;
+		/** Pauses the video. */
+		pause(): void;
+		/** Gets the URL of the video stream displayed in this component. */
+		getMediaLocation(): string;
+		/** Sets the URL of the video stream displayed in this component. */
+		setMediaLocation(value: string): void;
+		/** The object's bounds. */
+		bounds: Rect;
 	}
 }

@@ -117,6 +117,9 @@ MindFusion = {
 		Border: function () {
 			/// <summary>Represents a panel that draws a border around its child components.</summary>
 		},
+		Button: function () {
+			/// <summary>Represents a button component for CompositeNodes.</summary>
+		},
 		Cell: function () {
 			/// <summary>Represents a cell of a TableNode.</summary>
 		},
@@ -141,6 +144,9 @@ MindFusion = {
 			/// <summary>Represents an action that changes the diagram and whose effects can be undone.</summary>
 			/// <param name="diagram" type="MindFusion.Diagramming.Diagram">The Diagram modified by this command.</param>
 		},
+		CompatConfig: function () {
+			/// <summary>Contains API compatibility settings.</summary>
+		},
 		ComponentEventArgs: function (args) {
 			/// <summary>Contains the arguments passed to handlers of component-related events.</summary>
 			/// <param name="args" type="Object"></param>
@@ -164,6 +170,10 @@ MindFusion = {
 		},
 		ContainerNode: function (parent) {
 			/// <summary>ContainerNode instances are diagram nodes that can contain other nodes.</summary>
+			/// <param name="parent" type="MindFusion.Diagramming.Diagram" optional="true">Optional. The Diagram from which to obtain default values for the node properties.</param>
+		},
+		ControlNode: function (parent) {
+			/// <summary>ControlNode instances are diagram nodes that render HTML content.</summary>
 			/// <param name="parent" type="MindFusion.Diagramming.Diagram" optional="true">Optional. The Diagram from which to obtain default values for the node properties.</param>
 		},
 		CreateLinkController: function (diagram, link) {
@@ -229,6 +239,9 @@ MindFusion = {
 		},
 		Events: function () {
 			/// <summary>Defines all events raised by the Diagram component.</summary>
+		},
+		ExpandButtonAction: function() {
+			/// <summary>Specifies what action is triggered by the +/- buttons that are displayed near expandable nodes.</summary>
 		},
 		Factory: function () {
 			/// <summary>Provides shortcut methods for creating and adding instances of the standard item types.</summary>
@@ -508,6 +521,10 @@ MindFusion = {
 		Theme: function () {
 			/// <summary>Represents a set of Style objects whose properties are used to render items of a specific type in the current diagram.</summary>
 		},
+		VideoNode: function (parent) {
+			/// <summary>A VideoNode instance renders video stream assigned to the VideoLocation property.</summary>
+			/// <param name="parent" type="MindFusion.Diagramming.Diagram" optional="true">Optional. A Diagram instance whose default node attributes are copied to this node.</param>
+		},
 		XmlPersistContext: function (diagram) {
 			/// <summary>Contains helper methods for serialization of diagram contents to and from XML documents.</summary>
 			/// <param name="diagram" type="MindFusion.Diagramming.Diagram">The Diagram that will be serialized or deserialized.</param>
@@ -521,6 +538,9 @@ MindFusion = {
 		},
 		Component: function () {
 			/// <summary>Represents components in CompositeNode visual tree.</summary>
+		},
+		ComponentBase: function () {
+			/// <summary>A base class for components in CompositeNode visual tree.</summary>
 		},
 		DashStyle: function() {
 			/// <summary>Specifies the dash pattern of lines.</summary>
@@ -588,6 +608,13 @@ MindFusion = {
 			/// <summary>Represents displacement in 2D space.</summary>
 			/// <param name="x" type="Number">The X-coordinate of the Vector.</param>
 			/// <param name="y" type="Number">The Y-coordinate of the Vector.</param>
+		},
+		Video: function (bounds) {
+			/// <summary>A component that displays video stream.</summary>
+			/// <param name="bounds" type="MindFusion.Drawing.Rect">The bounds of the Video.</param>
+		},
+		Visibility: function() {
+			/// <summary>Specifies visibility for components.</summary>
 		},
 		__namespace: true
 	},
@@ -787,6 +814,9 @@ MindFusion = {
 		},
 		SpringLayout: function () {
 			/// <summary>Implements the Spring-Embedder graph layout algorithm.</summary>
+		},
+		TopologicalLayout: function () {
+			/// <summary>Applies&#160;topological ordering&#160;to&#160;the graph. This layout makes it easy to discern graph features such as overall flow direction, cycles and nested cycles.</summary>
 		},
 		TreeLayout: function () {
 			/// <summary>Implements algorithms for arranging tree structures.</summary>
@@ -1863,21 +1893,23 @@ MindFusion.Diagramming.Behavior.prototype = {
 	Custom: 0,
 	DoNothing: 1,
 	DrawContainers: 2,
-	DrawFreeForms: 3,
-	DrawFreeShapes: 4,
-	DrawLinks: 5,
-	DrawShapes: 6,
-	DrawSvgNodes: 7,
-	DrawTables: 8,
-	LinkContainers: 9,
-	LinkFreeForms: 10,
-	LinkFreeShapes: 11,
-	LinkShapes: 12,
-	LinkSvgNodes: 13,
-	LinkTables: 14,
-	Modify: 15,
-	Pan: 16,
-	SelectOnly: 17
+	DrawControls: 3,
+	DrawFreeForms: 4,
+	DrawFreeShapes: 5,
+	DrawLinks: 6,
+	DrawShapes: 7,
+	DrawSvgNodes: 8,
+	DrawTables: 9,
+	LinkContainers: 10,
+	LinkControls: 11,
+	LinkFreeForms: 12,
+	LinkFreeShapes: 13,
+	LinkShapes: 14,
+	LinkSvgNodes: 15,
+	LinkTables: 16,
+	Modify: 17,
+	Pan: 18,
+	SelectOnly: 19
 };
 MindFusion.Diagramming.Behavior.__enum = true;
 
@@ -1893,6 +1925,18 @@ MindFusion.Diagramming.BehaviorBase.__class = true;
 MindFusion.Diagramming.Border.prototype = {
 };
 MindFusion.Diagramming.Border.__class = true;
+
+MindFusion.Diagramming.Button.prototype = {
+	getText: function() {
+		/// <summary>Gets the text to be displayed.</summary>
+		/// <returns type="String">A string containing button's label.</returns>
+	},
+	setText: function(value) {
+		/// <summary>Sets the text to be displayed.</summary>
+		/// <param name="value" type="void">A string containing button's label.</param>
+	}
+};
+MindFusion.Diagramming.Button.__class = true;
 
 MindFusion.Diagramming.Cell.prototype = {
 	getBrush: function() {
@@ -2097,6 +2141,10 @@ MindFusion.Diagramming.Command.prototype = {
 };
 MindFusion.Diagramming.Command.__class = true;
 
+MindFusion.Diagramming.CompatConfig.prototype = {
+};
+MindFusion.Diagramming.CompatConfig.__class = true;
+
 MindFusion.Diagramming.ComponentEventArgs.prototype = {
 	getComponent: function() {
 		/// <summary>Gets the component for which the event was raised.</summary>
@@ -2123,6 +2171,10 @@ MindFusion.Diagramming.CompositeCommand.prototype = {
 MindFusion.Diagramming.CompositeCommand.__class = true;
 
 MindFusion.Diagramming.CompositeNode.prototype = {
+	getClipToOutline: function() {
+		/// <summary>Gets a value specifying whether contents will clip to outline,when an outline component is used.</summary>
+		/// <returns type="Boolean">true if contents will be clipped, otherwise false. The default value is true.</returns>
+	},
 	getComponent: function(name) {
 		/// <summary>Returns the component created for the template element with specified name.</summary>
 		/// <param name="name" type="String">A string specifying the value of the name attribute in node's template.</param>
@@ -2131,6 +2183,10 @@ MindFusion.Diagramming.CompositeNode.prototype = {
 	loadTemplate: function(jsonTemplate) {
 		/// <summary>Load a JSON template defining node's appearance.</summary>
 		/// <param name="jsonTemplate" type="Object">A JavaScript object literal containing template of node's component hierarchy.</param>
+	},
+	setClipToOutline: function(value) {
+		/// <summary>Sets a value specifying whether contents will clip to outline, when an outline component is used.</summary>
+		/// <param name="value" type="Boolean">true if contents will be clipped, or false otherwise. The default value is true.</param>
 	}
 };
 MindFusion.Diagramming.CompositeNode.__class = true;
@@ -2379,6 +2435,61 @@ MindFusion.Diagramming.ContainerNode.With = function(diagram) {
 	/// <returns type="Builder">A Builder instance.</returns>
 };
 
+MindFusion.Diagramming.ControlNode.prototype = {
+	createImage: function() {
+		/// <summary>Creates the background svg image.</summary>
+	},
+	getContent: function() {
+		/// <summary>Gets the content element of this node.</summary>
+		/// <returns type="HTMLDivElement">The div element hosting HTML content generated from Template.</returns>
+	},
+	getTemplate: function() {
+		/// <summary>Gets HTML string representing the DOM content rendered in this node.</summary>
+		/// <returns type="String">The HTML string.</returns>
+	},
+	init: function() {
+		/// <summary>Returns a Builder object used to configure this ControlNode instance.</summary>
+		/// <returns type="Builder">A Builder instance.</returns>
+	},
+	loadFromXml: function(xmlElement, context) {
+		/// <summary>DiagramNode.loadFromXml override. Loads the node's content from an XML element.</summary>
+		/// <param name="xmlElement" type="Element">An XML DOM element containing the item's data.</param>
+		/// <param name="context" type="MindFusion.Diagramming.XmlPersistContext">An object providing contextual information about the serialization process and some helper serialization methods.</param>
+	},
+	onUpdateBounds: function(oldBounds, bounds) {
+		/// <summary>DiagramNode.onUpdateBounds override.</summary>
+		/// <param name="oldBounds" type="void"></param>
+		/// <param name="bounds" type="void"></param>
+	},
+	removeCanvasElements: function() {
+		/// <summary>DiagramNode.removeCanvasElements override.</summary>
+	},
+	saveToXml: function(xmlElement, context) {
+		/// <summary>Saves the node's content into an XML element.</summary>
+		/// <param name="xmlElement" type="Element">An XML DOM element that will contain the item's data.</param>
+		/// <param name="context" type="MindFusion.Diagramming.XmlPersistContext">An object providing contextual information about the serialization process and some helper serialization methods.</param>
+	},
+	setTemplate: function(value) {
+		/// <summary>Sets HTML string representing the DOM content rendered in this node.</summary>
+		/// <param name="value" type="String">The HTML string.</param>
+	},
+	setVisible: function(value) {
+		/// <summary>DiagramItem.setVisible override.</summary>
+		/// <param name="value" type="void"></param>
+	},
+	setZIndex: function(value) {
+		/// <summary>DiagramItem.setZIndex override.</summary>
+		/// <param name="value" type="void"></param>
+	},
+};
+MindFusion.Diagramming.ControlNode.__class = true;
+
+MindFusion.Diagramming.ControlNode.With = function(diagram) {
+	/// <summary>Returns a Builder object used to configure and create new ControlNode instances.</summary>
+	/// <param name="diagram" type="void"></param>
+	/// <returns type="Builder">A Builder instance.</returns>
+};
+
 MindFusion.Diagramming.CreateLinkController.prototype = {
 	commit: function(position) {
 		/// <summary>SinglePointerController.commit override.</summary>
@@ -2492,6 +2603,9 @@ MindFusion.Diagramming.Diagram.prototype = {
 	},
 	clearAll: function() {
 		/// <summary>Removes all items from the diagram.</summary>
+	},
+	clearTooltip: function() {
+		/// <summary>Forces the removal of any created tooltips from the diagram canvas.</summary>
 	},
 	commitCompositeOperation: function() {
 		/// <summary>Stops recording undo/redo commands into a CompositeCommand and saves the composite in the history queue.</summary>
@@ -2611,6 +2725,10 @@ MindFusion.Diagramming.Diagram.prototype = {
 		/// <summary>Gets the type of a MindFusion.Diagramming.DiagramNode derived class whose instance should be created when a user starts drawing.</summary>
 		/// <returns type="Object">The type.</returns>
 	},
+	getDefaultControlTemplate: function() {
+		/// <summary>Gets the HTML string representing the DOM content, rendered by default in newly created ControlNode objects.</summary>
+		/// <returns type="String">The HTML string.</returns>
+	},
 	getDefaultShape: function() {
 		/// <summary>Gets the default Shape of shapeNode-s.</summary>
 		/// <returns type="MindFusion.Diagramming.Shape">A ShapeNode object.</returns>
@@ -2630,6 +2748,10 @@ MindFusion.Diagramming.Diagram.prototype = {
 	getEnabled: function() {
 		/// <summary>Checks if mouse events are enabled.</summary>
 		/// <returns type="Boolean">true if handling of mouse events is enabled; otherwise, false.</returns>
+	},
+	getExpandButtonAction: function() {
+		/// <summary>Specifies what should happen when a user clicks the +/- buttonthat is displayed near expandable nodes.</summary>
+		/// <returns type="MindFusion.Diagramming.ExpandButtonAction">A member of the ExpandButtonAction enumerationindicating what happens when a user clicks the +/- button that is displayed near expandable nodes.</returns>
 	},
 	getExpandOnIncoming: function() {
 		/// <summary>Gets a value indicating the link direction in which tree branches are expanded.</summary>
@@ -2944,7 +3066,7 @@ MindFusion.Diagramming.Diagram.prototype = {
 	},
 	getVirtualScroll: function() {
 		/// <summary>Gets a value indicating whether virtual scroll mode is enabled.</summary>
-		/// <returns type="Boolean">true if virtual scroll is enabled; otherwise, false.</returns>
+		/// <returns type="Boolean">true if virtual scroll is enabled;&#160;or false otherwise. The default value is true.</returns>
 	},
 	initialize: function() {
 		/// <summary>Overrides Component.Initialize</summary>
@@ -3031,11 +3153,7 @@ MindFusion.Diagramming.Diagram.prototype = {
 		/// <summary>Removes the specified item from the Diagram.</summary>
 		/// <param name="item" type="MindFusion.Diagramming.DiagramItem">The DiagramItem to be removed.</param>
 	},
-	replay: function(recording, timer, savedState) {
-		/// <summary>Replays a sequence of recorded mouse and keyboard events created by record and stopRecording methods.</summary>
-		/// <param name="recording" type="Array">An array of event records returned by stopRecording.</param>
-		/// <param name="timer" type="Boolean">true to replay records using a timer, preserving their original relative timing, or false to replay them immediately.</param>
-		/// <param name="savedState" type="String" optional="true">Optional. A diagram JSON string that should be loaded before replaying recorded events.</param>
+	replay: function() {
 	},
 	resizeToFitItem: function(item) {
 		/// <summary>Resize the document extents so that the specified item is contained within.</summary>
@@ -3142,6 +3260,10 @@ MindFusion.Diagramming.Diagram.prototype = {
 		/// <summary>Sets the type of a MindFusion.Diagramming.DiagramNode derived class whose instance should be created when a user starts drawing.</summary>
 		/// <param name="value" type="Object">The type.</param>
 	},
+	setDefaultControlTemplate: function(value) {
+		/// <summary>Sets the HTML string representing the DOM content, rendered by default in newly created ControlNode objects.</summary>
+		/// <param name="value" type="String">The HTML string.</param>
+	},
 	setDefaultShape: function(value) {
 		/// <summary>Sets the default shape of shape nodes.</summary>
 		/// <param name="value" type="MindFusion.Diagramming.Shape">A Shape instance or a string that identifies the Shape.</param>
@@ -3161,6 +3283,10 @@ MindFusion.Diagramming.Diagram.prototype = {
 	setEnabled: function(value) {
 		/// <summary>Enables or disables handling of mouse events.</summary>
 		/// <param name="value" type="Boolean">true if handling of mouse events is enabled; otherwise, false.</param>
+	},
+	setExpandButtonAction: function(value) {
+		/// <summary>Specifies what should happen when a user clicks the +/- buttonthat is displayed near expandable nodes.</summary>
+		/// <param name="value" type="MindFusion.Diagramming.ExpandButtonAction">A member of the ExpandButtonAction enumerationindicating what will happen when a user clicks the +/- button that is displayed near expandable nodes.</param>
 	},
 	setExpandOnIncoming: function(value) {
 		/// <summary>Sets a value indicating the link direction in which tree branches are expanded.</summary>
@@ -3402,7 +3528,7 @@ MindFusion.Diagramming.Diagram.prototype = {
 	},
 	setVirtualScroll: function(value) {
 		/// <summary>Enables or disables virtual scroll mode.</summary>
-		/// <param name="value" type="Boolean">true to enable virtual scroll; otherwise, false.</param>
+		/// <param name="value" type="Boolean">true if virtual scroll is enabled, or false otherwise. The default value is true.</param>
 	},
 	setZoomFactorPivot: function(zoomFactor, pivotPoint) {
 		/// <summary>Sets the zoom factor, preserving the on-screen position of the specified diagram point.</summary>
@@ -4363,10 +4489,16 @@ MindFusion.Diagramming.Events.prototype = {
 };
 MindFusion.Diagramming.Events.__class = true;
 
+MindFusion.Diagramming.ExpandButtonAction.prototype = {
+	ExpandTreeBranch: 0,
+	RaiseEvents: 1
+};
+MindFusion.Diagramming.ExpandButtonAction.__enum = true;
+
 MindFusion.Diagramming.Factory.prototype = {
 	createContainerNode: function(bounds, x, y, width, height) {
 		/// <summary>Creates a new ContainerNode instance and adds it to the nodes collection of the underlying diagram.</summary>
-		/// <param name="bounds" type="MindFusion.Drawing.Rect" optional="true">Optional. Specifies the bounding rectangle of the new node.</param>
+		/// <param name="bounds" type="MindFusion.Drawing.Rect" optional="true">Optional. A Rect instance specifying the bounding rectangle of the new node.</param>
 		/// <param name="x" type="Number" optional="true">Optional. The x-coordinate of the upper-left corner of the new node.</param>
 		/// <param name="y" type="Number" optional="true">Optional. The y-coordinate of the upper-left corner of the new node.</param>
 		/// <param name="width" type="Number" optional="true">Optional. The width of the new node.</param>
@@ -4381,7 +4513,7 @@ MindFusion.Diagramming.Factory.prototype = {
 	},
 	createShapeNode: function(bounds, x, y, width, height) {
 		/// <summary>Creates a new ShapeNode instance and adds it to the nodes collection of the underlying diagram.</summary>
-		/// <param name="bounds" type="MindFusion.Drawing.Rect" optional="true">Optional. Sets the bounds of the shape to create.</param>
+		/// <param name="bounds" type="MindFusion.Drawing.Rect" optional="true">Optional. A Rect instance specifying the bounding rectangle of the new node.</param>
 		/// <param name="x" type="Number" optional="true">Optional. The x-coordinate of the upper-left corner of the new node.</param>
 		/// <param name="y" type="Number" optional="true">Optional. The y-coordinate of the upper-left corner of the new node.</param>
 		/// <param name="width" type="Number" optional="true">Optional. The width of the new node.</param>
@@ -4390,7 +4522,7 @@ MindFusion.Diagramming.Factory.prototype = {
 	},
 	createSvgNode: function(bounds, x, y, width, height) {
 		/// <summary>Creates a new SvgNode instance and adds it to the nodes collection of the underlying diagram.</summary>
-		/// <param name="bounds" type="MindFusion.Drawing.Rect" optional="true">Optional. Sets the bounds of the shape to create.</param>
+		/// <param name="bounds" type="MindFusion.Drawing.Rect" optional="true">Optional. A Rect instance specifying the bounding rectangle of the new node.</param>
 		/// <param name="x" type="Number" optional="true">Optional. The x-coordinate of the upper-left corner of the new node.</param>
 		/// <param name="y" type="Number" optional="true">Optional. The y-coordinate of the upper-left corner of the new node.</param>
 		/// <param name="width" type="Number" optional="true">Optional. The width of the new node.</param>
@@ -4399,12 +4531,21 @@ MindFusion.Diagramming.Factory.prototype = {
 	},
 	createTableNode: function(bounds, x, y, width, height) {
 		/// <summary>Creates a new TableNode instance and adds it to the nodes collection of the underlying diagram.</summary>
-		/// <param name="bounds" type="MindFusion.Drawing.Rect" optional="true">Optional. Specifies the bounding rectangle of the new node.</param>
+		/// <param name="bounds" type="MindFusion.Drawing.Rect" optional="true">Optional. A Rect instance specifying the bounding rectangle of the new node.</param>
 		/// <param name="x" type="Number" optional="true">Optional. The x-coordinate of the upper-left corner of the new node.</param>
 		/// <param name="y" type="Number" optional="true">Optional. The y-coordinate of the upper-left corner of the new node.</param>
 		/// <param name="width" type="Number" optional="true">Optional. The width of the new node.</param>
 		/// <param name="height" type="Number" optional="true">Optional. The height of the new node.</param>
 		/// <returns type="MindFusion.Diagramming.TableNode">The newly created TableNode instance.</returns>
+	},
+	createVideoNode: function(bounds, x, y, width, height) {
+		/// <summary>Creates a new VideoNode instance and adds it to the nodes collection of the underlying diagram.</summary>
+		/// <param name="bounds" type="MindFusion.Drawing.Rect" optional="true">Optional. A Rect instance specifying the bounding rectangle of the new node.</param>
+		/// <param name="x" type="Number" optional="true">Optional. The x-coordinate of the upper-left corner of the new node.</param>
+		/// <param name="y" type="Number" optional="true">Optional. The y-coordinate of the upper-left corner of the new node.</param>
+		/// <param name="width" type="Number" optional="true">Optional. The width of the new node.</param>
+		/// <param name="height" type="Number" optional="true">Optional. The height of the new node.</param>
+		/// <returns type="MindFusion.Diagramming.VideoNode">The newly created VideoNode instance.</returns>
 	}
 };
 MindFusion.Diagramming.Factory.__class = true;
@@ -6980,6 +7121,28 @@ MindFusion.Diagramming.Theme.prototype = {
 };
 MindFusion.Diagramming.Theme.__class = true;
 
+MindFusion.Diagramming.VideoNode.prototype = {
+	getVideoLocation: function() {
+		/// <summary>Gets the URL of the video stream displayed in this VideoNode.</summary>
+		/// <returns type="String">A valid URL string that identifies the video to play.</returns>
+	},
+	loadFromXml: function(xmlElement, context) {
+		/// <summary>DiagramNode.loadFromXml override. Loads the node's content from an XML element.</summary>
+		/// <param name="xmlElement" type="Element">An XML DOM element containing the item's data.</param>
+		/// <param name="context" type="MindFusion.Diagramming.XmlPersistContext">An object providing contextual information about the serialization process and some helper serialization methods.</param>
+	},
+	saveToXml: function(xmlElement, context) {
+		/// <summary>Saves the node's content into an XML element.</summary>
+		/// <param name="xmlElement" type="Element">An XML DOM element that will contain the item's data.</param>
+		/// <param name="context" type="MindFusion.Diagramming.XmlPersistContext">An object providing contextual information about the serialization process and some helper serialization methods.</param>
+	},
+	setVideoLocation: function(value) {
+		/// <summary>Sets the URL of the video stream displayed in this VideoNode.</summary>
+		/// <param name="value" type="String">A valid URL string that identifies the video to play.</param>
+	}
+};
+MindFusion.Diagramming.VideoNode.__class = true;
+
 MindFusion.Diagramming.XmlPersistContext.prototype = {
 	addChildElement: function(elementName, parentElement, innerText) {
 		/// <summary>Adds a new child node with the specified name and value to the specified parent node.</summary>
@@ -7140,6 +7303,18 @@ MindFusion.Drawing.Canvas.create = function(element) {
 MindFusion.Drawing.Component.prototype = {
 };
 MindFusion.Drawing.Component.__class = true;
+
+MindFusion.Drawing.ComponentBase.prototype = {
+	getVisibility: function() {
+		/// <summary>Gets the visibility of this component.</summary>
+		/// <returns type="MindFusion.Drawing.Visibility">One of the Visibility enumeration values.</returns>
+	},
+	setVisibility: function(value) {
+		/// <summary>Sets the visibility of this component.</summary>
+		/// <param name="value" type="MindFusion.Drawing.Visibility">One of the Visibility enumeration values.</param>
+	}
+};
+MindFusion.Drawing.ComponentBase.__class = true;
 
 MindFusion.Drawing.DashStyle.prototype = {
 	Dash: 0,
@@ -7452,6 +7627,38 @@ MindFusion.Drawing.Thickness.__class = true;
 MindFusion.Drawing.Vector.prototype = {
 };
 MindFusion.Drawing.Vector.__class = true;
+
+MindFusion.Drawing.Video.prototype = {
+	clone: function() {
+		/// <summary>Creates a Video object identical to the current object.</summary>
+		/// <returns type="MindFusion.Drawing.Video"></returns>
+	},
+	getMediaLocation: function() {
+		/// <summary>Gets the URL of the video stream displayed in this component.</summary>
+		/// <returns type="String">A valid URL string that identifies the video to play.</returns>
+	},
+	isPlaying: function() {
+		/// <summary>Detects if video is playing.</summary>
+	},
+	pause: function() {
+		/// <summary>Pauses the video.</summary>
+	},
+	play: function() {
+		/// <summary>Starts playing the video stream.</summary>
+	},
+	setMediaLocation: function(value) {
+		/// <summary>Sets the URL of the video stream displayed in this component.</summary>
+		/// <param name="value" type="String">A valid URL string that identifies the video to play.</param>
+	}
+};
+MindFusion.Drawing.Video.__class = true;
+
+MindFusion.Drawing.Visibility.prototype = {
+	Collapsed: 0,
+	Hidden: 1,
+	Visible: 2
+};
+MindFusion.Drawing.Visibility.__enum = true;
 
 MindFusion.Gauges.Alignment.prototype = {
 	CenterInside: 0,
@@ -8716,7 +8923,7 @@ MindFusion.Graphs.AssistantType.__enum = true;
 MindFusion.Graphs.BorderedTreeLayout.prototype = {
 	arrange: function(graph) {
 		/// <summary>Applies the layout to the specified graph.</summary>
-		/// <param name="graph" type="MindFusion.Graphs.Graph">The graph to arrange.</param>
+		/// <param name="graph" type="MindFusion.Graphs.Graph">The Graph to arrange.</param>
 	}
 };
 MindFusion.Graphs.BorderedTreeLayout.__class = true;
@@ -8889,7 +9096,7 @@ MindFusion.Graphs.Graph.__class = true;
 MindFusion.Graphs.LayeredLayout.prototype = {
 	arrange: function(graph) {
 		/// <summary>Applies the layout to the specified graph.</summary>
-		/// <param name="graph" type="MindFusion.Graphs.Graph">The graph to arrange.</param>
+		/// <param name="graph" type="MindFusion.Graphs.Graph">The Graph to arrange.</param>
 	}
 };
 MindFusion.Graphs.LayeredLayout.__class = true;
@@ -8917,15 +9124,32 @@ MindFusion.Graphs.Orientation.__enum = true;
 MindFusion.Graphs.SpringLayout.prototype = {
 	arrange: function(graph) {
 		/// <summary>Applies the layout to the specified graph.</summary>
-		/// <param name="graph" type="MindFusion.Graphs.Graph">The graph to arrange.</param>
+		/// <param name="graph" type="MindFusion.Graphs.Graph">The Graph to arrange.</param>
 	}
 };
 MindFusion.Graphs.SpringLayout.__class = true;
 
+MindFusion.Graphs.TopologicalLayout.prototype = {
+	arrange: function(graph) {
+		/// <summary>Applies the layout to the specified graph.</summary>
+		/// <param name="graph" type="MindFusion.Graphs.Graph">The Graph to arrange.</param>
+	},
+	init: function() {
+		/// <summary>Returns a Builder object used to configure this TopologicalLayout instance.</summary>
+		/// <returns type="Builder">A Builder instance.</returns>
+	},
+};
+MindFusion.Graphs.TopologicalLayout.__class = true;
+
+MindFusion.Graphs.TopologicalLayout.With = function() {
+	/// <summary>Returns a Builder object used to configure and create new TopologicalLayout instances.</summary>
+	/// <returns type="Builder">A Builder instance.</returns>
+};
+
 MindFusion.Graphs.TreeLayout.prototype = {
 	arrange: function(graph) {
 		/// <summary>Applies the layout to the specified graph.</summary>
-		/// <param name="graph" type="MindFusion.Graphs.Graph">The graph to arrange.</param>
+		/// <param name="graph" type="MindFusion.Graphs.Graph">The Graph to arrange.</param>
 	}
 };
 MindFusion.Graphs.TreeLayout.__class = true;
@@ -8940,7 +9164,7 @@ MindFusion.Graphs.TreeLayoutLinkType.__enum = true;
 MindFusion.Graphs.TreeMapLayout.prototype = {
 	arrange: function(graph) {
 		/// <summary>Applies the layout to the specified graph.</summary>
-		/// <param name="graph" type="MindFusion.Graphs.Graph">The graph to arrange.</param>
+		/// <param name="graph" type="MindFusion.Graphs.Graph">The Graph to arrange.</param>
 	}
 };
 MindFusion.Graphs.TreeMapLayout.__class = true;

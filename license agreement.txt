@@ -1,0 +1,64 @@
+END-USER LICENSE AGREEMENT FOR MindFusion LLC SOFTWARE
+
+*** MindFusion.Diagramming for JavaScript ***
+
+IMPORTANT - READ CAREFULLY: This License Agreement ("Agreement") is a legal agreement between you (either an individual developer or an organization known as "Customer") and MindFusion LLC for using the MindFusion.Diagramming for JavaScript library ("Software"). By installing, copying, redistributing or otherwise using the Software or any Software Updates, Customer agrees to be bound by the terms of this Agreement. If Customer does not agree to the terms of this Agreement, please do not install, copy, redistribute or use the Software, including all Software Updates that Customer receives as part of the Software (each, an "Update"). By installing, copying, or otherwise using an Update, Customer agrees to be bound by the additional license terms that accompany such Update. If Customer does not agree to the terms of the additional license terms that accompany the Update, disregard the Update and the additional license terms that accompany the Update. In this event, Customer's rights to use the Software shall continue to be governed by the then-existing Agreement.
+
+
+1. Copyright
+
+All rights, title, interests in and to copyrights in the Software (including but not limited to any software components, product documentation and associated media, sample files, extension files, tools and utilities, miscellaneous technical information, and any copies of the Software, are owned exclusively (or licensed) by MindFusion. The Software is protected by international copyright laws and treaty provisions. Therefore, you must treat the Software like any other copyrighted material. The Software is licensed, not sold.
+
+
+2. Grant of License
+
+MindFusion LLC grants Customer the following rights:
+
+a. Customer is granted the worldwide, non-transferable, non-exclusive, and perpetual right to (i) use the Software for developing, testing, supporting and deploying software products which Customer creates, (ii) use Customer's products developed using the Software in its own company and to host, demonstrate and distribute Customer's products developed using the Software under Customer's own trade name, and (iii) reproduce and distribute (directly or indirectly, through multiple tiers of distribution) copies of the Software's run-time components (which are designated as run-time components in the Software or related documentation or otherwise identified as such by MindFusion LLC) as part of Customer's products to Customer's end users. The end users of the Customer products acquire no rights to the Software, except to use its run-time components with Customer's products.
+
+b. License fee is based on the number of developers that will use the Application Programming Interface provided by the Software. The total number of development workplaces is taken into account, while the number of computers is irrelevant. A single developer or a number of developers in an organization, in accordance with the purchased license, may use the Software in any software development process. Site license grants to Customer the right any developer at a single physical address of Customer organization to use the Software in any software development process. Enterprise license grants to Customer the right any developer at all branches of the organization world-wide to use the Software in any software development process.
+
+c. Apart from the per-developer license fee, Customer is NOT required to pay any additional distribution, runtime, royalty, or per-end-user license fees.
+
+d. If the Software's source code is purchased, Customer may create and redistribute custom builds of the Software runtime executable file (MindFusion.Diagramming.js) with their products. The metadata associated with custom builds of the Software must include the original copyright notice by MindFusion and the original product name. Without an explicit permission by MindFusion, Customer may not redistribute or resell versions of their custom build that can be used in software development processes by third parties.
+
+e. Customer may create as many backup copies of the Software package as needed, as long as copies are not redistributed to third parties without explicit permission by MindFusion LLC.
+
+f. Solely with respect to electronic documents included with the Software, Customer may make an unlimited number of copies (either in hardcopy or electronic form), provided that such copies shall be used only for internal purposes and are not republished or distributed to any third party.
+
+MindFusion reserves all rights not expressly granted to Customer.
+
+
+3. Upgrades
+
+With any Software license purchased, Customer is granted a twelve-month upgrade subscription. During the subscription period Customer receives in a timely manner any upgrades or patches of the Software released by MindFusion LLC.
+Customer may use upgraded Software only in accordance with this Agreement.
+
+
+4. Other Restrictions
+
+a. The Software is the sole and exclusive property of MindFusion LLC, including, but not limited to, all applicable rights to patents, copyrights, trademarks and trade secrets and is provided for Customer's exclusive use for the purposes of this Agreement and will be held in confidence.
+
+b. Customer will not alter, remove or obscure any designation name or mark from any supplied material that identifies such material as belonging to or developed by MindFusion LLC. Customer agrees not to disassemble, decompile, reverse engineer or otherwise reduce the Software to perceptible form. Customer agrees not to alter or modify the Software.
+
+c. Customer may not transfer, rent, lease, or sublicense the Software without explicit written permission by MindFusion LLC.
+
+d. In case Customer has purchased source code-packed copy of the Software, Customer agrees not to create any software products based on the source code, that are generally competitive the MindFusion LLC's software (e.g. diagramming software components)
+
+
+5. Termination
+
+a. All rights granted hereunder shall immediately terminate upon Customer's failure to comply with the terms and conditions of this Agreement. In either such event, Customer agrees to destroy all copies of the Software in any form and all of its component parts.
+
+
+6. Disclaimer of Warranty
+
+a. NO WARRANTIES. THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, MINDFUSION DISCLAIMS ALL WARRANTIES, EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE AND ANY WARRANTY AGAINST INFRINGEMENT, WITH REGARD TO THE SOFTWARE. THIS LIMITED WARRANTY GIVES YOU SPECIFIC LEGAL RIGHTS. YOU MAY HAVE OTHERS, WHICH VARY FROM STATE/JURISDICTION TO STATE/JURISDICTION.
+
+b. NO LIABILITY FOR DAMAGES. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL MINDFUSION BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE, EVEN IF MINDFUSION HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. BECAUSE SOME STATES/JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU.
+
+CUSTOMER ACKNOWLEDGES THAT CUSTOMER HAS READ THIS AGREEMENT, UNDERSTAND IT AND AGREES TO BE BOUND BY ITS TERMS AND CONDITIONS. CUSTOMER FURTHER AGREES THAT IT IS THE COMPLETE AND EXCLUSIVE STATEMENT OF THE AGREEMENT BETWEEN CUSTOMER AND MINDFUSION LLC WHICH SUPERSEDES ANY PROPOSAL OR PRIOR AGREEMENT, ORAL OR WRITTEN, AND ANY OTHER COMMUNICATIONS BETWEEN CUSTOMER AND MINDFUSION RELATING TO THE SOFTWARE. This Agreement may not be modified except by a writing signed by a duly authorized representative of MindFusion LLC.
+
+Note:
+
+Should you have any questions concerning this Agreement, or if you desire to contact MindFusion LLC for any other reason, please write to support@mindfusion.eu or call the MindFusion LLC Team at (+359) 888951737.

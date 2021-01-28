@@ -10,12 +10,14 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.7</TypeScriptToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Animations.html" />
@@ -43,6 +45,7 @@
     <Content Include="common\samples.css" />
     <Content Include="common\samples.js" />
     <Content Include="Containers.html" />
+    <Content Include="ControlNodes.html" />
     <Content Include="Controls.html" />
     <Content Include="DomTree.html" />
     <Content Include="DragDrop.html" />
@@ -56,6 +59,7 @@
     <Content Include="LayeredLayout.html" />
     <Content Include="MindFusion.Common.js" />
     <Content Include="MindFusion.Diagramming.js" />
+    <TypeScriptCompile Include="ControlNodes.ts" />
     <TypeScriptCompile Include="Lanes.ts" />
     <TypeScriptCompile Include="PathFinder.ts" />
     <Content Include="PathFinder.html" />
