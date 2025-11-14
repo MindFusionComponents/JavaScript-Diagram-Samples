@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>MindFusion JsDiagram Sample - TabbedView</title>
+    <link href="common/samples.css" rel="stylesheet" />
+    <script type="text/javascript" src="common/samples.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./themes/common-ui.css" />
+    <link rel="stylesheet" type="text/css" href="./themes/blue.css" />
+    <link rel="stylesheet" type="text/css" href="./themes/business.css" />
+    <link rel="stylesheet" type="text/css" href="./themes/earth.css" />
+    <link rel="stylesheet" type="text/css" href="./themes/gray.css" />
+    <link rel="stylesheet" type="text/css" href="./themes/green.css" />
+    <link rel="stylesheet" type="text/css" href="./themes/light.css" />
+    <link rel="stylesheet" type="text/css" href="./themes/pastel.css" />
+    <link rel="stylesheet" type="text/css" href="./themes/peach.css" />
+    <link rel="stylesheet" type="text/css" href="./themes/standard.css" />
+    <link rel="stylesheet" type="text/css" href="./themes/black.css" />
+</head>
+
+<body>
+    <div id="header" style="height: 49px;">
+
+        <div style="float: left; margin-right: 5px;">
+            <a href="./index.html" style="margin-left: 10px;">Index</a>
+            TabAlignment
+            <select id="tabAlignment">
+                <option value=0>None</option>
+                <option value=1 selected>Top</option>
+                <option value=3>Bottom</option>
+            </select>
+            <input id="showNavBtn" type="checkbox" checked="checked" /> Show navigation buttons
+            <input id="showAddBtn" type="checkbox" checked="checked" /> Show 'Add Tab' button
+            <input id="showCloseBtn" type="checkbox" /> Show tabs close buttons
+            Theme
+            <select id="theme">
+                <option value="" selected="selected">none</option>
+                <option value="standard">standard</option>
+                <option value="light">light</option>
+                <option value="business">business</option>
+                <option value="green">green</option>
+                <option value="blue">blue</option>
+                <option value="gray">gray</option>
+                <option value="peach">peach</option>
+                <option value="earth">earth</option>
+                <option value="pastel">pastel</option>
+                <option value="black">black</option>
+            </select>
+
+        </div>
+        <div style="float: right; margin-right: 5px;">
+            <a href="TabbedView.js" style="margin-right: 10px;">View source</a>
+            <button id="expandButton" onclick="onExpandCollapse()">
+                &rsaquo;
+            </button>
+        </div>
+    </div>
+    <div id="info" style="top: 60px; bottom: 24px;">
+        <div id="infoTab" style="padding: 10px;">
+            <h1>
+                About this sample
+            </h1>
+            <p id="pinfo">
+                This sample shows the functionality of the TabbedDiagramView control.
+            </p>
+        </div>
+    </div>
+    <div id="content" style="top: 60px; bottom: 24px;">
+        <!-- The DiagramView component is bound to the canvas element below -->
+        <div style="width: 100%; height: 100%; overflow: auto;">
+            <canvas id="diagram" width="2100" height="2100">
+                This page requires a browser that supports HTML 5 Canvas element.
+            </canvas>
+        </div>
+    </div>
+    <div id="footer" style="height: 24px;">
+        <span id="copyright"></span>
+    </div>
+
+
+    <script src="Scripts/collections.js" type="text/javascript"></script>
+    <script src="Scripts/drawing.js" type="text/javascript"></script>
+    <script src="Scripts/controls.js" type="text/javascript"></script>
+
+    <script src="Scripts/animations.js" type="text/javascript"></script>
+    <script src="Scripts/graphs.js" type="text/javascript"></script>
+    <script src="Scripts/diagramming.js" type="text/javascript"></script>
+
+    <script src="Scripts/common.js" type="text/javascript"></script>
+    <script src="Scripts/common-collections.js" type="text/javascript"></script>
+    <script src="Scripts/common-ui.js" type="text/javascript"></script>
+    <script src="Scripts/diagramming-controls.js" type="text/javascript"></script>
+
+    <script src="TabbedView.js" type="text/javascript"></script>
+</body>
+
+</html>

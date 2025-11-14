@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MindFusion JsDiagram Sample - WebComponents</title>
+    
+	<link href="common/samples.css" rel="stylesheet" />
+	<script type="text/javascript" src="common/samples.js"></script>
+</head>
+<body>
+	<div id="header" style="height: 49px;">
+		<div style="float: left; margin-left: 5px;">
+			<a href="./index.html" style="margin-left: 10px;">Index</a>
+		</div>
+		<div style="float: right; margin-right: 5px;">
+			<a href="WebComponents.js" style="margin-right: 10px;">View source</a>
+			<button id="expandButton" onclick="onExpandCollapse()">
+				&rsaquo;
+			</button>
+		</div>
+	</div>
+	<div id="info" style="top: 60px; bottom: 24px;">
+		<div id="infoTab" style="padding: 10px;">
+			<h1>
+				About this sample
+			</h1>
+			<p id="pinfo">
+				This sample demonstrates how to use MindFusion.Diagramming controls as web components.
+			</p>
+		</div>
+	</div>
+	<div id="content" style="top: 60px; bottom: 24px;">
+		<div style="position: absolute; left: 0px; top: 0px; bottom: 0px; width: 200px; border-right: 1px solid #e2e4e7;
+			overflow: hidden; vertical-align: top;">
+			<mindfusion-overview id="overview" width="200" height="200" style="position: absolute; top: 0px; bottom: 0px; right: 0px; width: 200px;
+				height: 200px; border-bottom: 1px solid #e2e4e7; background-color: #c0c0c0;"></mindfusion-overview>
+			<mindfusion-nodelistview id="nodeList" width="200" style="width: 200px; height: 100%; overflow-y: auto; overflow-x: hidden; position: absolute;
+				top: 201px; left: 0px; right: 0px; bottom: 0px;"></mindfusion-nodelistview>
+		</div>
+			<mindfusion-ruler id="ruler" style="position: absolute; left: 201px; top: 0px; right: 0px; bottom: 0px;">
+				<mindfusion-diagramview id="diagramView" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: auto;"></mindfusion-diagramview>
+			</mindfusion-ruler>
+			<mindfusion-zoomcontrol id="zoomer" width="50" height="300" style="width: 50px; height: 300px; position: absolute; top: 20px; right: 35px;
+			width: 50px; height: 300px;z-index:3;"></mindfusion-zoomcontrol>
+	</div>
+	<div id="footer" style="height: 24px;">
+		<span id="copyright"></span>
+	</div>
+
+	<script src="Scripts/collections.js" type="text/javascript"></script>
+	<script src="Scripts/drawing.js" type="text/javascript"></script>
+	<script src="Scripts/controls.js" type="text/javascript"></script>
+
+	<script src="Scripts/animations.js" type="text/javascript"></script>
+	<script src="Scripts/graphs.js" type="text/javascript"></script>
+	<script src="Scripts/diagramming.js" type="text/javascript"></script>
+
+	<script src="WebComponents.js" type="text/javascript"></script>
+</body>
+</html>

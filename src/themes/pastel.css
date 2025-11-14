@@ -1,0 +1,335 @@
+.mfc-calendar.pastel
+{
+    border: solid 2px #ea684f;
+}
+.mfc-calendar-view.pastel {
+    color: #444;
+    background-color: #fff;
+}
+.mfc-calendar-view.pastel .mfc-calendar-header,
+.mfc-calendar.pastel .mfc-calendar-footer
+{
+    color: #fff;
+    background-color: #E2806C;
+    padding: 2px; 
+}
+.mfc-calendar-view.pastel .mfc-calendar-header
+{
+    border-bottom: solid 1px #E2806C;
+}
+.mfc-calendar.pastel .mfc-calendar-content
+{
+    padding: 4px;
+    font-size: smaller;
+}
+.mfc-calendar-view.pastel .mfc-calendar-content div[data-value]
+{
+    padding: 2px;
+}
+.mfc-calendar-view.pastel .mfc-calendar-content div[data-value]:hover
+{
+    border: dotted 2px #e9ca91;
+    padding: 0;
+}
+.mfc-calendar.pastel .mfc-calendar-content .mfc-selected,
+.mfc-calendar-view.pastel .mfc-calendar-content .mfc-selected
+{
+    border:none;
+    background-color: #ea684f;
+    color: #fff;
+    border-radius: 4px;  
+}
+.mfc-checklistbox.pastel 
+{
+    color: #444;
+}
+.mfc-checklistbox.pastel .mfc-listview-item.mfc-selected
+{
+    background-color: #ea684f;
+}
+.mfc-checklistpicker.pastel > span
+{
+    background-color: #ea684f;
+    color: #fff;
+}.mfc-dialog.pastel .mfc-header .mfc-title
+{
+    padding: 10px;
+}
+.mfc-dialog.pastel .mfc-dialog-button {
+    color: #444;
+    background-color: #fff;
+    border: solid 2px #ea684f;
+    padding: 10px;
+}
+.mfc-dialog.pastel .mfc-dialog-button:hover
+{
+    color: #444;
+    background-color: #fff;
+    border: dotted 2px #e9ca91;
+}.mfc-listview.pastel
+{
+    background-color: #ea684f;
+    color:  #fff;
+}
+.mfc-listview.pastel .mfc-listview-item
+{
+    border-bottom: solid 1px  #fff;
+    padding: 10px;
+}
+.mfc-listview.pastel .mfc-listview-item.mfc-active
+{
+    color: #ea684f;
+    background-color: #fff;
+}.mfc-menu-content.pastel 
+{
+    color:  #fff;
+    background-color: #ea684f;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+}
+.mfc-menu-content.pastel .mfc-menuitem-header
+{
+    padding: 10px;
+}
+.mfc-menu-content.pastel .mfc-menuitem-header > a
+{
+    padding: 5px;
+    border-radius: 5px;
+    color:  #fff;
+}
+.mfc-menu-content.pastel .mfc-menuitem .mfc-menuitem-image {
+    background-image: url("icons/white/small.png");
+    background-position: -80px 0;
+}
+.mfc-menu-content.pastel .mfc-menuitem.mfc-active > .mfc-menuitem-header > a
+{
+    border: 2px dotted #fff;
+    padding: 3px;
+}
+.mfc-menu-content.pastel.mfc-menuitem-expanded.mfc-menuitem-children
+{
+   animation: scale8 300ms ease-out;
+}
+@keyframes scale8
+{
+    from { 
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}.mfc-picker.pastel
+{
+    outline: none;
+    color: #444;
+    border: 1px solid;
+}
+.mfc-picker.pastel:focus
+{
+    border-color: #E2806C;
+}
+.mfc-picker-button.pastel
+{
+    background-color: #E2806C;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}.mfc-tabcontrol.pastel .mfc-tabstrip .mfc-toolstrip-item
+{
+    background-color: #fff;
+    color: #ea684f;
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.pastel .mfc-tabstrip .mfc-toolstrip-item
+{
+    border-top: 1px solid #ea684f;
+    border-right: 1px solid #ea684f;
+    padding-right:10px;
+}
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.pastel .mfc-tabstrip .mfc-toolstrip-item
+{
+    border-bottom: 1px solid #ea684f;
+    border-left: 1px solid #ea684f;
+   
+}
+.mfc-tabcontrol.pastel .mfc-tabstrip .mfc-toolstrip-item:first-child
+{
+    border-left: 1px solid #ea684f; 
+    border-radius: 15px 0 0;
+}
+.mfc-tabcontrol.pastel .mfc-tabstrip .mfc-toolstrip-item.mfc-selected
+{
+    background-color: #ea684f;
+    color: #fff;
+}
+.mfc-tabcontrol.pastel .mfc-tabstrip
+{
+    background-color: #fff;
+}
+.mfc-tabcontrol.pastel > ul
+{
+    border: none;
+    background-color: #fff;
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.pastel > ul
+{
+    border-top: 5px solid #ea684f;
+}
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.pastel > ul
+{
+    border-left: 5px solid #ea684f;    
+}
+.mfc-tabcontrol.pastel .mfc-tabbutton-close
+{
+    background-image: url("icons/white/small.png");
+    background-position: -48px 0;
+}
+.mfc-tabstrip.pastel ul  {
+    background-color: #ea684f;
+}
+.mfc-toolstrip.mfc-toolstrip-scrollable.pastel .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-scrollable.pastel .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/white/small.png");
+}
+.mfc-toolstrip.pastel
+{
+    background-color: #ea684f;
+    color: #fff;
+}
+.mfc-toolstrip.pastel .mfc-toolstrip-item
+{
+    padding: 0 10px;
+}
+.mfc-toolstrip:not(.mfc-tabstrip).pastel .mfc-toolstrip-item.mfc-active
+{
+    background-color: #fff;
+    color: #ea684f;
+}.mfc-tooltip.pastel {
+    color: #fff;
+    background-color: #ea684f;
+    border: solid 1px #E2806C;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+}
+
+.mfc-tooltip-right.pastel::after {
+    border-color: transparent #ea684f transparent transparent;
+}
+
+.mfc-tooltip-left.pastel::after {
+    border-color: transparent transparent transparent #ea684f;
+}
+
+.mfc-tooltip-bottom.pastel::after {
+    border-color: transparent transparent #ea684f transparent;
+}
+
+.mfc-tooltip-top.pastel::after {
+    border-color: #ea684f transparent transparent transparent;
+}
+
+.mfc-tooltip-right.pastel::before {
+    border-color: transparent #E2806C transparent transparent;
+}
+
+.mfc-tooltip-left.pastel::before {
+    border-color: transparent transparent transparent #E2806C;
+}
+
+.mfc-tooltip-bottom.pastel::before {
+    border-color: transparent transparent #E2806C transparent;
+}
+
+.mfc-tooltip-top.pastel::before {
+    border-color: #E2806C transparent transparent transparent;
+}.mfc-treeview.pastel 
+{
+    color:  #ea684f;
+    background-color: #fff;
+}
+.mfc-treeview.pastel .mfc-treenode-header
+{
+    padding: 10px;
+}
+.mfc-treeview.pastel .mfc-treenode.mfc-active > .mfc-treenode-header
+{
+    color: #fff;
+    background-color: #ea684f;
+}
+.mfc-treeview.pastel .mfc-treenode .mfc-treenode-image 
+{
+     background-image: url("icons/black/small.png");
+     background-position: -80px 0;
+ }
+ .mfc-treeview.pastel .mfc-treenode.mfc-active > .mfc-treenode-header .mfc-treenode-image 
+{
+    background-image: url("icons/white/small.png");
+    background-position: -80px 0;
+}.mfc-windowhost.pastel
+{
+    background: #fff;
+    border: solid 1px #ea684f;
+}
+.mfc-window.pastel
+{
+    color: #444;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    background: #fff;
+    border: solid 1px #E2806C;
+    border-radius: 4px;
+}
+.mfc-windowhost.pastel .mfc-windowhost-toolstrip,
+.mfc-window.pastel .mfc-header,
+.mfc-window.pastel .mfc-footer
+{
+    color: #fff;
+    background-color: #ea684f;
+    border-color:#fff;
+}
+.mfc-window.pastel .mfc-content
+{
+    color: #444;
+    background: #fff;
+    border: solid 1px #ea684f;
+}
+.mfc-window.pastel.mfc-maximized .mfc-content
+{
+    border: none;
+}
+.mfc-window.pastel .mfc-window-toolstrip .mfc-toolbutton-default a,
+.mfc-windowhost.pastel .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-windowhost.pastel .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next,
+.mfc-window.pastel .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-window.pastel .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/white/small.png");
+}
+.mfc-windowhost.pastel .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-show-all a
+{
+    background-image: url("icons/white/show-all.png");
+} 
+.mfc-windowhost.pastel .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-restore-all a
+{
+    background-image: url("icons/white/restore-all.png");
+} 
+.mfc-windowhost.pastel .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-minimize-all a
+{
+    background-image: url("icons/white/minimize-all.png");
+} 
+.mfc-windowhost.pastel .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-close-all a
+{
+    background-image: url("icons/white/close-all.png");
+} 
+.mfc-windowhost.pastel .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-default a
+{
+    border-radius:50%;
+    border: none;
+    padding:2px;
+}
+.mfc-windowhost.pastel .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-default a:hover
+{
+    border: 2px dotted #fff;
+    padding:0;
+}
+.mfc-windowhost.pastel .mfc-windowhost-toolstrip.mfc-maximized-toolstrip .mfc-toolstrip-item.mfc-toolbutton-label.mfc-selected
+{
+   background-color: #fff;
+   color: #ea684f;
+}

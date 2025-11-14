@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MindFusion JsDiagram Sample - Scripting</title>
+    <link href="common/samples.css" rel="stylesheet" />
+    <script type="text/javascript" src="common/samples.js"></script>
+    <style type="text/css">
+
+        .mf_diagram_controlNodeContent {
+            box-shadow: rgba(0, 0, 0, 0.35) 4px 4px 4px;
+            text-align: center;
+        }
+
+            .mf_diagram_controlNodeContent.selected {
+                outline: 4px solid LightSteelBlue;
+            }
+
+            .mf_diagram_controlNodeContent.highlight {
+                outline: 4px solid Red;
+            }
+
+            .mf_diagram_controlNodeContent > .root {
+                background-color: #F0F0F0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+            }
+
+            .mf_diagram_controlNodeContent > .terminator {
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            .mf_diagram_controlNodeContent .terminatortext {
+                flex: 1;
+                padding: 5px;
+                cursor: move;
+            }
+
+            .mf_diagram_controlNodeContent > .operation {
+                flex-direction: column;
+            }
+
+            .mf_diagram_controlNodeContent .operationtitle {
+                font-weight: bold;
+                margin: 10px;
+                cursor: move;
+            }
+
+            .mf_diagram_controlNodeContent .operationcode {
+                flex: 1;
+                margin: 10px;
+                resize: none;
+            }
+
+            .mf_diagram_controlNodeContent > .function {
+                flex-direction: column;
+            }
+
+            .mf_diagram_controlNodeContent .functionname {
+                margin: 4px 10px;
+            }
+
+            .mf_diagram_controlNodeContent .functioncode {
+                flex: 1;
+                margin: 10px;
+                resize: none;
+            }
+
+            .mf_diagram_controlNodeContent > .variableList {
+                flex-direction: column;
+                overflow: auto;
+            }
+    </style>
+
+</head>
+<body>
+    <div id="header" style="height: 70px;">
+        <div style="float: left; margin-left: 5px;">
+            <a href="./index.html" style="margin-left: 10px;">Index</a>
+        </div>
+        <div style="float: left; margin-right: 5px; margin-top: 12px;">
+            <div style="display: flex; flex-direction: column; justify-content: space-around; align-items: start;">
+                <div>
+                    Creation:
+                    <button id="startButton" class="createbutton" onclick="onStartNode()">
+                        Start node
+                    </button>
+                    <button id="operationButton" class="createbutton" onclick="onOperation()">
+                        Operation
+                    </button>
+                    <button id="choiceButton" class="createbutton" onclick="onChoice()">
+                        Choice
+                    </button>
+                    <button id="endButton" class="createbutton" onclick="onEndNode()">
+                        End node
+                    </button>
+                    <button id="functionButton" class="createbutton" onclick="onFunction()">
+                        Function
+                    </button>
+                    <button id="clearButton" class="createbutton" onclick="onClear()">
+                        Clear
+                    </button>
+                </div>
+                <div style="margin-top: 5px;">
+                    Execution:
+                    <button id="validateButton" class="executebutton" onclick="onValidate()">
+                        Validate
+                    </button>
+                    <button id="runButton" class="executebutton" onclick="onRun()">
+                        Run
+                    </button>
+                    <button id="stepRunButton" class="executebutton" onclick="onNext()">
+                        Step by step
+                    </button>
+                    <button id="stopButton" class="executebutton" onclick="onStop()">
+                        Stop
+                    </button>
+                    Presets:
+                    <select id="preset">
+                        <option value="factorial.xml"> Factorial </option>
+                        <option value="gcd.xml"> GCD </option>
+                        <option value="fibonacci.xml"> Fibonacci </option>
+                    </select>
+                    <button id="loadButton" onclick="onLoad()">
+                        Load
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div style="float: right; margin-right: 5px; margin-top: 12px;">
+            <a href="Scripting.js" style="margin-right: 10px;"> View source</a>
+            <button id="expandButton" onclick="onExpandCollapse()">
+                &rsaquo;
+            </button>
+        </div>
+    </div>
+    <div id="info" style="top: 80px; bottom: 24px;">
+        <div id="infoTab" style="padding: 10px;">
+            <h1>
+                About this sample
+            </h1>
+            <p id="pinfo">
+                Using JsDiagram to implement a dynamic process calculation.
+                The sample lets you create nodes of different types that illustrate the logic flow of a function.
+                Several predefined examples are included.
+            </p>
+            <hr />
+            <h1>About JsDiagram</h1>
+            JsDiagram is fully interactive flow diagramming control for the web. The diagram tool is written 100% in JavaScript and uses the HTML5 Canvas element for drawing. The component can use either jQuery or Microsoft Ajax library for browser independence layer and type system implementation. The package includes miscellaneous UI controls such as Overview providing scaled down view of the drawing, and NodeListView displaying a palette of diagram elements.
+            <h2>Features</h2>
+            <ul>
+                <li>Interactive zooming, scrolling, and panning</li>
+                <li>Hundreds of built-in shapes and the ability to define custom shapes</li>
+                <li>Table nodes with collapsible rows and spanning cells</li>
+                <li>Many ready-to-use layouts, including tree, layered, fractal, and more</li>
+                <li>Automatic link routing</li>
+                <li>Lane grid</li>
+                <li>Hierarchical grouping of diagram elements</li>
+                <li>Undo and redo support</li>
+                <li>Styles and themes</li>
+                <li>Node effects</li>
+                <li>Overview, NodeListView, Zoom controls</li>
+            </ul>
+        </div>
+    </div>
+    <div id="content" style="top: 80px; bottom: 24px;">
+        <!-- The DiagramView component is bound to the canvas element below -->
+        <div style="position: absolute; width: 100%; height: 100%; overflow: auto;">
+            <canvas id="diagram" width="2100" height="2100">
+                This page requires a browser that supports HTML 5 Canvas element.
+            </canvas>
+        </div>
+    </div>
+    <div id="footer" style="height: 24px;">
+        <span id="copyright"> </span>
+    </div>
+
+    <script src="Scripts/collections.js" type="text/javascript"></script>
+    <script src="Scripts/drawing.js" type="text/javascript"></script>
+    <script src="Scripts/controls.js" type="text/javascript"></script>
+
+    <script src="Scripts/animations.js" type="text/javascript"></script>
+    <script src="Scripts/graphs.js" type="text/javascript"></script>
+    <script src="Scripts/diagramming.js" type="text/javascript"></script>
+    <script src="Scripting.js" type="text/javascript"></script>
+</body>
+</html>

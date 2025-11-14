@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>MindFusion.Diagramming for JavaScript Samples</title>
+	<style type="text/css">
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+			background-color: #f8f9fa;
+		}
+
+		#header {
+			background-color: #343a40;
+			color: white;
+			padding: 15px;
+			text-align: center;
+			font-size: 1.5em;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+
+		#main-container {
+			display: flex;
+			flex: 1;
+			overflow: hidden;
+		}
+
+		#sidebar {
+			width: 280px;
+			background-color: #495057;
+			color: white;
+			padding: 20px;
+			overflow-y: auto;
+			box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+		}
+
+		#sidebar h3 {
+			color: #dee2e6;
+			border-bottom: 2px solid #6c757d;
+			padding-bottom: 10px;
+			margin-top: 0;
+		}
+
+		#sidebar a {
+			display: block;
+			color: #f8f9fa;
+			text-decoration: none;
+			padding: 10px 15px;
+			border-radius: 4px;
+			margin-bottom: 8px;
+			transition: background-color 0.3s, color 0.3s;
+		}
+
+		#sidebar a:hover, #sidebar a.active {
+			background-color: #c71c22;
+			color: white;
+		}
+
+		#content {
+			flex: 1;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		#content iframe {
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+
+		#footer {
+			background-color: #343a40;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			font-size: 0.9em;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		MindFusion.Diagramming for JavaScript Samples
+	</div>
+	<div id="main-container">
+		<div id="sidebar">
+			<h3>Samples</h3>
+			<a href="AdjustmentHandles.html" target="chart-frame">Adjustment Handles</a>
+			<a href="AnchorPoints.html" target="chart-frame">Anchor Points</a>
+			<a href="Animations.html" target="chart-frame">Animations</a>
+			<a href="Containers.html" target="chart-frame">Containers</a>
+			<a href="ControlNodes.html" target="chart-frame">Control Nodes</a>
+			<a href="Controls.html" target="chart-frame">Controls</a>
+			<a href="DomTree.html" target="chart-frame">Dom Tree</a>
+			<a href="DragDrop.html" target="chart-frame">Drag Drop</a>
+			<a href="Flowcharter.html" target="chart-frame">Flowcharter</a>
+			<a href="FlowchartLayout.html" target="chart-frame">Flowchart Layout</a>
+			<a href="FractalLayout.html" target="chart-frame">Fractal Layout</a>
+			<a href="Inheritance.html" target="chart-frame">Inheritance</a>
+			<a href="Lanes.html" target="chart-frame">Lanes</a>
+			<a href="LayeredLayout.html" target="chart-frame">Layered Layout</a>
+			<a href="MultipleViews.html" target="chart-frame">MultipleViews</a>
+			<a href="OrgChartEditor.html" target="chart-frame">OrgChart Editor</a>
+			<a href="PathFinder.html" target="chart-frame">Path Finder</a>
+			<a href="Scripting.html" target="chart-frame">Scripting</a>
+			<a href="SpanningCells.html" target="chart-frame">Spanning Cells</a>
+			<a href="StockShapes.html" target="chart-frame">Stock Shapes</a>
+			<a href="StressTest.html" target="chart-frame">Stress Test</a>
+			<a href="SvgNodes.html" target="chart-frame">SVG Nodes</a>
+			<a href="TabbedView.html" target="chart-frame">TabbedView</a>
+			<a href="Themes.html" target="chart-frame">Themes</a>
+			<a href="TreeLayout.html" target="chart-frame">Tree Layout</a>
+			<a href="TreeMap.html" target="chart-frame">Tree Map</a>
+			<a href="TreeViewNodes.html" target="chart-frame">TreeView Nodes</a>
+			<a href="WebComponents.html" target="chart-frame">Web Components</a>
+			<a href="Tutorial1.html" target="chart-frame">Tutorial 1</a>
+			<a href="Tutorial2.html" target="chart-frame">Tutorial 2</a>
+			<a href="Tutorial3.html" target="chart-frame">Tutorial 3</a>
+			<a href="Tutorial4.html" target="chart-frame">Tutorial 4</a>
+		</div>
+		<div id="content">
+			<iframe name="chart-frame" src="about:blank"></iframe>
+		</div>
+	</div>
+	<div id="footer">
+		<span id="copyright"></span>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const links = document.querySelectorAll("#sidebar a");
+			const iframe = document.querySelector("iframe[name='chart-frame']");
+
+			// Set the first link as active and load it
+			if(links.length > 0) {
+				links[0].classList.add("active");
+				iframe.src = links[0].href;
+			}
+
+			links.forEach(link => {
+				link.addEventListener("click", function(e) {
+					// No need for preventDefault as target is handled by iframe
+					
+					// Remove active class from all links
+					links.forEach(l => l.classList.remove("active"));
+					
+					// Add active class to the clicked link
+					this.classList.add("active");
+				});
+			});
+
+			// Update copyright year
+			const copyrightSpan = document.getElementById("copyright");
+			if (copyrightSpan) {
+				copyrightSpan.innerHTML = `&copy; ${new Date().getFullYear()} MindFusion. All rights reserved.`;
+			}
+		});
+	</script>
+</body>
+</html>

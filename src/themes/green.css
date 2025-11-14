@@ -1,0 +1,348 @@
+.mfc-calendar.green
+{
+    border: solid 1px #829640;
+}
+.mfc-calendar-view.green {
+    color: #829640;
+    background-color: #f8ffe2;
+}
+.mfc-calendar-view.green .mfc-calendar-header,
+.mfc-calendar.green .mfc-calendar-footer
+{
+    color: #fff;
+    background-color: #829640;
+    padding: 2px; 
+}
+.mfc-calendar-view.green .mfc-calendar-header
+{
+    border-bottom: solid 1px #829640;
+}
+.mfc-calendar.green .mfc-calendar-content
+{
+    padding: 4px;
+    font-size: smaller;
+}
+.mfc-calendar-view.green .mfc-calendar-content div[data-value]:hover
+{
+    color:#505858;
+}
+.mfc-calendar.green .mfc-calendar-content .mfc-selected,
+.mfc-calendar-view.green .mfc-calendar-content .mfc-selected
+{
+    border:none;
+    background-color: #505858;
+    color: #fff;
+    border-radius: 4px;  
+}
+.mfc-checklistbox.green 
+{
+    color: #829640;
+    background-color:  #fff;
+}
+.mfc-checklistbox.green .mfc-listview-item.mfc-selected
+{
+    background-color: #505858;
+    color: #fff;
+}
+.mfc-checklistpicker.green > span
+{
+    color: #829640;
+    background-color:  #f8ffe2;
+}.mfc-dialog.green .mfc-dialog-buttons
+{
+    border-top: solid 1px #829640;
+    padding:10px;
+}
+.mfc-dialog.green .mfc-dialog-button {
+    color: #5D544F;
+    background-color: #fff;
+    border: solid 1px #829640;
+    padding: 10px;
+}
+.mfc-dialog.green .mfc-dialog-button:hover
+{
+    color: #5D544F;
+    background-color: #fff;
+    border-bottom: solid 4px #829640;
+}.mfc-listview.green
+{
+    background-color: #829640;
+    color:  #fff;
+}
+.mfc-listview.green .mfc-listview-item
+{
+    border-bottom: solid 1px  #fff;
+    padding: 10px;
+}
+.mfc-listview.green .mfc-listview-item.mfc-active
+{
+    background-color: #505858;
+}.mfc-menu-content.green 
+{
+    color:  #829640;
+    background-color: #fff;
+    border-left: 1px solid #829640;
+    border-right: 1px solid #829640;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+}
+.mfc-menu-content.green .mfc-menuitem-header
+{
+    padding: 5px;
+    border-bottom: 1px solid #829640;
+}
+.mfc-menu-content.green .mfc-menuitem:first-child .mfc-menuitem-header
+{
+    border-top: 4px solid #829640;
+}
+.mfc-menu-content.green .mfc-menuitem .mfc-menuitem-image {
+    background-image: url("icons/black/small.png");
+    background-position: -80px 0;
+}
+.mfc-menu-content.green .mfc-menuitem-header > a
+{
+    padding: 5px;
+    border-radius: 5px;
+    color:  #829640;
+}
+.mfc-menu-content.green .mfc-menuitem.mfc-active > .mfc-menuitem-header > a
+{
+    color: #fff;
+    background-color: #829640;
+}.mfc-picker.green
+{
+    outline: none;
+    background-color: #fff;
+    color: #5D544F;
+    border: 1px solid;
+}
+.mfc-picker.green:focus
+{
+    color: #829640;
+}
+.mfc-picker-button.green
+{
+    background-color: #829640;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+.mfc-picker-button.green:hover
+{
+    background-color: #505858;
+}
+.mfc-tooltip.mfc-dropdown.green
+{
+    border-color: #829640; 
+}.mfc-tabcontrol.green .mfc-tabstrip .mfc-toolstrip-item
+{
+    background-color: #829640;
+    color: #fff;
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.green .mfc-tabstrip .mfc-toolstrip-item
+{
+    border-top: 1px solid #829640;
+    border-right: 1px solid #829640;
+    padding-right:10px;
+    margin-right:2px;
+}
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.green .mfc-tabstrip .mfc-toolstrip-item
+{
+    border-bottom: 1px solid #829640;
+    border-left: 1px solid #829640;
+    margin-bottom:2px;
+} 
+.mfc-tabcontrol.green .mfc-tabstrip .mfc-toolstrip-item:first-child
+{
+    border-left: 1px solid #829640; 
+    border-radius: 5px 0 0;
+}
+.mfc-tabcontrol.green .mfc-tabstrip .mfc-toolstrip-item:last-child
+{
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+}
+.mfc-tabcontrol.green .mfc-tabstrip .mfc-toolstrip-item.mfc-selected
+{
+    background-color: #505858;
+    color: #fff;
+}
+.mfc-tabcontrol.green .mfc-tabstrip
+{
+    background-color: #fff;
+}
+.mfc-tabcontrol.green > ul
+{
+    border: none;
+    background-color: #fff;
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.green > ul
+{
+    border-top: 5px solid #505858;
+}
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.green > ul
+{
+    border-left: 5px solid #505858;    
+}
+.mfc-tabcontrol.green .mfc-tabbutton-close
+{
+    background-image: url("icons/black/small.png");
+    background-position: -48px 0;
+    transform: scale(0.7);
+    position: absolute;
+    right:0;
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.green .mfc-tabbutton-close
+{
+    top: 50%;
+    margin-top: -8px;
+}
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.green .mfc-tabbutton-close
+{
+    top:auto;
+    bottom:0;
+}
+.mfc-tabstrip.green ul  {
+    background-color: #829640;
+}
+.mfc-toolstrip.mfc-toolstrip-scrollable.green .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-scrollable.green .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/black/small.png");
+}
+.mfc-toolstrip.green
+{
+    background-color: #829640;
+    color:  #fff;
+}
+.mfc-toolstrip.green .mfc-toolstrip-item
+{
+    padding: 0 10px;
+}
+.mfc-toolstrip:not(.mfc-tabstrip).green .mfc-toolstrip-item.mfc-active
+{
+    background-color: #505858;
+}
+.mfc-toolstrip.mfc-toolstrip-horizontal.green .mfc-toolstrip-item.mfc-toolbutton-separator::after
+{
+	top: 25%;
+	height: 50%;
+}
+.mfc-toolstrip.mfc-toolstrip-vertical.green .mfc-toolstrip-item.mfc-toolbutton-separator::after
+{
+	left: 25%;
+	width: 50%;
+}.mfc-tooltip.green {
+    color: #fff;
+    background-color:  #829640;
+    border: solid 1px  #fff;
+    box-shadow: 4px 4px 4px rgba(228, 112, 112, 0.1);
+}
+
+.mfc-tooltip-right.green::after {
+    border-color: transparent #829640 transparent transparent;
+}
+
+.mfc-tooltip-left.green::after {
+    border-color: transparent transparent transparent #829640;
+}
+
+.mfc-tooltip-bottom.green::after {
+    border-color: transparent transparent #829640 transparent;
+}
+
+.mfc-tooltip-top.green::after {
+    border-color: #829640 transparent transparent transparent;
+}
+
+.mfc-tooltip-right.green::before {
+    border-color: transparent #fff transparent transparent;
+}
+
+.mfc-tooltip-left.green::before {
+    border-color: transparent transparent transparent #fff;
+}
+
+.mfc-tooltip-bottom.green::before {
+    border-color: transparent transparent #fff transparent;
+}
+
+.mfc-tooltip-top.green::before {
+    border-color: #fff transparent transparent transparent;
+}.mfc-treeview.green 
+{
+    background-color: #829640;
+    color:  #fff;
+}
+.mfc-treeview.green .mfc-treenode-header
+{
+    padding: 10px;
+}
+.mfc-treeview.green .mfc-treenode.mfc-active > .mfc-treenode-header
+{
+    background-color: #505858;
+}
+.mfc-treeview.green .mfc-treenode .mfc-treenode-image 
+{
+     background-image: url("icons/black/small.png");
+     background-position: -80px 0;
+ }.mfc-windowhost.green
+{
+    background: #fff;
+    border: solid 1px #829640;
+}
+.mfc-window.green
+{
+    color: #5D544F;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    background: #fff;
+    border: solid 1px #829640;
+    border-radius: 4px;
+}
+.mfc-windowhost.green .mfc-windowhost-toolstrip,
+.mfc-window.green .mfc-header,
+.mfc-window.green .mfc-footer
+{
+    color: #fff;
+    background-color: #829640;
+    border-color:#fff;
+}
+.mfc-window.green .mfc-content
+{
+    color: #829640;
+    background-color: #fff;
+}
+.mfc-window.green .mfc-window-toolstrip .mfc-toolbutton-default a,
+.mfc-windowhost.green .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-windowhost.green .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next,
+.mfc-window.green .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-window.green .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/black/small.png");
+}
+.mfc-windowhost.green .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-show-all a
+{
+    background-image: url("icons/black/show-all.png");
+} 
+.mfc-windowhost.green .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-restore-all a
+{
+    background-image: url("icons/black/restore-all.png");
+} 
+.mfc-windowhost.green .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-minimize-all a
+{
+    background-image: url("icons/black/minimize-all.png");
+} 
+.mfc-windowhost.green .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-close-all a
+{
+    background-image: url("icons/black/close-all.png");
+} 
+.mfc-windowhost.green .mfc-windowhost-toolstrip .mfc-toolbutton-default a
+{
+    border: none;   
+}
+.mfc-windowhost.green .mfc-windowhost-toolstrip .mfc-toolbutton-default a:hover
+{
+    border-bottom: 2px solid;
+    margin-bottom: 0;
+}
+.mfc-windowhost.green .mfc-windowhost-toolstrip.mfc-maximized-toolstrip .mfc-toolstrip-item.mfc-toolbutton-label.mfc-selected
+{
+    background-color: #505858;
+}

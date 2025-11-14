@@ -1,0 +1,340 @@
+.mfc-calendar.light
+{
+    border: solid 1px #d4d4d4;
+}
+.mfc-calendar-view.light {
+    color: #747474;
+    background-color: #fff;
+}
+.mfc-calendar-view.light .mfc-calendar-header,
+.mfc-calendar.light .mfc-calendar-footer
+{
+    color: #747474;
+    padding: 2px; 
+}
+.mfc-calendar.light .mfc-calendar-content
+{
+    padding: 4px;
+    font-size: smaller;
+}
+.mfc-calendar-view.light .mfc-calendar-content div[data-value]:hover
+{
+    color:#bdf07c;
+}
+.mfc-calendar.light .mfc-calendar-content .mfc-selected,
+.mfc-calendar-view.light .mfc-calendar-content .mfc-selected
+{
+    border:none;
+    background-color: #bdf07c;
+    color: #fff;
+    border-radius: 4px;  
+}
+.mfc-checklistbox.light 
+{
+    color:  #747474;
+    background-color: #fff;
+    border: solid 1px #d4d4d4;
+}
+.mfc-checklistbox.light .mfc-listview-item.mfc-selected
+{
+    background-color: #bdf07c;
+}
+.mfc-checklistpicker.light > span
+{
+    color:  #747474;
+    background-color: #fff;
+}
+.mfc-dialog.light .mfc-dialog-button {
+    color: #747474;
+    background-color: #fff;
+    border: solid 1px #d4d4d4;
+    padding: 10px;
+}
+.mfc-dialog.light .mfc-dialog-button:hover
+{
+    color: #747474;
+    background-color: #fff;
+    border: solid 1px #bdf07c;
+}.mfc-listview.light
+{
+    border: 1px solid #d4d4d4;
+    background-color: #fff;
+    color:  #747474;
+}
+.mfc-listview.light .mfc-listview-item
+{
+    padding: 10px;
+}
+.mfc-listview.light .mfc-listview-item.mfc-active
+{
+    color: #bdf07c;
+}       .mfc-menu-content.light 
+{
+    color:  #747474;
+    background-color: #fff;
+    border: 1px solid #d4d4d4;
+}
+.mfc-menu-content.light .mfc-menuitem-header
+{
+    padding: 10px;
+}
+.mfc-menu-content.light .mfc-menuitem-header > a
+{
+    padding: 5px;
+    color:  #747474;
+}
+.mfc-menu-content.light .mfc-menuitem.mfc-active > .mfc-menuitem-header > a
+{
+    color: #bdf07c;
+}
+.mfc-menu-content.light .mfc-menuitem .mfc-menuitem-image {
+    background-image: url("icons/black/small.png");
+    background-position: -80px 0;
+}.mfc-picker.light,
+.mfc-picker.mfc-imagepicker.light,
+.mfc-picker.mfc-checklistpicker.light
+{
+    outline: none;
+    background-color: #fff;
+    color: #5D544F;
+    border: solid 1px #d4d4d4;
+}
+.mfc-picker.light:focus
+{
+    border-color: #bdf07c;
+}
+.mfc-picker-button.light
+{
+    color: #747474;
+    background-color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+.mfc-tooltip.mfc-dropdown.light
+{
+    border-color: #d4d4d4; 
+}
+.mfc-tabcontrol.light .mfc-tabstrip .mfc-toolstrip-item
+{
+    background-color: #fff;
+    color: #747474;
+    border-color: #d4d4d4;
+    border-right: none;
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.light .mfc-tabstrip .mfc-toolstrip-item:first-child,
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.light .mfc-tabstrip .mfc-toolstrip-item:first-child
+{
+    border-color: #d4d4d4;
+}
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.light .mfc-tabstrip .mfc-toolstrip-item
+{
+    border-bottom: none;
+}
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.light .mfc-tabstrip .mfc-toolstrip-item:last-child
+{
+    border-bottom: 1px solid #d4d4d4; 
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.light .mfc-tabstrip .mfc-toolstrip-item:last-child
+{
+	border-right: 1px solid #d4d4d4; 
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.light .mfc-tabstrip .mfc-toolstrip-item:not(:last-child)::after
+{
+    content: '';
+    position: absolute;
+    right:0;
+	width: 1px;
+	border-right: 1px solid #d4d4d4;
+    top: 25%;
+	height: 50%;
+}
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.light .mfc-tabstrip .mfc-toolstrip-item:not(:last-child)::after
+{
+    content: '';
+    position: absolute;
+    bottom:0;
+	width: 50%;
+	border-bottom: 1px solid #d4d4d4;
+    left: 25%;
+	height: 1px;
+}
+.mfc-tabcontrol.light .mfc-tabstrip .mfc-toolstrip-item.mfc-selected
+{
+    color: #bdf07c;
+}
+.mfc-tabcontrol.light > ul
+{
+    border: solid 1px #d4d4d4;
+    background-color: #fff;
+}
+.mfc-tabcontrol.light .mfc-tabbutton-close
+{
+    background-image: url("icons/black/small.png");
+    background-position: -48px 0;
+}
+.mfc-toolstrip.mfc-tabstrip.light {
+    border: none;
+}
+
+.mfc-tabstrip.light ul {
+    background-color: #fff;
+}
+
+.mfc-tabstrip.light .mfc-toolstrip-item:not(.mfc-navbutton).mfc-selected {
+    color: #bdf07c;
+}.mfc-toolstrip.mfc-toolstrip-scrollable.light .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-scrollable.light .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/black/small.png");
+}
+.mfc-toolstrip.light
+{
+    border: 1px solid #d4d4d4;
+}
+.mfc-toolstrip.mfc-toolstrip-horizontal.light .mfc-toolstrip-item
+{
+    padding: 0 8px;
+}
+.mfc-toolstrip.mfc-toolstrip-vertical.light .mfc-toolstrip-item
+{
+    padding: 8px 0;
+}
+.mfc-toolstrip:not(.mfc-tabstrip).light .mfc-toolstrip-item.mfc-active
+{
+    color: #bdf07c;
+}
+.mfc-toolstrip.light .mfc-toolstrip-item.mfc-toolbutton-separator
+{
+    color: #d4d4d4;
+}.mfc-tooltip.light {
+    color: #747474;
+    background-color: #fff;
+    border: solid 1px #d4d4d4;
+}
+
+.mfc-tooltip-right.light::after {
+    border-color: transparent #fff transparent transparent;
+}
+
+.mfc-tooltip-left.light::after {
+    border-color: transparent transparent transparent #fff;
+}
+
+.mfc-tooltip-bottom.light::after {
+    border-color: transparent transparent #fff transparent;
+}
+
+.mfc-tooltip-top.light::after {
+    border-color: #fff transparent transparent transparent;
+}
+
+.mfc-tooltip-right.light::before {
+    border-color: transparent #d4d4d4 transparent transparent;
+}
+
+.mfc-tooltip-left.light::before {
+    border-color: transparent transparent transparent #d4d4d4;
+}
+
+.mfc-tooltip-bottom.light::before {
+    border-color: transparent transparent #d4d4d4 transparent;
+}
+
+.mfc-tooltip-top.light::before {
+    border-color: #d4d4d4 transparent transparent transparent;
+}.mfc-treeview.light 
+{
+    color:  #747474;
+    background-color: #fff;
+    border: 1px solid #d4d4d4;
+}
+.mfc-treeview.light .mfc-treenode-header
+{
+    padding: 10px;
+}
+.mfc-treeview.light .mfc-treenode.mfc-active > .mfc-treenode-header
+{
+    color: #bdf07c;
+}
+.mfc-treeview.light .mfc-treenode .mfc-treenode-image 
+{
+     background-image: url("icons/black/small.png");
+     background-position: -80px 0;
+ }.mfc-windowhost.light
+{
+    border: solid 1px #d4d4d4;  
+}
+.mfc-window.light
+{
+    color: #747474;
+    background: #fff;
+    border: solid 1px #d4d4d4;
+}
+.mfc-windowhost.light .mfc-windowhost-toolstrip,
+.mfc-window.light .mfc-header,
+.mfc-window.light .mfc-footer
+{
+    background-color: #fff;
+    border-color:#d4d4d4;
+    color: #747474;
+}
+.mfc-window.light .mfc-content
+{
+    background-color: #fff;
+}
+.mfc-window.light.mfc-active .mfc-header
+{
+    color: #bdf07c;
+}
+.mfc-window.light .mfc-window-toolstrip .mfc-toolbutton-default a,
+.mfc-windowhost.light .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-windowhost.light .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next,
+.mfc-window.light .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-window.light .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/black/small.png");
+}
+.mfc-windowhost.light .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-show-all a
+{
+    background-image: url("icons/black/show-all.png");
+} 
+.mfc-windowhost.light .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-restore-all a
+{
+    background-image: url("icons/black/restore-all.png");
+} 
+.mfc-windowhost.light .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-minimize-all a
+{
+    background-image: url("icons/black/minimize-all.png");
+} 
+.mfc-windowhost.light .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-close-all a
+{
+    background-image: url("icons/black/close-all.png");
+} 
+.mfc-windowhost.light .mfc-windowhost-toolstrip.mfc-toolstrip-vertical
+{
+    border-right: 1px solid #d4d4d4;
+}
+.mfc-windowhost.light .mfc-toolstrip-wrapper-top > .mfc-toolstrip.mfc-windowhost-toolstrip.mfc-toolstrip-horizontal
+{
+    border-bottom: 1px solid #d4d4d4;
+}
+.mfc-windowhost.light .mfc-toolstrip-wrapper-bottom > .mfc-toolstrip.mfc-windowhost-toolstrip.mfc-toolstrip-horizontal
+{
+    border-top: 1px solid #d4d4d4;
+}
+.mfc-windowhost.light .mfc-windowhost-toolstrip .mfc-toolbutton-default a
+{
+    border: none;
+}
+.mfc-windowhost.light .mfc-windowhost-toolstrip .mfc-toolbutton-default a:hover
+{
+    border-bottom:1px solid #d4d4d4;
+    margin-bottom: 1px;
+} 
+.mfc-windowhost.light .mfc-windowhost-toolstrip .mfc-toolbutton-label
+{
+    border-color:#d4d4d4;
+}
+.mfc-windowhost.light .mfc-windowhost-toolstrip.mfc-maximized-toolstrip .mfc-toolstrip-item.mfc-toolbutton-label.mfc-selected
+{
+   color: #bdf07c;
+}

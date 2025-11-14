@@ -1,0 +1,373 @@
+.mfc-calendar.peach
+{
+    border: solid 1px #E2806C;
+}
+.mfc-calendar-view.peach {
+    color: #E2806C;
+    background-color: #f5d8bc;
+}
+.mfc-calendar-view.peach .mfc-calendar-header,
+.mfc-calendar.peach .mfc-calendar-footer
+{
+    color: #fff;
+    background-color: #E2806C;
+    padding: 2px; 
+}
+.mfc-calendar-view.peach .mfc-calendar-header
+{
+    border-bottom: solid 1px #E2806C;
+}
+.mfc-calendar.peach .mfc-calendar-content
+{
+    padding: 4px;
+    font-size: smaller;
+}
+.mfc-calendar-view.peach .mfc-calendar-content div[data-value]:hover
+{
+    color: #e26b92;
+}
+.mfc-calendar.peach .mfc-calendar-content .mfc-selected,
+.mfc-calendar-view.peach .mfc-calendar-content .mfc-selected
+{
+    border:none;
+    background-color: #e26b92;
+    color: #fff;
+    border-radius: 4px;  
+}
+.mfc-checklistbox.peach 
+{
+    background-color: #fff;
+    color:  #E2806C;
+}
+.mfc-checklistbox.peach .mfc-listview-item.mfc-selected
+{
+    background-color: #e26b92;
+    color: #fff;
+}
+.mfc-checklistpicker.peach > span
+{
+    color: #fff;
+    background-color:  #E2806C;
+}.mfc-dialog.peach 
+{
+    border: 4px solid #E2806C;
+}
+.mfc-dialog.peach .mfc-header
+{
+    color: #E2806C;
+    background-color: #fff;
+}
+.mfc-window.mfc-dialog.peach .mfc-content
+{
+    color: #e26b92;
+    background-color: #fff;
+}
+.mfc-dialog.peach .mfc-dialog-button {
+
+    background-color: #f5d8bc;
+    color: #E2806C;
+    border: solid 1px #E2806C;
+    padding: 10px;
+    border-radius: 5px;
+}
+.mfc-dialog.peach .mfc-dialog-button:hover
+{
+    background-color: #e26b92;
+    color: #fff;
+    border: solid 1px #f6be84;
+}.mfc-listview.peach
+{
+    border-color: #E2806C; 
+    background-color: #E2806C;
+}
+.mfc-listview.peach .mfc-listview-item
+{
+    color:  #fff;
+    border-bottom: solid 1px  #fff;
+    padding: 10px;
+}
+.mfc-listview.peach .mfc-listview-item.mfc-active
+{
+    background-color:#e26b92;
+}       .mfc-menu-content.peach 
+{
+    color:  #fff;
+    background-color: #E2806C;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+}
+.mfc-menu-content.peach .mfc-menuitem-header
+{
+    padding: 10px;
+    border-left: 1px solid #fff;
+    border-radius: 0 5px 5px 0;
+}
+.mfc-menu-content.peach .mfc-menuitem-header > a
+{
+    padding: 5px;
+    color:  #fff;
+}
+.mfc-menu-content.peach .mfc-menuitem.mfc-active > .mfc-menuitem-header
+{
+    background-color:#e26b92;
+}
+.mfc-menu-content.peach .mfc-menuitem .mfc-menuitem-image {
+    background-image: url("icons/black/small.png");
+    background-position: -80px 0;
+}
+.mfc-menu-content.peach.mfc-menuitem-children
+{
+    margin-left: -10px;
+    margin-top: 10px;
+    display: block;
+    visibility: hidden;
+    border-top: 1px solid #fff;
+    border-radius: 0 5px 5px 0;
+    background-color: #f5d8bc;
+    transition: background-color 0.5s linear;
+}
+.mfc-menu-content.peach.mfc-menuitem-expanded.mfc-menuitem-children
+{
+   display: block;
+   visibility: visible;
+   transition-delay:0s;
+   background-color: #E2806C;
+}.mfc-picker.peach
+{
+    outline: none;
+    background-color: #fff;
+    color: #E2806C;
+    border: 1px solid;
+}
+.mfc-picker.peach:focus
+{
+    color: #e26b92;
+}
+.mfc-picker-button.peach
+{
+    background-color: #E2806C;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+.mfc-picker-button.peach:hover
+{
+    background-color: #e26b92;
+}.mfc-tabcontrol.peach .mfc-tabstrip
+{
+    background-color: transparent;
+}
+.mfc-tabcontrol.peach .mfc-tabstrip .mfc-toolstrip-item
+{
+    color: #fff;
+    background-color: #f5d8bc;
+    border-color:#f5d8bc;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    margin-right: 3px;
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.peach .mfc-tabstrip .mfc-toolstrip-item.mfc-selected
+{
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    background-color: #E2806C;
+}
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.peach .mfc-tabstrip .mfc-toolstrip-item.mfc-selected
+{
+    border-radius: 5px 0 0 5px;
+    margin-right: 0;
+    background-color: #E2806C;
+}
+.mfc-tabcontrol.peach > ul
+{
+    border: none;
+    background-color: #E2806C;
+}
+.mfc-tabcontrol.peach .mfc-tabbutton-close
+{
+    background-image: url("icons/white/small.png");
+    background-position: -48px 0;
+}
+.mfc-tabstrip.peach ul  {
+    background-color: #E2806C;
+}
+
+.mfc-tabstrip.peach .mfc-navbutton[data-mfc="mfc-add"] img {
+    content: url("icons/white/add.png");
+}
+
+.mfc-tabstrip.peach .mfc-navbutton[data-mfc="mfc-first"] img {
+    content: url("icons/white/first.png");
+}
+
+.mfc-tabstrip.peach .mfc-navbutton[data-mfc="mfc-prev"] img {
+    content: url("icons/white/prev.png");
+}
+
+.mfc-tabstrip.peach .mfc-navbutton[data-mfc="mfc-next"] img {
+    content: url("icons/white/next.png");
+}
+
+.mfc-tabstrip.peach .mfc-navbutton[data-mfc="mfc-last"] img {
+    content: url("icons/white/last.png");
+}
+
+.mfc-tabstrip.peach .mfc-tabbutton-close {
+    background-image: url("icons/white/remove.png");
+}
+.mfc-toolstrip.mfc-toolstrip-scrollable.peach .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-scrollable.peach .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/white/small.png");
+}
+.mfc-toolstrip.peach
+{
+    color: #fff;
+    background-color:  #E2806C;
+}
+.mfc-toolstrip.mfc-toolstrip-horizontal.peach .mfc-toolstrip-item
+{
+    padding: 0 10px;
+}
+.mfc-toolstrip.mfc-toolstrip-vertical.peach .mfc-toolstrip-item
+{
+    padding: 10px 0;
+}
+.mfc-toolstrip:not(.mfc-tabstrip).peach .mfc-toolstrip-item.mfc-active
+{
+    background-color:#e26b92;
+}
+.mfc-toolstrip.mfc-toolstrip-cues.peach .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-cues.peach .mfc-toolstrip-cue-next
+{
+    border: solid 1px #fff;
+    border-radius: 50%;
+}
+.mfc-tooltip.peach {
+    color: #fff;
+    background-color: #E2806C;
+    border: solid 1px #E2806C;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+}
+.mfc-tooltip-right.peach::after {
+    border-color: transparent #E2806C transparent transparent;
+}
+.mfc-tooltip-left.peach::after {
+    border-color: transparent transparent transparent #E2806C;
+}
+.mfc-tooltip-bottom.peach::after {
+    border-color: transparent transparent #E2806C transparent;
+}
+.mfc-tooltip-top.peach::after {
+    border-color: #E2806C transparent transparent transparent;
+}
+.mfc-tooltip-right.peach::before {
+    border-color: transparent #E2806C transparent transparent;
+}
+.mfc-tooltip-left.peach::before {
+    border-color: transparent transparent transparent #E2806C;
+}
+.mfc-tooltip-bottom.peach::before {
+    border-color: transparent transparent #E2806C transparent;
+}
+.mfc-tooltip-top.peach::before {
+    border-color: #E2806C transparent transparent transparent;
+}.mfc-treeview.peach 
+{
+    color:  #E2806C;
+    background-color: #fff;
+}
+.mfc-treeview.peach .mfc-treenode-header
+{
+    padding: 10px;
+}
+.mfc-treeview.peach .mfc-treenode-header > a
+{
+    padding: 5px;
+    border-radius: 5px;
+}
+.mfc-treeview.peach .mfc-treenode-header:hover > a
+{
+    color: #fff;
+    background-color: #E2806C;
+}
+.mfc-treeview.peach .mfc-treenode .mfc-treenode-image 
+{
+     background-image: url("icons/black/small.png");
+     background-position: -80px 0;
+ }.mfc-windowhost.peach
+{
+    background: #fff;
+    border: solid 1px #E2806C;
+}
+.mfc-window.peach
+{
+    color: #444;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    background: #fff;
+    border: solid 1px #E2806C;
+    border-radius: 4px;
+}
+.mfc-windowhost.peach .mfc-windowhost-toolstrip,
+.mfc-window.peach .mfc-header,
+.mfc-window.peach .mfc-footer
+{
+    color: #fff;
+    background-color: #E2806C;
+    border-color:#fff;
+}
+.mfc-window.peach .mfc-content
+{
+    color: #e26b92;
+    background-color: #f5d8bc;
+}
+.mfc-windowhost.peach .mfc-windowhost-toolstrip .mfc-toolbutton-default a
+{
+    background-color: #E2806C;
+    border: none;
+}
+.mfc-windowhost.peach .mfc-windowhost-toolstrip.mfc-toolstrip-vertical
+{
+    background-color: #f5d8bc;
+}
+.mfc-windowhost.peach .mfc-windowhost-toolstrip.mfc-toolstrip-vertical > div > ul
+{
+    height: auto;
+    position: absolute;
+    bottom: 0;
+}
+.mfc-windowhost.peach .mfc-windowhost-toolstrip.mfc-toolstrip-horizontal
+{
+    background-color: #E2806C;
+    color: #fff;
+}
+.mfc-window.peach .mfc-window-toolstrip .mfc-toolbutton-default a,
+.mfc-windowhost.peach .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-windowhost.peach .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next,
+.mfc-window.peach .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-window.peach .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/white/small.png");
+}
+.mfc-windowhost.peach .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-show-all a
+{
+    background-image: url("icons/white/show-all.png");
+} 
+.mfc-windowhost.peach .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-restore-all a
+{
+    background-image: url("icons/white/restore-all.png");
+} 
+.mfc-windowhost.peach .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-minimize-all a
+{
+    background-image: url("icons/white/minimize-all.png");
+} 
+.mfc-windowhost.peach .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-close-all a
+{
+    background-image: url("icons/white/close-all.png");
+} 
+.mfc-windowhost.peach .mfc-windowhost-toolstrip .mfc-toolbutton-default a:hover
+{
+   background-color:#e26b92;
+}
+.mfc-windowhost.peach .mfc-windowhost-toolstrip.mfc-maximized-toolstrip .mfc-toolstrip-item.mfc-toolbutton-label.mfc-selected
+{
+    background-color:#e26b92;
+} 

@@ -1,0 +1,1435 @@
+.mfc-tooltip{
+    position: absolute !important;
+    color: #000000;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 0px;
+    max-width: 300px;
+    word-wrap: break-word;
+    /*pointer-events: none;*/
+}
+.mfc-tooltip.mfc-hidden
+{
+    display: block !important;
+    visibility: hidden;
+    /*height: 0px !important;*/
+    opacity: 0;
+    transition:visibility 0s linear 0.2s,opacity 0.2s linear;
+}
+.mfc-tooltip:not(.mfc-hidden)
+{
+    display: block !important;
+    visibility: visible;
+    opacity: 1;
+    transition-delay:0s;
+    transition: opacity 0.2s linear;
+}
+.mfc-tooltip-right::after {
+    position: absolute;
+    content: " ";
+    margin-top: -4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+    top: 50%;
+    right: 100%;
+} 
+
+.mfc-tooltip-right::before {
+    position: absolute;
+    content: " ";
+    margin-top: -5px; /*one less than after, as the border of the tooltip is 1px*/
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+    top: 50%;
+    right: 100%;
+}
+
+.mfc-tooltip-left::after {
+    position: absolute;
+    content: " ";
+    margin-top: -4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+    top: 50%;
+    left: 100%;
+}
+
+.mfc-tooltip-left::before {
+    position: absolute;
+    content: " ";
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+    top: 50%;
+    left: 100%;
+}
+
+.mfc-tooltip-bottom::after {
+    position: absolute;
+    content: " ";
+    margin-left: -4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    bottom: 100%;
+    left: 50%;
+}
+
+.mfc-tooltip-bottom::before {
+    position: absolute;
+    content: " ";
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    bottom: 100%;
+    left: 50%;
+}
+
+.mfc-tooltip-top::after {
+    position: absolute;
+    content: " ";
+    margin-left: -4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    top: 100%;
+    left: 50%;
+}
+
+.mfc-tooltip-top::before {
+    position: absolute;
+    content: " ";
+    margin-left: -5px; 
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    top: 100%;
+    left: 50%;
+}
+.mfc-listview {
+    display: inline-block;
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.mfc-listview>ul {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.mfc-listview.mfc-listview-horizontal {
+    /* width:100%;*/
+    overflow-x: auto;
+}
+
+.mfc-listview.mfc-listview-vertical {
+    /* height:100%;   */
+    overflow-y: auto;
+}
+
+.mfc-listview.mfc-listview-horizontal>ul {
+    height: 100%;
+    overflow-x: auto;
+}
+
+.mfc-listview.mfc-listview-vertical>ul {
+    flex-direction: column;
+}
+
+.mfc-listview .mfc-listview-item {
+    position: relative;
+    user-select: none;
+    -moz-user-select: -moz-none;
+}
+
+.mfc-listview .mfc-listview-item>div {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1 1 100%;
+    align-items: center;
+    height: 100%;
+}
+
+.mfc-listview .mfc-listview-item a {
+    cursor: pointer;
+}
+
+.mfc-listview .mfc-listview-item img {
+    pointer-events: none;
+    vertical-align: middle;
+}
+
+.mfc-listview .mfc-listview-item .mfc-templateditem {
+    width: 100%;
+    height: 100%;
+}
+
+.mfc-listview.mfc-listview-collapsible ul {
+    height: 0;
+}
+
+.mfc-listview.mfc-listview-collapsible:hover ul {
+    height: 100%;
+}
+
+.mfc-listview.mfc-listview-collapsible::after {
+    content: " ";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.mfc-listview.mfc-listview-horizontal.mfc-listview-collapsible::after {
+    top: 0;
+    left: 50%;
+    border-color: #fff transparent transparent transparent;
+}
+
+.mfc-listview.mfc-listview-vertical.mfc-listview-collapsible::after {
+    top: 50%;
+    right: 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+.mfc-listview .mfc-listview-item.mfc-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mfc-listview .mfc-listview-item.mfc-disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.mfc-listview .mfc-dropHolder {
+    position: relative;
+}
+
+.mfc-listview .mfc-dropHolder::after {
+    content: " ";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.mfc-listview.mfc-listview-horizontal .mfc-dropHolder::after {
+    left: -5px;
+    top: 0;
+    border-color: #000 transparent transparent transparent;
+}
+
+.mfc-listview.mfc-listview-vertical .mfc-dropHolder::after {
+    left: 0;
+    top: -5px;
+    border-color: transparent transparent transparent #000;
+}
+
+.mfc-listview .mfc-indent {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+.mfc-container-horizontal
+{
+    position: relative;
+    height:100%;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+}
+.mfc-container-vertical
+{
+    position: relative;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+.mfc-hidden
+{
+    display: none !important;
+}
+.mfc-scrollable
+{
+    overflow:auto;
+}
+.mfc-inactive
+{
+    opacity: 0.5;
+}
+.mfc-transparent-text
+{
+    color: transparent !important;
+}
+.mfc-invalid
+{
+    color: red;
+}
+.mfc-window.mfc-dialog
+{
+    z-index: 1000;
+    text-align: center;
+}
+.mfc-dialog .mfc-dialog-message
+{
+    padding: 10px;
+    white-space: nowrap;
+}
+.mfc-dialog .mfc-dialog-message:nth-child(even)
+{
+    padding-top:0;
+}
+.mfc-dialog .mfc-dialog-button {
+    display: inline-block;
+    padding: 2px;
+    margin: 2px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+}
+.mfc-attr
+{
+    color: red;
+    background-color: #fff;
+    display: block;
+    position: fixed;
+    top:10px;
+    right:10px;
+}
+/*.mfc-flex-wrap
+{
+    flex-wrap:wrap;
+}
+.mfc-flex-wrap > div
+{
+    flex-grow: 0 !important;
+}*/
+.mfc-menu
+{
+    display:inline-block;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+}
+.mfc-menu-content
+{
+    margin: 0;
+    padding: 0;
+    list-style-type:none;
+}
+.mfc-menu-content .mfc-indent
+{
+    display:inline-block;
+    width:20px;
+    height:16px;
+}
+.mfc-menu-content .mfc-templateditem
+{
+    display:inline-block;
+}
+.mfc-menu-content .mfc-menuitem img
+{
+    pointer-events: none;
+    flex: 0 0 auto;
+}
+.mfc-menu-content .mfc-menuitem .mfc-menuitem-image {
+     width: 16px;
+     height: 16px;
+     background-image: url("icons/black/small.png");
+     background-position: -80px 0;
+ }
+ .mfc-menu-content.mfc-menuitem-children
+ {
+     display: none;
+     position: absolute;
+     z-index: 1;
+ }
+ .mfc-menu-content .mfc-menuitem-expanded > .mfc-menuitem-header .mfc-menuitem-image
+ {
+     background-position: -96px 0;
+ }
+ .mfc-menu-content.mfc-menuitem-expanded.mfc-menuitem-children
+ {
+    display: block;
+ }
+ .mfc-menu-content .mfc-menuitem-header
+ {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    -moz-user-select: -moz-none;
+    display: flex;
+    align-items: center;
+    /*justify-content: space-between;*/ /*flex on image and a*/
+ }
+ .mfc-menu-content .mfc-menuitem-header > a
+ {
+     text-decoration: none;
+     flex: 1 1 auto;
+ }
+ .mfc-menu-content .mfc-disabled > .mfc-menuitem-header
+{
+    opacity: 0.65; 
+    cursor: not-allowed;
+} 
+.mfc-context-menu
+{
+    position: absolute !important;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+}
+.mfc-context-menu
+{
+    display: block !important;
+    visibility: visible;
+    opacity: 1;
+    transition-delay:0s;
+    transition: opacity 0.2s linear;
+}
+.mfc-windowhost div,
+.mfc-window div,
+.mfc-window {
+    box-sizing: border-box;
+}
+
+.mfc-windowhost {
+    position: relative;
+}
+
+.mfc-windowhost>.mfc-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.mfc-windowhost>.mfc-wrapper,
+.mfc-windowhost>.mfc-wrapper .mfc-content {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mfc-windowhost,
+.mfc-window {
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.mfc-window {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    cursor: default;
+    user-select: none;
+    -moz-user-select: -moz-none;
+}
+
+.mfc-window .mfc-header,
+.mfc-window .mfc-footer {
+    flex: 0 0 auto;
+    text-align: left;
+}
+
+.mfc-window .mfc-content {
+    flex: 1 1 auto;
+}
+
+.mfc-window .mfc-resize-wrapper {
+    flex: 0 0 5px;
+}
+
+.mfc-window .mfc-resize.mfc-resize-left,
+.mfc-window .mfc-resize.mfc-resize-right,
+.mfc-window .mfc-resize.mfc-resize-topleft,
+.mfc-window .mfc-resize.mfc-resize-topright,
+.mfc-window .mfc-resize.mfc-resize-bottomleft,
+.mfc-window .mfc-resize.mfc-resize-bottomright {
+    flex: 0 0 5px;
+    width: 5px;
+}
+
+.mfc-window .mfc-resize.mfc-resize-top,
+.mfc-window .mfc-resize.mfc-resize-bottom {
+    flex: 1 1 100%;
+}
+
+.mfc-window:not(.mfc-resizable) .mfc-resize-wrapper,
+.mfc-window:not(.mfc-resizable) .mfc-resize {
+    display: none;
+}
+
+.mfc-window.mfc-resizable .mfc-resize.mfc-resize-top,
+.mfc-window.mfc-resizable .mfc-resize.mfc-resize-bottom {
+    cursor: n-resize;
+}
+
+.mfc-window.mfc-resizable .mfc-resize.mfc-resize-left,
+.mfc-window.mfc-resizable .mfc-resize.mfc-resize-right {
+    cursor: w-resize;
+}
+
+.mfc-window.mfc-resizable .mfc-resize.mfc-resize-topleft,
+.mfc-window.mfc-resizable .mfc-resize.mfc-resize-bottomright {
+    cursor: nw-resize;
+}
+
+.mfc-window.mfc-resizable .mfc-resize.mfc-resize-topright,
+.mfc-window.mfc-resizable .mfc-resize.mfc-resize-bottomleft {
+    cursor: ne-resize;
+}
+
+.mfc-window.mfc-draggable .mfc-header {
+    cursor: move;
+}
+
+.mfc-window .mfc-header {
+    display: flex;
+}
+
+.mfc-window .mfc-header>.mfc-toolstrip-wrapper,
+.mfc-window .mfc-header .mfc-window-title {
+    width: 100%;
+}
+
+.mfc-window .mfc-header .mfc-window-title a {
+    margin: 0;
+    margin-left: 4px;
+}
+
+.mfc-window.mfc-minimized .mfc-resize-wrapper,
+.mfc-window.mfc-minimized .mfc-resize-left,
+.mfc-window.mfc-minimized .mfc-resize-right,
+.mfc-window.mfc-minimized .mfc-content,
+.mfc-window.mfc-minimized .mfc-footer {
+    display: none;
+}
+
+.mfc-window.mfc-minimized {
+    height: auto !important;
+    width: auto !important;
+}
+
+.mfc-window.mfc-maximized {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.mfc-windowhost .mfc-window.mfc-maximized {
+    border: none;
+    box-shadow: none;
+}
+
+.mfc-windowhost .mfc-window.mfc-maximized .mfc-header,
+.mfc-windowhost .mfc-window.mfc-maximized .mfc-footer,
+.mfc-windowhost .mfc-window.mfc-maximized .mfc-resize-wrapper,
+.mfc-windowhost .mfc-window.mfc-maximized .mfc-resize-left,
+.mfc-windowhost .mfc-window.mfc-maximized .mfc-resize-right {
+    display: none;
+}
+
+.mfc-window iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.mfc-window .mfc-overlay-resize {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mfc-window.mfc-modal {
+    z-index: 2;
+}
+
+.mfc-overlay-modal,
+.mfc-overlay-disabled,
+.mfc-overlay-interaction {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.mfc-overlay-modal {
+    position: fixed;
+}
+
+.mfc-overlay-disabled,
+.mfc-overlay-interaction {
+    position: absolute;
+}
+
+.mfc-overlay-interaction {
+    background-color: transparent;
+}
+
+.mfc-toolstrip.mfc-windowhost-toolstrip .mfc-toolbutton-default a {
+    padding: 2px;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    margin: 2px;
+}
+
+.mfc-toolstrip.mfc-window-toolstrip .mfc-toolbutton-default a {
+    background-image: url("icons/black/small.png");
+    padding: 2px;
+    height: 14px;
+    width: 14px;
+    display: block;
+}
+
+.mfc-toolstrip.mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-show-all a {
+    background: url("icons/black/show-all.png") no-repeat center center;
+}
+
+.mfc-toolstrip.mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-restore-all a {
+    background: url("icons/black/restore-all.png") no-repeat center center;
+}
+
+.mfc-toolstrip.mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-minimize-all a {
+    background: url("icons/black/minimize-all.png") no-repeat center center;
+}
+
+.mfc-toolstrip.mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-close-all a {
+    background: url("icons/black/close-all.png") no-repeat center center;
+}
+
+.mfc-toolstrip.mfc-window-toolstrip .mfc-toolstrip-item.mfc-toolbutton-pin a {
+    background-position: -80px 0;
+}
+
+.mfc-pinned .mfc-toolstrip.mfc-window-toolstrip .mfc-toolstrip-item.mfc-toolbutton-pin a {
+    background-position: -96px 0;
+}
+
+.mfc-toolstrip.mfc-window-toolstrip .mfc-toolstrip-item.mfc-toolbutton-refresh a {
+    background-position: -64px 0px;
+}
+
+.mfc-toolstrip.mfc-window-toolstrip .mfc-toolstrip-item.mfc-toolbutton-minimize a {
+    background-position: 0px 0px;
+}
+
+.mfc-minimized .mfc-toolstrip.mfc-window-toolstrip .mfc-toolstrip-item.mfc-toolbutton-minimize a {
+    background-position: -32px 0;
+}
+
+.mfc-toolstrip.mfc-window-toolstrip .mfc-toolstrip-item.mfc-toolbutton-maximize a {
+    background-position: -16px 0;
+}
+
+.mfc-maximized .mfc-toolstrip.mfc-window-toolstrip .mfc-toolstrip-item.mfc-toolbutton-maximize a {
+    background-position: -32px 0;
+}
+
+.mfc-toolstrip.mfc-window-toolstrip .mfc-toolstrip-item.mfc-toolbutton-close a {
+    background-position: -48px 0;
+}
+
+.mfc-windowhost .mfc-toolstrip.mfc-windowhost-toolstrip .mfc-toolbutton-label {
+    padding: 0 10px;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+.mfc-windowhost .mfc-toolstrip-wrapper-left {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    z-index: 99999;
+}
+
+.mfc-windowhost .mfc-toolstrip-wrapper-left.mfc-toolstrip-wrapper-collapsible {
+    position: absolute;
+}
+.mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-image: url("icons/black/small.png");
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-horizontal.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next {
+    top: 50%;
+    background-position: -80px -2px;
+    margin-top: -8px;
+}
+
+.mfc-toolstrip.mfc-toolstrip-vertical.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-vertical.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next {
+    left: 50%;
+    background-position: -100px -2px;
+    margin-left: -8px;
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev {
+    left: 0;
+}
+
+.mfc-toolstrip.mfc-toolstrip-vertical.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev {
+    top: 0;
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next {
+    right: 0;
+    background-position: -80px -2px;
+}
+
+.mfc-toolstrip.mfc-toolstrip-vertical.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next {
+    bottom: 0;
+    background-position: -100px -2px;
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-vertical.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev {
+    transform: rotate(180deg);
+}
+
+.mfc-toolstrip {
+    position: relative;
+}
+
+.mfc-toolstrip>div {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal:not(.mfc-toolstrip-scrollable)>div {
+    height: 100%;
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal.mfc-toolstrip-scrollable>div {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+}
+
+.mfc-toolstrip.mfc-toolstrip-vertical:not(.mfc-toolstrip-scrollable)>div {
+    height: 100%;
+}
+
+.mfc-toolstrip.mfc-toolstrip-vertical.mfc-toolstrip-scrollable>div {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+}
+
+.mfc-toolstrip>div>ul {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    white-space: nowrap;
+    height: 100%;
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal>div>ul {
+    height: 100%;
+    display: flex;
+}
+
+.mfc-toolstrip .mfc-toolstrip-item {
+    user-select: none;
+    -moz-user-select: -moz-none;
+    position: relative;
+}
+
+.mfc-toolstrip .mfc-toolstrip-item img {
+    pointer-events: none;
+}
+
+.mfc-toolstrip .mfc-toolstrip-item>div {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1 1 100%;
+    align-items: center;
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal .mfc-toolstrip-item>div {
+    height: 100%;
+}
+
+.mfc-toolstrip.mfc-toolstrip-vertical .mfc-toolstrip-item>div {
+    width: 100%;
+    /*writing-mode: vertical-lr;*/
+}
+
+.mfc-toolstrip .mfc-toolstrip-item a {
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    position: relative;
+    /* text-align: center;
+    margin: auto; */
+}
+
+.mfc-toolstrip .mfc-toolstrip-item.mfc-toolbutton-separator {
+    padding: 0 !important;
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal .mfc-toolstrip-item.mfc-toolbutton-separator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+.mfc-toolstrip.mfc-toolstrip-vertical .mfc-toolstrip-item.mfc-toolbutton-separator::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal.mfc-toolstrip-collapsible {
+    height: 10px;
+    transition: height 500ms;
+}
+
+.mfc-toolstrip.mfc-toolstrip-vertical.mfc-toolstrip-collapsible {
+    width: 10px;
+    transition: width 500ms ease-in-out;
+}
+
+.mfc-toolstrip.mfc-toolstrip-collapsible ul {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.mfc-toolstrip.mfc-toolstrip-collapsible::after {
+    content: " ";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.mfc-toolstrip.mfc-toolstrip-horizontal.mfc-toolstrip-collapsible::after {
+    top: 0;
+    left: 50%;
+    border-color: #fff transparent transparent transparent;
+}
+
+.mfc-toolstrip.mfc-toolstrip-vertical.mfc-toolstrip-collapsible::after {
+    top: 50%;
+    right: 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+.mfc-toolstrip .mfc-dropHolder {
+    position: relative;
+    border-right: 2px dotted;
+}
+
+.mfc-toolstrip .mfc-toolstrip-item.mfc-disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+.mfc-tabstrip {
+    overflow-x: hidden;
+}
+
+.mfc-tabstrip>div {
+    display: flex;
+}
+
+.mfc-tabstrip ul
+{
+    display: inline-flex;
+    background-color: #fff; /*opaque*/
+}
+
+.mfc-tabstrip .mfc-toolstrip-item.mfc-toolbutton-label
+{
+    padding: 0 4px;
+}
+
+.mfc-tabstrip .mfc-toolstrip-item:not(.mfc-navbutton) img,
+.mfc-drag-item img {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+.mfc-tabstrip .mfc-navbutton {
+    padding: 0 !important;
+}
+
+.mfc-tabstrip .mfc-navbutton img {
+    width: 10px;
+    height: 10px;
+    padding: 0 2px;
+}
+
+.mfc-tabstrip .mfc-navbutton[data-mfc="mfc-add"] img {
+    content: url("icons/black/add.png");
+}
+
+.mfc-tabstrip .mfc-navbutton[data-mfc="mfc-first"] img {
+    content: url("icons/black/first.png");
+}
+
+.mfc-tabstrip .mfc-navbutton[data-mfc="mfc-prev"] img {
+    content: url("icons/black/prev.png");
+}
+
+.mfc-tabstrip .mfc-navbutton[data-mfc="mfc-next"] img {
+    content: url("icons/black/next.png");
+}
+
+.mfc-tabstrip .mfc-navbutton[data-mfc="mfc-last"] img {
+    content: url("icons/black/last.png");
+}
+
+.mfc-tabstrip .mfc-tabbutton-close {
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    background-image: url("icons/black/remove.png");
+    cursor: pointer;
+    margin-left: 4px;
+}
+
+.mfc-tabstrip .mfc-toolstrip-item.mfc-selected
+{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.mfc-tabcontrol {
+    position: relative;
+    display: flex;
+}
+
+.mfc-tabcontrol.mfc-tabcontrol-vertical {
+    flex-direction: column;
+}
+
+.mfc-tabcontrol .mfc-toolstrip-item {
+    box-sizing: border-box;
+}
+
+.mfc-tabcontrol.mfc-tabcontrol-vertical .mfc-tabstrip .mfc-toolstrip-item {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+.mfc-tabcontrol.mfc-tabcontrol-horizontal .mfc-tabstrip .mfc-toolstrip-item {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+
+.mfc-tabcontrol .mfc-tabstrip .mfc-toolstrip-item>div {
+    padding: 0 5px;
+    justify-content: space-around;
+}
+
+.mfc-tabcontrol.mfc-tabcontrol-vertical .mfc-tabstrip .mfc-toolstrip-item:first-child {
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+
+.mfc-tabcontrol.mfc-tabcontrol-horizontal .mfc-tabstrip .mfc-toolstrip-item:first-child {
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.mfc-tabcontrol>ul {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-width: 1px;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+.mfc-tabcontrol .mfc-tabpage,
+.mfc-tabcontrol .mfc-tabpage-content>.mfc-content {
+    width: 100%;
+    height: 100%;
+}
+
+.mfc-tabcontrol .mfc-tabpage-content {
+    /* display: block;*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /*  overflow: auto;*/
+}
+
+.mfc-tabcontrol .mfc-toolstrip-item.mfc-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mfc-tabcontrol .mfc-tabbutton-close {
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    background-image: url("icons/black/small.png");
+    background-position: -48px 0;
+    cursor: pointer;
+}
+
+.mfc-tabcontrol.mfc-tabcontrol-horizontal .mfc-tabbutton-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.mfc-treeview {
+    display: inline-block;
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.mfc-treeview>ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.mfc-treeview .mfc-indent {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.mfc-treeview .mfc-templateditem {
+    display: inline-block;
+}
+
+.mfc-treeview .mfc-treenode img {
+    pointer-events: none;
+    vertical-align: middle;
+}
+
+.mfc-treeview .mfc-treenode .mfc-treenode-image {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 4px;
+    background-image: url("icons/black/small.png");
+    background-position: -80px 0;
+    cursor: pointer;
+}
+
+.mfc-treeview .mfc-treenode>.mfc-treenode-children {
+    list-style: none;
+    padding: 0;
+    display: none;
+}
+
+.mfc-treeview .mfc-treenode-expanded>.mfc-treenode-header>.mfc-treenode-image {
+    background-position: -96px 0;
+}
+
+.mfc-treeview .mfc-treenode-expanded>.mfc-treenode-children {
+    list-style: none;
+    padding: 0;
+    display: block;
+}
+
+.mfc-treeview .mfc-treenode-header {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    -moz-user-select: -moz-none;
+    position: relative;
+}
+
+.mfc-treeview .mfc-selected>.mfc-treenode-header {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mfc-treeview .mfc-disabled>.mfc-treenode-header {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.mfc-treeview .mfc-dropHolder {
+    position: relative;
+}
+
+.mfc-treeview .mfc-dropHolder::after {
+    content: " ";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    left: 0;
+    top: -5px;
+    border-color: transparent transparent transparent #000;
+}
+.mfc-calendar {
+    display: inline-block;
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.mfc-calendar>div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .mfc-calendar ul {
+    list-style-type: none;
+} */
+
+.mfc-calendar .mfc-calendar-footer {
+    font-size: smaller;
+}
+
+.mfc-calendar-view {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    /*  overflow: auto;*/
+}
+
+.mfc-calendar div {
+    box-sizing: border-box;
+}
+
+.mfc-calendar .mfc-calendar-view {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /*flex: 1;*/
+}
+
+.mfc-calendar-view .mfc-calendar-header,
+.mfc-calendar-view .mfc-calendar-footer {
+    white-space: nowrap;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-around;
+    /* padding:5px;*/
+}
+
+.mfc-toolstrip.mfc-calendar-toolstrip .mfc-toolbutton-default a {
+    padding: 2px;
+    width: 14px;
+    text-align: center;
+}
+
+.mfc-calendar-view .mfc-calendar-view-title {
+    flex: 1 1 100%;
+    overflow: hidden;
+}
+
+.mfc-calendar-view .mfc-calendar-view-title a {
+    margin: auto;
+}
+
+.mfc-calendar-view .mfc-calendar-content {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mfc-calendar-view.mfc-calendar-dayview .mfc-calendar-content {
+    overflow: auto;
+}
+
+.mfc-calendar-view.mfc-calendar-dayview .mfc-calendar-content div[data-value] {
+    padding: 4px;
+    margin: 0 4px;
+}
+
+.mfc-calendar-view.mfc-calendar-dayview .mfc-calendar-content div[data-value]:nth-child(even) {
+    /* border-left: 1px solid;*/
+}
+
+/*.mfc-calendar-view .mfc-calendar-content.mfc-flex-wrap
+{
+    flex-direction: row;
+    flex-wrap: wrap;
+}*/
+.mfc-calendar-view .mfc-calendar-content>div {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    text-align: center;
+    flex: 1 1 100%;
+    position: relative;
+}
+
+.mfc-calendar-view .mfc-calendar-content>div>div {
+    flex: 1 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* padding: 1px;*/
+    cursor: pointer;
+}
+
+.mfc-calendar-view .mfc-calendar-content .mfc-selected {
+    border-width: 1px;
+    border-style: solid;
+    padding: 0;
+}
+.mfc-picker-wrapper {
+    display: inline-flex;
+    /*align-items: center;*/
+    /* position: relative; */
+    /*overflow: hidden;*/
+    white-space: nowrap;
+    box-sizing: border-box;
+    /* padding: 0 4px;*/
+    vertical-align: middle;
+}
+
+.mfc-picker-button {
+    position: absolute;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+}
+
+.mfc-picker-wrapper .mfc-picker-button {
+    position: initial;
+    flex: 0 0 auto;
+}
+
+.mfc-picker-wrapper input {
+    flex: 1 1 auto;
+    order: 0;
+}
+
+.mfc-picker-button::after {
+    content: "\25bc";
+}
+
+.mfc-picker-button-inline {
+    transform: scale(0.7);
+}
+
+.mfc-picker-button-inline.mfc-picker-button-clear {
+    order: 1;
+}
+
+.mfc-picker-button-clear::after {
+    content: "\2715";
+}
+
+.mfc-picker-button-inline+.mfc-picker-button-clear.mfc-picker-button-inline {
+    transform: scale(0.7) translate(30%)
+}
+
+.mfc-picker-wrapper .mfc-picker-button-inline+.mfc-picker-button-clear.mfc-picker-button-inline {
+    transform: scale(0.7) translate(30%) translate(-150%, 0)
+}
+
+.mfc-dropdown {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mfc-dropdown.mfc-tooltip {
+    border-radius: 0 !important;
+    border-width: 1px;
+    border-style: solid;
+    max-width: none;
+}
+
+.mfc-dropdown.mfc-tooltip::before,
+.mfc-dropdown.mfc-tooltip::after {
+    border: none;
+}
+
+.mfc-dropdown.mfc-tooltip.mfc-hidden {
+    transform: translateY(-2em);
+    transition: all 0s, visibility 0s linear 0.3s;
+}
+
+.mfc-dropdown.mfc-tooltip:not(.mfc-hidden) {
+    transform: translateY(0%);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.mfc-dropdown .mfc-calendar,
+.mfc-dropdown .mfc-checklistbox {
+    display: block !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+.mfc-picker.mfc-imagepicker {
+    /*display: inline-block;
+    position: relative; */
+    /*  display: flex;*/
+    flex: 1 1 auto;
+    order: 0;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fdfdfd;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+.mfc-dropdown .mfc-inline-image {
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    transform: scale(0.8);
+}
+
+.mfc-picker.mfc-checklistpicker {
+    flex: 1 1 auto;
+    overflow: hidden;
+    order: 0;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.mfc-picker.mfc-checklistpicker>span {
+    display: inline-block;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 2px;
+    font-size: smaller;
+}
+
+.mfc-dropdown .mfc-listview {
+    display: block !important;
+    border-radius: 0 !important;
+    border: none !important;
+}
+
+.mfc-dropdown .mfc-listview .mfc-listview-item,
+.mfc-dropdown .mfc-listview .mfc-listview-item.mfc-selected {
+    background-color: #fff !important;
+}
+
+.mfc-dropdown .mfc-listview .mfc-listview-item.mfc-active,
+.mfc-dropdown .mfc-listview .mfc-listview-item.mfc-active.mfc-selected {
+    border: none !important;
+    background-color: rgba(125, 125, 125, 0.3) !important
+}
+
+/*.mfc-dropdown .mfc-listview .mfc-listview-item.mfc-selected
+{
+    background-color: #fff !important;
+    background-color:rgba(255,255,255,0.1) !important
+}*/
+.mfc-checklistbox {
+    display: inline-block;
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.mfc-checklistbox>ul {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.mfc-checklistbox.mfc-checklistbox-horizontal {
+    /* width:100%;*/
+    overflow-x: auto;
+}
+
+.mfc-checklistbox.mfc-checklistbox-vertical {
+    /* height:100%;   */
+    overflow-y: auto;
+}
+
+.mfc-checklistbox.mfc-checklistbox-horizontal>ul {
+    height: 100%;
+    overflow-x: auto;
+}
+
+.mfc-checklistbox.mfc-checklistbox-vertical>ul {
+    flex-direction: column;
+}
+
+.mfc-checklistbox .mfc-listview-item.mfc-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mfc-checklistbox .mfc-listview-item.mfc-disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.mfc-checklistbox .mfc-listview-item input.mfc-hidden+a {
+    margin-left: 4px;
+}

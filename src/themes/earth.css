@@ -1,0 +1,362 @@
+.mfc-calendar.earth
+{
+    border: solid 1px #5a79a5;
+    border-radius: 3px;
+}
+.mfc-calendar-view.earth {
+    color: #46697d;
+    background-color: #f2ebcf;   
+}
+.mfc-calendar-view.earth .mfc-calendar-header
+{
+    color: #46697d;
+    background-color: #c5b28a;   
+    padding: 2px;
+}
+.mfc-calendar.earth .mfc-calendar-footer
+{
+    color: #f2ebcf;
+    background-color: #46697d;   
+    padding: 6px;
+}
+.mfc-calendar.earth .mfc-calendar-content
+{
+    padding: 4px;
+    font-size: smaller;
+}
+.mfc-calendar-view.earth .mfc-calendar-content div[data-value]:hover
+{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.mfc-calendar.earth .mfc-calendar-content .mfc-selected,
+.mfc-calendar-view.earth .mfc-calendar-content .mfc-selected
+{
+    border:none;
+    background-color: #a3c686;
+    color: #fff;
+    border-radius: 4px;  
+}.mfc-checklistbox.earth 
+{
+    color: #46697d;
+    background-color:  #f2ebcf;
+}
+.mfc-checklistbox.earth .mfc-listview-item.mfc-selected
+{
+    background-color: #a3c686;
+}
+.mfc-checklistpicker.earth > span
+{
+    color: #46697d;
+    background-color:  #f2ebcf;
+}.mfc-dialog.earth .mfc-dialog-buttons
+{
+    text-align: right;
+}
+.mfc-dialog.earth .mfc-dialog-button {
+    color: #fff;
+    background-color: #c5b28a;
+    border: solid 1px #46697d; 
+    padding: 10px;
+    margin: 10px 15px 10px -5px;
+}
+.mfc-dialog.earth .mfc-dialog-button:hover
+{
+    background-color: #a3c686;
+}.mfc-listview.earth 
+{
+    color:  #46697d;
+    background-color:  #c5b28a;
+}
+.mfc-listview.earth .mfc-listview-item
+{
+    border-bottom: solid 1px #46697d;
+    padding: 10px;
+}
+.mfc-listview.earth .mfc-listview-item.mfc-active
+{
+    background-color: #46697d;
+    color: #c5b28a;
+}
+.mfc-menu-content.earth 
+{
+    color:  #46697d;
+    background-color: #c5b28a;
+    border-left: 4px solid #46697d;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+}
+.mfc-menu-content.earth .mfc-menuitem-header
+{
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+}
+.mfc-menu-content.earth .mfc-menuitem-header > a
+{
+    padding: 5px;
+    color:  #46697d;
+}
+.mfc-menu-content.earth .mfc-menuitem.mfc-active > .mfc-menuitem-header
+{
+    background-color:  #46697d;
+}
+.mfc-menu-content.earth .mfc-menuitem.mfc-active > .mfc-menuitem-header > a
+{
+    color:  #c5b28a;
+}
+.mfc-menu-content.earth .mfc-menuitem-header .mfc-menuitem-image
+{
+    background: none;
+}
+.mfc-menu-content.earth .mfc-menuitem-header .mfc-menuitem-image::after
+{
+    content: " ";
+    position: absolute;
+    right: 5px;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+}
+.mfc-menu-content.earth .mfc-menuitem-expanded > .mfc-menuitem-header .mfc-menuitem-image::after
+{
+    transform: rotate(-45deg);
+}
+.mfc-menu-content.earth.mfc-menuitem-expanded.mfc-menuitem-children
+{
+   animation: fromLeft 300ms ease-out;
+}
+@keyframes fromLeft
+{
+    from { 
+        transform: translateX(-20%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}.mfc-picker.earth
+{
+    outline: none;
+    background-color: #fff;
+    color: #46697d;
+    border: 1px solid;
+}
+.mfc-picker.earth:focus
+{
+    border-color: #a3c686;
+}
+.mfc-picker-button.earth
+{
+    background-color: #c5b28a;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+.mfc-picker-button.earth:hover
+{
+    background-color: #a3c686;
+}
+.mfc-dropdown.earth
+{
+    border-color: #46697d; 
+}
+.mfc-tabcontrol.earth .mfc-tabstrip .mfc-toolstrip-item
+{
+    color: #46697d;
+    background-color:  #fff;
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.earth .mfc-tabstrip .mfc-toolstrip-item
+{
+    border-top: 1px solid #f2ebcf;
+    border-right: 1px solid #f2ebcf; 
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.earth .mfc-tabstrip .mfc-toolstrip-item:first-child
+{
+    border-left: 1px solid #f2ebcf;
+} 
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.earth .mfc-tabstrip .mfc-toolstrip-item
+{
+    border-bottom: 1px solid #f2ebcf;
+    border-left: 1px solid #f2ebcf; 
+}
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.earth .mfc-tabstrip .mfc-toolstrip-item:first-child
+{
+    border-top: 1px solid #f2ebcf;
+}
+.mfc-tabcontrol.earth .mfc-tabstrip .mfc-toolstrip-item.mfc-selected
+{
+    background-color: #f2ebcf;
+    color: #46697d;
+}
+.mfc-tabcontrol.earth > ul
+{
+    border: none;
+    background-color: #f2ebcf;
+}
+.mfc-tabcontrol.earth .mfc-tabbutton-close
+{
+    background-image: url("icons/black/small.png");
+    background-position: -48px 0;
+}.mfc-tabstrip.earth ul  {
+    background-color:  #f2ebcf;
+}
+.mfc-toolstrip.mfc-toolstrip-scrollable.earth .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-scrollable.earth .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/black/small.png");
+}
+.mfc-toolstrip.earth
+{
+    color: #46697d;
+    background-color:  #f2ebcf;
+}
+.mfc-toolstrip.earth .mfc-toolstrip-item
+{
+    padding: 0 10px;
+}
+.mfc-toolstrip:not(.mfc-tabstrip).earth .mfc-toolstrip-item.mfc-active
+{
+    background-color: #46697d;
+    color: #c5b28a;
+}
+.mfc-toolstrip.earth.mfc-toolstrip-horizontal.mfc-toolstrip-collapsible::after {
+    border-color: #f2ebcf transparent transparent transparent;
+}
+.mfc-toolstrip.earth.mfc-toolstrip-vertical.mfc-toolstrip-collapsible::after {
+    border-color: transparent #f2ebcf transparent transparent;
+}
+.mfc-windowhost.earth .mfc-toolstrip.mfc-toolstrip-collapsible.mfc-expanded::after
+{
+    border: none;
+}.mfc-tooltip.earth {
+    color:  #46697d;
+    background-color:  #c5b28a;
+    border: solid 1px  #d4d4d4;
+}
+
+.mfc-tooltip-right.earth::after {
+    border-color: transparent #c5b28a transparent transparent;
+}
+
+.mfc-tooltip-left.earth::after {
+    border-color: transparent transparent transparent #c5b28a;
+}
+
+.mfc-tooltip-bottom.earth::after {
+    border-color: transparent transparent #c5b28a transparent;
+}
+
+.mfc-tooltip-top.earth::after {
+    border-color: #c5b28a transparent transparent transparent;
+}
+
+.mfc-tooltip-right.earth::before {
+    border-color: transparent #d4d4d4 transparent transparent;
+}
+
+.mfc-tooltip-left.earth::before {
+    border-color: transparent transparent transparent #d4d4d4;
+}
+
+.mfc-tooltip-bottom.earth::before {
+    border-color: transparent transparent #d4d4d4 transparent;
+}
+
+.mfc-tooltip-top.earth::before {
+    border-color: #d4d4d4 transparent transparent transparent;
+}.mfc-treeview.earth 
+{
+    color:  #46697d;
+    background-color:  #c5b28a;
+}
+.mfc-treeview.earth .mfc-treenode-header
+{
+    padding: 10px;
+}
+.mfc-treeview.earth .mfc-treenode.mfc-active > .mfc-treenode-header
+{
+    color:  #c5b28a;
+    background-color:  #46697d;
+}
+.mfc-treeview.earth .mfc-treenode .mfc-treenode-image 
+{
+    background-image: url("icons/black/small.png");
+     background-position: -80px 0;
+ }.mfc-windowhost.earth
+{
+    border: solid 1px #d4d4d4;  
+    background-color: #f2ebcf;
+}
+.mfc-window.earth
+{
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    background-color: #c5b28a;
+    border-color: #d4d4d4;
+}
+.mfc-window.earth .mfc-header,
+.mfc-window.earth .mfc-footer
+{
+    background-color: #c5b28a;
+    border-color: #46697d;
+    color: #46697d;
+}
+.mfc-window.earth .mfc-content
+{
+    background-color: #f2ebcf;
+    color: #46697d;
+    margin-top: 1px;
+}
+.mfc-window.earth.mfc-active .mfc-header
+{
+    font-weight: bold;
+}
+.mfc-windowhost.earth .mfc-windowhost-toolstrip.mfc-toolstrip-vertical
+{
+    background-color: #fff;
+}
+.mfc-windowhost.earth .mfc-windowhost-toolstrip.mfc-toolstrip-horizontal
+{
+    background-color: #c5b28a;
+    border-color: #46697d;
+    color: #46697d;
+}
+.mfc-windowhost.earth .mfc-windowhost-toolstrip .mfc-toolbutton-default a
+{
+    border: none;
+}
+.mfc-window.earth .mfc-window-toolstrip .mfc-toolbutton-default a,
+.mfc-windowhost.earth .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-windowhost.earth .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next,
+.mfc-window.earth .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-window.earth .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/black/small.png");
+}
+.mfc-windowhost.earth .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-show-all a
+{
+    background-image: url("icons/black/show-all.png");
+} 
+.mfc-windowhost.earth .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-restore-all a
+{
+    background-image: url("icons/black/restore-all.png");
+} 
+.mfc-windowhost.earth .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-minimize-all a
+{
+    background-image: url("icons/black/minimize-all.png");
+} 
+.mfc-windowhost.earth .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-close-all a
+{
+    background-image: url("icons/black/close-all.png");
+} 
+.mfc-windowhost.earth .mfc-toolstrip-horizontal.mfc-toolstrip-collapsible::after {
+    border-color: #f2ebcf transparent transparent transparent;
+}
+.mfc-windowhost.earth .mfc-toolstrip.mfc-toolstrip-vertical.mfc-toolstrip-collapsible::after {
+    border-color: transparent #f2ebcf transparent transparent;
+}
+.mfc-windowhost.earth .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-active
+{
+    background-color:#f2ebcf;
+}
+.mfc-windowhost.earth .mfc-windowhost-toolstrip.mfc-maximized-toolstrip .mfc-toolstrip-item.mfc-toolbutton-label.mfc-selected
+{
+    font-weight: bold;
+}

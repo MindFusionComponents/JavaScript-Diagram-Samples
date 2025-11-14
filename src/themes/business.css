@@ -1,0 +1,360 @@
+.mfc-calendar.business
+{
+    border: solid 1px #5a79a5;
+    border-radius: 3px;
+}
+.mfc-calendar-view.business {
+    color: #5a79a5;
+    background-color: #fff;   
+}
+.mfc-calendar-view.business .mfc-calendar-header,
+.mfc-calendar.business .mfc-calendar-footer
+{
+    color: #5a79a5;
+    background-color: #fff;   
+    padding: 2px;
+}
+.mfc-calendar.business .mfc-calendar-content
+{
+    padding: 4px;
+    font-size: smaller;
+}
+/*.mfc-calendar-view.business .mfc-calendar-content div[data-value]
+{
+    padding: 2px;
+}*/
+.mfc-calendar-view.business .mfc-calendar-content div[data-value]:hover
+{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/*.mfc-calendar-view.mfc-calendar-dayview.business .mfc-calendar-content div[data-value]:nth-child(even)
+{
+   border-left: 1px solid;
+}*/
+.mfc-calendar.business .mfc-calendar-content .mfc-selected,
+.mfc-calendar-view.business .mfc-calendar-content .mfc-selected
+{
+    border:none;
+    background-color: #5a79a5;
+    color: #fff;
+    border-radius: 4px;  
+}
+.mfc-picker-button.business
+{
+    background-color: #5a79a5;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}.mfc-checklistbox.business 
+{
+    color: #5a79a5;
+    background-color:  #fff;
+}
+.mfc-checklistpicker.business > span
+{
+    background-color: #5a79a5;
+    color: #fff;
+}.mfc-dialog.business .mfc-dialog-button {
+    color: #fff;
+    background-color: #5a79a5;
+    border: solid 1px #fff;
+    border-radius: 5px;
+    padding: 10px;
+}
+.mfc-dialog.business .mfc-dialog-button:hover
+{
+    background-color: rgba(0, 0, 0, 0.3);
+}.mfc-listview.business 
+{
+    color: #fff;
+    background-color:  #5a79a5;
+}
+.mfc-listview.business .mfc-listview-item
+{
+    border-bottom: solid 1px  #fff;
+    padding: 10px;
+}
+.mfc-listview.business .mfc-listview-item.mfc-active
+{
+    font-weight: bold;
+}
+.mfc-listview.business .mfc-listview-item.mfc-selected
+{
+    background-color: #fff;
+    color: #5a79a5;
+} 
+.mfc-menu-content.business {
+    color: #fff;
+    background-color: #5a79a5;
+}
+
+.mfc-menu-content.mfc-menuitem-children.business {
+    border-left: 5px solid #fff;
+}
+
+.mfc-menu-content.business .mfc-menuitem-header {
+    padding: 10px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.mfc-menu-content.business .mfc-menuitem-header>a {
+    padding: 5px;
+    color: #fff;
+}
+
+.mfc-menu-content.business .mfc-menuitem.mfc-active>.mfc-menuitem-header {
+    background-color: #fff;
+}
+
+.mfc-menu-content.business .mfc-menuitem.mfc-active>.mfc-menuitem-header>a {
+    color: #5a79a5;
+}
+
+.mfc-menu-content.business .mfc-menuitem .mfc-menuitem-image {
+    background-image: url("icons/black/small.png");
+    background-position: -80px 0;
+}
+
+.mfc-menu-content.business.mfc-menuitem-children {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+
+.mfc-menu-content.business.mfc-menuitem-expanded.mfc-menuitem-children {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}.mfc-picker.business
+{
+    background-color: #fff;
+    color: #5a79a5;
+    border: 1px solid;
+}
+.mfc-picker-button.business
+{
+    background-color: #5a79a5;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+.mfc-tooltip.mfc-dropdown.business
+{
+    border-color: #5a79a5; 
+}
+
+.mfc-tabcontrol.business .mfc-tabstrip .mfc-toolstrip-item
+{
+    background-color: #5a79a5;
+    color: #fff;
+}
+.mfc-tabcontrol.mfc-tabcontrol-vertical.business .mfc-tabstrip .mfc-toolstrip-item.mfc-selected > div,
+.mfc-tabcontrol.mfc-tabcontrol-horizontal.business .mfc-tabstrip .mfc-toolstrip-item.mfc-selected > div
+{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.mfc-tabcontrol.business > ul
+{
+    border: 1px solid #5a79a5;
+    background-color: #fff;
+}
+.mfc-tabcontrol.business .mfc-tabbutton-close
+{
+    background-image: url("icons/white/small.png");
+    background-position: -48px 0;
+}.mfc-tabstrip.business ul  {
+    background-color: #5a79a5;
+}
+
+.mfc-tabstrip.business .mfc-navbutton[data-mfc="mfc-add"] img {
+    content: url("icons/white/add.png");
+}
+
+.mfc-tabstrip.business .mfc-navbutton[data-mfc="mfc-first"] img {
+    content: url("icons/white/first.png");
+}
+
+.mfc-tabstrip.business .mfc-navbutton[data-mfc="mfc-prev"] img {
+    content: url("icons/white/prev.png");
+}
+
+.mfc-tabstrip.business .mfc-navbutton[data-mfc="mfc-next"] img {
+    content: url("icons/white/next.png");
+}
+
+.mfc-tabstrip.business .mfc-navbutton[data-mfc="mfc-last"] img {
+    content: url("icons/white/last.png");
+}
+
+.mfc-tabstrip.business .mfc-tabbutton-close {
+    background-image: url("icons/white/remove.png");
+}
+.mfc-toolstrip.mfc-toolstrip-scrollable.business .mfc-toolstrip-cue-prev,
+.mfc-toolstrip.mfc-toolstrip-scrollable.business .mfc-toolstrip-cue-next {
+    background-image: url("icons/white/small.png");
+}
+
+.mfc-toolstrip.business {
+    color: #fff;
+    background-color: #5a79a5;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.mfc-toolstrip.business .mfc-toolstrip-item {
+    padding: 0 10px;
+}
+
+.mfc-toolstrip.business:not(.mfc-tabstrip) .mfc-toolstrip-item.mfc-active {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.mfc-windowhost.business .mfc-toolstrip.mfc-toolstrip-collapsible::after {
+    content: "...";
+    position: absolute;
+    border: none;
+    transform: rotate(90deg) translate(0, -11px);
+    font-size: x-large
+}
+
+.mfc-windowhost.business .mfc-toolstrip.mfc-toolstrip-collapsible.mfc-expanded::after {
+    content: "";
+}.mfc-tooltip.business {
+    color: #fff;
+    background-color: #5a79a5;
+    border: solid 1px #fff;
+}
+
+.mfc-tooltip-right.business::after {
+    border-color: transparent #5a79a5 transparent transparent;
+}
+
+.mfc-tooltip-left.business::after {
+    border-color: transparent transparent transparent #5a79a5;
+}
+
+.mfc-tooltip-bottom.business::after {
+    border-color: transparent transparent #5a79a5 transparent;
+}
+
+.mfc-tooltip-top.business::after {
+    border-color: #5a79a5 transparent transparent transparent;
+}
+
+.mfc-tooltip-right.business::before {
+    border-color: transparent #fff transparent transparent;
+}
+
+.mfc-tooltip-left.business::before {
+    border-color: transparent transparent transparent #fff;
+}
+
+.mfc-tooltip-bottom.business::before {
+    border-color: transparent transparent #fff transparent;
+}
+
+.mfc-tooltip-top.business::before {
+    border-color: #fff transparent transparent transparent;
+}.mfc-treeview.business 
+{
+    color: #5a79a5;
+    background-color: #fff;
+}
+.mfc-treeview.business .mfc-treenode-header
+{
+    padding: 10px;
+}
+.mfc-treeview.business .mfc-treenode-header > a
+{
+    padding: 5px;
+}
+.mfc-treeview.business .mfc-treenode.mfc-active > .mfc-treenode-header > a
+{
+    border:1px solid #5a79a5;
+    margin: -1px;
+}
+.mfc-treeview.business .mfc-treenode.mfc-selected > .mfc-treenode-header
+{
+    background-color: #5a79a5;
+    color: #fff;
+} 
+.mfc-treeview.business .mfc-treenode-expanded .mfc-indent:last-of-type
+{
+    border-bottom: 1px dashed #5a79a5;
+    border-left: 1px dashed #5a79a5;
+    transform: scale(0.7);
+}
+.mfc-treeview.business .mfc-treenode .mfc-treenode-image {
+    background: none;
+    text-align: right;
+}
+.mfc-treeview.business .mfc-treenode-image::after
+{
+    content: "+";
+}
+.mfc-treeview.business .mfc-treenode-expanded > .mfc-treenode-header > .mfc-treenode-image::after
+{
+    content: "-";
+}.mfc-windowhost.business
+{
+    background-color: #fff;
+    border: 1px solid #5a79a5;
+}
+.mfc-window.business
+{
+    color: #5a79a5;
+    background-color: #fff;
+    border-color: #5a79a5;
+}
+.mfc-windowhost.business .mfc-windowhost-toolstrip,
+.mfc-window.business .mfc-header,
+.mfc-window.business .mfc-footer
+{
+    background-color: #5a79a5;
+    color:#fff;
+}
+.mfc-window.business .mfc-header .mfc-title
+{
+    padding: 10px;
+}
+.mfc-window.business .mfc-content
+{
+    background-color: #fff;
+}
+.mfc-window.business .mfc-resize
+{
+    background-color: #5a79a5;
+}
+.mfc-window.business .mfc-window-toolstrip .mfc-toolbutton-default a,
+.mfc-windowhost.business .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-windowhost.business .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next,
+.mfc-window.business .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-prev,
+.mfc-window.business .mfc-toolstrip.mfc-toolstrip-scrollable .mfc-toolstrip-cue-next
+{
+    background-image: url("icons/white/small.png");
+}
+.mfc-windowhost.business .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-show-all a
+{
+    background-image: url("icons/white/show-all.png");
+} 
+.mfc-windowhost.business .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-restore-all a
+{
+    background-image: url("icons/white/restore-all.png");
+} 
+.mfc-windowhost.business .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-minimize-all a
+{
+    background-image: url("icons/white/minimize-all.png");
+} 
+.mfc-windowhost.business .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-toolbutton-close-all a
+{
+    background-image: url("icons/white/close-all.png");
+} 
+.mfc-windowhost.business .mfc-windowhost-toolstrip .mfc-toolstrip-item.mfc-active
+{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.mfc-windowhost.business .mfc-windowhost-toolstrip.mfc-maximized-toolstrip .mfc-toolstrip-item.mfc-toolbutton-label.mfc-selected
+{
+    font-weight: bold;
+}

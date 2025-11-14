@@ -1,0 +1,15 @@
+{
+  "name": "javascript-diagram-samples",
+  "version": "1.0.0",
+  "description": "MindFusion JavaScript Diagram Samples",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server src --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
